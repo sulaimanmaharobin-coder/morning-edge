@@ -62,16 +62,41 @@ footer .row { display:flex; justify-content:space-between; gap:16px; flex-wrap:w
 footer .cost { color:var(--ink); font-weight:700; }
 .checked span { white-space:nowrap; }
 .st-nothing-new { opacity:.6; } .st-unreachable { text-decoration:line-through; opacity:.55; }
+.sister { text-align:center; font-size:13px; letter-spacing:.08em; text-transform:uppercase; padding:6px 0; border-bottom:1px solid var(--hair); }
+.sister a { color:var(--accent); }
+.prose { column-count:2; column-gap:30px; column-rule:1px solid var(--hair); margin-top:18px; }
+.prose h1 { display:none; }
+.prose h2 { column-span:all; font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
+  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:22px 0 10px; }
+.prose h2:first-of-type { margin-top:4px; }
+.prose h3 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:12px 0 4px; break-after:avoid; }
+.prose p, .prose li { font-size:15px; line-height:1.55; }
+.prose p:first-of-type { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
+.prose ul, .prose ol { padding-left:20px; margin:0 0 12px; }
+.prose li { margin-bottom:7px; break-inside:avoid; }
+.prose code { font:13px/1.4 Consolas, "Courier New", monospace; overflow-wrap:anywhere; background:var(--box); padding:0 3px; }
+.prose table { border-collapse:collapse; width:100%; font-size:13.5px; margin:8px 0 14px; column-span:all; }
+.prose th, .prose td { border-bottom:1px solid var(--hair); padding:5px 6px; text-align:left; vertical-align:top; }
+.prose th { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.prose a { text-decoration:underline; text-decoration-color:var(--hair); }
+@media print {
+  @page { size:148mm 240mm; margin:0; }
+  :root { --paper:#f3eee2; --ink:#1b1916; --muted:#5d574c; --rule:#1b1916; --hair:#bfb6a3; --accent:#8a1c12; --box:#e9e2d1; }
+  html, body { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { padding:9mm 8mm; max-width:none; }
+  .no-print { display:none !important; }
+}
 @media (max-width:860px) {
   body { padding:16px 16px 32px; }
   .front { grid-template-columns:1fr; }
   .lead { padding-right:0; border-right:none; }
   .side { padding-left:0; margin-top:22px; }
-  .story { column-count:1; }
+  .story, .prose { column-count:1; }
   .reads-row { grid-template-columns:1fr; }
   .read, .read:first-child, .read:last-child { padding:12px 0; border-right:none; border-bottom:1px solid var(--hair); }
   .ears span:nth-child(2), .dateline span:nth-child(3) { display:none; }
 }
+
 </style></head>
 <body>
 <div class="ears"><span>Vol. I &middot; No. 1</span><span>All the news that's fit for one reader</span><span>Price: $0.63</span></div>
@@ -79,9 +104,11 @@ footer .cost { color:var(--ink); font-weight:700; }
 <div class="motto">The internet, read for you overnight &middot; 18 sources checked</div>
 <div class="dateline"><span>Sunday, 11 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
 
+<nav class="sister" id="sister" hidden>Also this morning: <a href="desk.html" target="_top">The Contract Desk</a> &middot; <a href="brief.html" target="_top">The Repo Brief</a></nav>
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
+if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementById("sister").hidden = false;  // laptop only
 (function () {
   var ed = "2026-10-11", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)") && location.pathname.indexOf(ed) < 0) {
