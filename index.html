@@ -79,6 +79,18 @@ footer .cost { color:var(--ink); font-weight:700; }
 <div class="motto">The internet, read for you overnight &middot; 18 sources checked</div>
 <div class="dateline"><span>Sunday, 11 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
 
+<div class="notice" id="stale" hidden></div>
+<script>
+// Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
+(function () {
+  var ed = "2026-10-11", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  if (ed < today && !document.querySelector(".notice:not(#stale)") && location.pathname.indexOf(ed) < 0) {
+    var n = document.getElementById("stale");
+    n.textContent = "Today's edition hasn't arrived yet. This is the edition of " + ed + ".";
+    n.hidden = false;
+  }
+})();
+</script>
 <main class="front">
   <section class="lead">
     <div class="kicker">Top story</div>
