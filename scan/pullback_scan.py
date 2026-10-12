@@ -34,6 +34,7 @@ TOUCH = 0.005        # low within 0.5% of the 20 EMA counts as a touch
 ZONE = (-1.5, 2.0)   # close vs 20 EMA, % (below 0 = needs a close back above)
 WATCH_MAX = 3.0      # close up to 3% above the 20 EMA = waiting for a pullback
 TOP_N = 15           # pre-breakout rows shown in the paper
+MIN_STOP_ATR = 1.0   # stops closer than one day's ATR sit inside normal noise
 
 
 def get_json(url, tries=3):
@@ -57,6 +58,16 @@ def ema(xs, n):
         e = sum(xs[:n]) / n if e is None else x * k + e * (1 - k)
         out.append(e)
     return out
+
+
+def atr(hi, lo, c, n=14):
+    """Wilder ATR of the last bar."""
+    tr = [hi[0] - lo[0]] + [max(hi[i] - lo[i], abs(hi[i] - c[i - 1]), abs(lo[i] - c[i - 1]))
+                            for i in range(1, len(c))]
+    a = sum(tr[:n]) / n
+    for x in tr[n:]:
+        a = (a * (n - 1) + x) / n
+    return a
 
 
 def rsi(xs, n=14):
@@ -97,9 +108,12 @@ def evaluate(sym, kind, bars):
     else:
         status = "no"
     stop = (c[i] / e50[i] - 1) * 100
+    a = atr(hi, lo, c)
+    stop_atr = (c[i] - e50[i]) / a if a else None
     to_hi = (max(hi[i - 20:i + 1]) / c[i] - 1) * 100
     return dict(sym=sym, kind=kind, close=c[i], e20=e20[i], e50=e50[i], rsi=round(r[i], 1),
-                d20=round(d20, 1), stop_pct=round(stop, 1), to_hi=round(to_hi, 1), status=status,
+                d20=round(d20, 1), stop_pct=round(stop, 1),
+                stop_atr=round(stop_atr, 2) if stop_atr is not None else None, to_hi=round(to_hi, 1), status=status,
                 pre_breakout=status == "buy" and stop <= 5 and to_hi <= 5)
 
 
@@ -190,8 +204,11 @@ def fmt(x):
 def render(crypto, stocks, notes, stamp):
     rows = crypto + stocks
     buys = [r for r in rows if r["status"] == "buy"]
-    pre_all = sorted((r for r in buys if r["pre_breakout"]), key=lambda r: r["stop_pct"])
-    pre = pre_all[:TOP_N]
+    pre_all = [r for r in buys if r["pre_breakout"]]
+    ranked = sorted((r for r in pre_all if r["stop_atr"] is not None and r["stop_atr"] >= MIN_STOP_ATR),
+                    key=lambda r: r["stop_atr"])
+    noise = len(pre_all) - len(ranked)
+    pre = ranked[:TOP_N]
     e = html.escape
     out = ['<!-- pullback:start -->', '<section class="pb reads">',
            '<style>.pb .pb-wrap{overflow-x:auto}.pb table{border-collapse:collapse;width:100%;font-size:13.5px;margin:6px 0 10px}'
@@ -204,22 +221,24 @@ def render(crypto, stocks, notes, stamp):
            '.pb .pb-note{font-size:12.5px;color:var(--muted);margin-top:8px}</style>',
            '<h2>Pullback Setups &middot; 20/50 EMA &amp; RSI</h2>',
            f'<p class="tldr">Pre-breakout setups today: {len(pre_all)}'
-           + (f', top {len(pre)} by stop distance shown' if len(pre_all) > len(pre) else '')
-           + f'. Other buy-zone names not listed: {len(buys) - len(pre)}.</p>']
+           + (f', top {len(pre)} by stop distance in ATR shown' if len(ranked) > len(pre) else '')
+           + (f'. Left out with a stop inside one ATR: {noise}' if noise else '')
+           + f'. Other buy-zone names not listed: {len(buys) - len(pre_all)}.</p>']
     if pre:
         out.append('<div class="pb-wrap"><table><tr><th>Name</th><th>Type</th><th>Close</th><th>vs 20 EMA</th>'
-                   '<th>RSI</th><th>Stop (50 EMA)</th><th>Risk</th><th>To 20d high</th></tr>')
+                   '<th>RSI</th><th>Stop (50 EMA)</th><th>Risk</th><th>Stop in ATR</th><th>To 20d high</th></tr>')
         for r in pre:
             out.append(f'<tr><td>{e(r["sym"])}</td><td>{r["kind"]}</td><td>{fmt(r["close"])}</td>'
                        f'<td>{r["d20"]:+.1f}%</td><td>{r["rsi"]:.1f}</td><td>{fmt(r["e50"])}</td>'
-                       f'<td>{r["stop_pct"]:.1f}%</td><td>{r["to_hi"]:.1f}%</td></tr>')
+                       f'<td>{r["stop_pct"]:.1f}%</td><td>{r["stop_atr"]:.1f}</td><td>{r["to_hi"]:.1f}%</td></tr>')
         out.append('</table></div>')
     else:
         out.append('<p>No pre-breakout setup today.</p>')
     below = [r["sym"] for r in pre if r["d20"] < 0]
     if below:
         out.append(f'<p>Closed just under the 20 EMA, wait for a daily close back above: {e(", ".join(below))}.</p>')
-    out.append('<p class="pb-note">Pre-breakout = in the buy zone, stop within 5% and price within 5% of its 20-day high; sorted by stop distance. '
+    out.append('<p class="pb-note">Pre-breakout = in the buy zone, stop within 5% and price within 5% of its 20-day high. '
+               'Ranked by stop distance in ATR(14), tightest first; stops closer than 1 ATR are left out as they sit inside a normal day\'s range. '
                'Buy zone = 20 EMA above 50 EMA, 50 EMA rising, daily low touched the 20 EMA in the last two bars, RSI(14) above 50. '
                'Exit when the 20 EMA closes below the 50 EMA or price closes below the 50 EMA. '
                f'Scanned {e(stamp)} SGT. ' + e(" ".join(notes)) +
