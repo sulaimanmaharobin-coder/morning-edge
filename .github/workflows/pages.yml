@@ -1,4 +1,5 @@
-# Builds the site and adds the daily pullback scan to the latest edition.
+# Builds the site, adds the daily pullback scan to the latest edition and
+# builds app.html (all morning feeds on one page).
 # Runs after every edition push and at 07:30 SGT. Never commits to main.
 # Requires Settings -> Pages -> Source: "GitHub Actions".
 name: Publish with pullback scan
@@ -34,11 +35,23 @@ jobs:
         continue-on-error: true   # a failed scan must never block the paper
         timeout-minutes: 15
         run: python scan/pullback_scan.py
+      - name: Fetch jev-trader scan
+        continue-on-error: true   # optional feed; needs the JEV_TOKEN secret
+        env:
+          JEV_TOKEN: ${{ secrets.JEV_TOKEN }}
+        run: |
+          if [ -n "$JEV_TOKEN" ]; then
+            git clone -q --depth 1 --branch scan-reports \
+              "https://x-access-token:${JEV_TOKEN}@github.com/sulaimanmaharobin-coder/jev-trader.git" /tmp/jev
+          else
+            echo "JEV_TOKEN not set; app will show jev-trader as not connected"
+          fi
       - name: Build site
         run: |
           mkdir _site
           find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name _site -exec cp -r {} _site/ \;
           python scan/inject.py _site || true
+          timeout 600 python scan/build_app.py _site /tmp/jev || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
