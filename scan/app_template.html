@@ -148,7 +148,7 @@ details summary { cursor:pointer; color:var(--muted); font-size:13.5px; margin:6
       })) : '<p class="muted">No breakouts.</p>';
       if (s.watch.length) h += "<details><summary>Watch list (" + s.watch.length + "), breakout levels</summary>" + table(["Watch", "Level", "Rev YoY"], s.watch.map(function (w) { return tr([e(w.ticker), px(w.level), w.rev_yoy == null ? "n/a" : pct(w.rev_yoy * 100)]); })) + "</details>";
     });
-    h += '<p class="muted">Paper trades only. The pre-breakout rule\'s 2-year backtest was losing (profit factor 0.84). Holdings and sleeve balances are on the private Work Brief.</p>';
+    h += '<p class="muted">Paper trades only. The pre-breakout rule\'s 2-year backtest was losing (profit factor 0.84).</p>';
   }
   document.getElementById("stocks").innerHTML = h;
 
