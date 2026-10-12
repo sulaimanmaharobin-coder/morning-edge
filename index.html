@@ -101,10 +101,10 @@ footer .cost { color:var(--ink); font-weight:700; }
 
 </style></head>
 <body>
-<div class="ears"><span>Vol. I &middot; No. 2</span><span>All the news that's fit for one reader</span><span>Price: $0.35</span></div>
+<div class="ears"><span>Vol. I &middot; No. 3</span><span>All the news that's fit for one reader</span><span>Price: $0.41</span></div>
 <div class="masthead">The Morning Edge</div>
 <div class="motto">The internet, read for you overnight &middot; 18 sources checked</div>
-<div class="dateline"><span>Monday, 12 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
+<div class="dateline"><span>Tuesday, 13 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
 
 <nav class="sister" id="sister" hidden>Also this morning: <a href="desk.html" target="_top">The Contract Desk</a> &middot; <a href="brief.html" target="_top">The Repo Brief</a></nav>
 <div class="notice" id="stale" hidden></div>
@@ -112,7 +112,7 @@ footer .cost { color:var(--ink); font-weight:700; }
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementById("sister").hidden = false;  // laptop only
 (function () {
-  var ed = "2026-10-12", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-13", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)") && location.pathname.indexOf(ed) < 0) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition hasn't arrived yet. This is the edition of " + ed + ".";
@@ -123,49 +123,48 @@ if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementByI
 <main class="front">
   <section class="lead">
     <div class="kicker">Top story</div>
-    <h1><a href="https://momo5502.com/posts/2026-10-09-game-decompilation/" target="_top" rel="noopener">Claude agent team decompiles a shooter game, guided by byte-match checks</a></h1>
-    <p class="dek">A three-month, 14-to-16-agent project rebuilt 99% of a first-person shooter&#x27;s functions in C++.</p>
-    <div class="byline">From momo5502.com &middot; 2026-10-09</div>
+    <h1><a href="https://news.ycombinator.com/item?id=50059096" target="_top" rel="noopener">YC-backed Agent37 launches sandboxes for agents at under $5 a month</a></h1>
+    <p class="dek">The Fall 2026 startup says it runs agent harnesses, including Claude Code, at a fraction of typical sandbox prices.</p>
+    <div class="byline">From Hacker News (Launch HN) &middot; 2026-10-13</div>
     <div class="story">
-      <p>A developer writing at momo5502.com describes using multiple autonomous coding agents over three months to decompile a first-person shooter back to C++. The agents ran through Claude Code and Codex CLI on a mix of models, including Sonnet 5, Opus 5.5 and others. The team started with four agents and scaled to 14 to 16 by the end.</p>
-<p>Human review of the agents&#x27; output did not scale. The change that worked was byte-matching verification: a script compiles the reconstructed code and compares the object files with the original binaries. That gave each agent an objective PASS or FAIL. The author&#x27;s conclusion is that a reliable verification harness is the best feedback an agent can get, and that it let cheaper models do useful work.</p>
-<p>Coordination used GitHub issues for tracking, Discord for agent-to-agent communication, and GitHub Actions CI to run the verification. The author lowered the context compaction threshold from 90% to 42% to drop irrelevant context, and refreshed instructions hourly to keep agents on task.</p>
-<p>The author estimates 600 to 700 billion tokens in total, about 300 billion of them on one cheaper model family. The result was 99% of functions reconstructed and 83% byte-exact. The author believes the remaining 17% are semantically correct but differ because of compiler non-determinism.</p>
-      <div class="why-box"><b>Why it matters to you</b>If you run Claude teams unattended overnight, this is a worked example of making a pass/fail check, such as a backtest-equals-Pine-output comparison, the thing that steers the agents.</div>
+      <p>Agent37, a Y Combinator Fall 2026 company, launched on Hacker News with low-cost cloud sandboxes built for running AI agents. The founder, Vishnu Kool, says the service costs under 10% of most sandbox providers.</p>
+<p>Paid plans start at about $4.94 a month for a 2 vCPU, 4 GB configuration. The company says the average paid customer spends about $0.37 a month per sandbox. A free tier is available, which the company says costs it roughly $0.05 to $0.10 in infrastructure per user each month. It claims to be 2.8 times cheaper than Boat.dev and 94% cheaper than Fly.io Sprites. Those figures come from the company, not from independent tests.</p>
+<p>The platform offers both gVisor-based containers and full VM sandboxes. It supports several agent harnesses, naming Hermes, OpenClaw and Claude Code. It also provides OpenAI-compatible API endpoints and managed integrations including Composio and BraveSearch. The launch thread had 77 points when checked and was ranked #10 on the front page.</p>
+      <div class="why-box"><b>Why it matters to you</b>If you run Claude Code teams unattended overnight, an isolated, cheap sandbox is a way to cap blast radius and cost, though the pricing claims need testing against your own workloads.</div>
     </div>
-    <p class="editor-note">Very quiet day: Anthropic, Willison and TradingView had nothing after Oct 11, so some items are 3 to 5 days old and the three reads are evergreen guides rather than new posts.</p>
+    <p class="editor-note">Quiet day with several sources unreachable; some briefs and reads are 3 to 6 days old and unpublished.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://pub.sakana.ai/mass/" target="_top" rel="noopener">Sakana&#x27;s MASS trains multi-agent teams to improve themselves</a></h3>
-          <p>Sakana AI describes a two-loop framework. An inner loop optimizes agent workflows, and an outer loop fine-tunes the model on the best trajectories. Win rate against the base model rose from 53.9% to 69.9% in round two, using 31% fewer supervised tokens than single-agent training.</p>
-          <p class="why"><span>Why it matters</span> It is a research view of the workflow-optimizing loop you could try on your own overnight agent teams.</p>
-          <p class="src">Sakana AI via Hacker News</p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/10/one-year-after-10-10-bitcoin-and-ether-liquidity-have-rebuilt-but-other-altcoins-still-face-risks" target="_top" rel="noopener">Bitcoin and ether order books rebuilt a year after 10/10 crash</a></h3>
+          <p>Bitcoin depth within 1% of price reached $11.7 million on Oct 7, 75% deeper than on the crash day. ETH depth within 1% rose 75% to $5.3 million, but altcoin depth at 5% fell about a third to roughly $2 million.</p>
+          <p class="why"><span>Why it matters</span> For perps breakout-reclaim entries, thin altcoin books mean more slippage, so size alts smaller than majors.</p>
+          <p class="src">CoinDesk</p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/plimsollmark/plimsoll" target="_top" rel="noopener">Plimsoll: self-hosted sandbox for code your AI agent writes</a></h3>
-          <p>A Show HN project that runs agent-generated code in a self-hosted sandbox. It is early, with 5 points on Hacker News at the time of checking.</p>
-          <p class="why"><span>Why it matters</span> Unattended Claude agents that execute code or touch trading keys are safer inside a sandbox like this.</p>
-          <p class="src">GitHub via Hacker News</p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/09/bitcoin-s-volatility-has-plunged-but-extreme-price-swings-are-more-frequent-than-in-2018" target="_top" rel="noopener">Bitcoin logs 10 three-sigma days in 2026 despite falling volatility</a></h3>
+          <p>Annualized volatility fell to 46% from 84%, yet 2026 already has 10 three-sigma days against eight in all of 2018. Analysts warn that value-at-risk models built on recent volatility understate tail risk.</p>
+          <p class="why"><span>Why it matters</span> If your backtests size positions from trailing volatility, stress-test them against fat-tail days.</p>
+          <p class="src">CoinDesk</p>
         </article>
 <article class="brief">
-          <h3><a href="https://tedhaley.ca/pensieve/" target="_top" rel="noopener">Pensieve: local indexing to cut tool calls and tokens</a></h3>
-          <p>A write-up on indexing content locally so agents make fewer tool calls and spend fewer tokens. It was posted on Hacker News on the morning of Oct 12.</p>
-          <p class="why"><span>Why it matters</span> Fewer tool calls would lower the cost of long-running Claude Code sessions on large repos.</p>
-          <p class="src">tedhaley.ca via Hacker News</p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/09/ether-bets-were-wiped-out-at-six-times-bitcoin-s-rate-in-crypto-s-usd1-billion-flush" target="_top" rel="noopener">ETH longs wiped out at six times bitcoin&#x27;s rate in $1B flush</a></h3>
+          <p>About $356 million of ETH positions were liquidated over 24 hours, more than bitcoin&#x27;s despite ETH&#x27;s smaller market cap, in a crypto-wide liquidation of roughly $1 billion.</p>
+          <p class="why"><span>Why it matters</span> Liquidation clusters like this are the failed-breakout and reclaim setups your perps scanner should log with volume data.</p>
+          <p class="src">CoinDesk</p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.anthropic.com/claude-haiku-5-5" target="_top" rel="noopener">Claude Haiku 5.5 cuts small-model pricing by about 90%</a></h3>
-          <p>Anthropic&#x27;s Haiku 5.5 costs $0.10 to $0.50 per million input tokens and $0.50 to $2.50 per million output tokens, depending on prompt length. It scores 72.4% on OSWorld 2.1 and is aimed at subagent work. Sonnet 5.5 cache reads are also 50% cheaper.</p>
-          <p class="why"><span>Why it matters</span> It is a cheaper option for the scanner and outreach subagents in your multi-agent setups.</p>
-          <p class="src">Anthropic</p>
+          <h3><a href="https://simonwillison.net/2026/Oct/12/python-3-15/" target="_top" rel="noopener">Python 3.15 arrives; Simon Willison drops 3.10 support</a></h3>
+          <p>3.15 adds explicit lazy imports, unpacking in comprehensions and a built-in sampling profiler called Tachyon. Willison says dropping 3.10 lets his projects use 3.11 features such as asyncio TaskGroup and tomllib. He found performance gains modest outside the experimental JIT.</p>
+          <p class="why"><span>Why it matters</span> Tachyon could help you profile slow loops when porting Pine Script indicators to local Python backtests.</p>
+          <p class="src">Simon Willison</p>
         </article>
 <article class="brief">
-          <h3><a href="https://claude.com/resources/articles/dashboards-and-motion" target="_top" rel="noopener">Claude Dashboards beta builds live dashboards from warehouse data</a></h3>
-          <p>Dashboards connects to BigQuery, Snowflake or Databricks and builds auto-updating dashboards from plain-language questions, with the underlying queries visible. Docs, Slides and Design leave beta on all plans, and Claude Design merges into Claude chat by Dec 14.</p>
-          <p class="why"><span>Why it matters</span> It could suit your LTA contract reporting, though it is not aimed at trading.</p>
-          <p class="src">Claude blog</p>
+          <h3><a href="https://yyhh.org/blog/2026/10/ai-is-a-tool/" target="_top" rel="noopener">Essay: LLMs are tools that reward skill, not automation</a></h3>
+          <p>Huahai replies to Rich Hickey&#x27;s claim that LLMs are automation rather than tools. The essay argues the real divide is between skilled operation and delegating without understanding, since tools amplify poor judgment as readily as good.</p>
+          <p class="why"><span>Why it matters</span> It supports a habit worth keeping for unattended Claude agents: review their trading and code output yourself.</p>
+          <p class="src">yyhh.org</p>
         </article>
   </aside>
 </main>
@@ -173,29 +172,29 @@ if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementByI
   <h2>Worth Reading in Full</h2>
   <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://cryptobriefing.com/tradingview-mcp-server-ai-agents-beta/" target="_top" rel="noopener">TradingView enables AI agent connectivity via MCP server in public beta</a></h4>
-          <p class="src">Crypto Briefing</p>
-          <p class="why">Covers connecting Claude Code to TradingView screeners, quotes and alerts, with about 100 tool calls per minute.</p>
+          <h4><a href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/" target="_top" rel="noopener">AI coding agents generate more code, but not more software</a></h4>
+          <p class="src">Ars Technica</p>
+          <p class="why">A 284-point HN discussion on agent output versus shipped software, relevant to judging your own overnight agent teams (I could not open the article itself).</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://claudemarketplaces.com/skills/tradermonty/claude-trading-skills/vcp-screener" target="_top" rel="noopener">vcp screener (tradermonty/claude-trading-skills)</a></h4>
-          <p class="src">claudemarketplaces.com</p>
-          <p class="why">A ready-made Claude Code skill for Minervini VCP screening that you can compare with your own scanner.</p>
+          <h4><a href="https://simonwillison.net/2026/Oct/9/built-using-my-voice/" target="_top" rel="noopener">A new feature for my blog, built using my voice</a></h4>
+          <p class="src">Simon Willison</p>
+          <p class="why">A concrete example of voice-driven development that you could adapt for Claude Code sessions.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://blog.pickmytrade.io/how-to-connect-claude-ai-to-tradingview-using-mcp/" target="_top" rel="noopener">How to Connect Claude AI to TradingView Using MCP</a></h4>
-          <p class="src">PickMyTrade blog</p>
-          <p class="why">A setup walkthrough for linking Claude to TradingView. It comes from a trade-automation vendor, so treat it as a how-to only.</p>
+          <h4><a href="https://claude.dev/blog/automating-eval-design-and-hillclimbing/" target="_top" rel="noopener">Automating eval design and hillclimbing with Claude</a></h4>
+          <p class="src">Claude Developer Blog</p>
+          <p class="why">Eval methodology you could reuse to score your scanner and strategy agents systematically.</p>
         </article></div>
 </section>
 <footer>
   <div class="row">
-    <span>Edited by Claude (sonnet) at 08:54 &middot; 2 min &middot; 21 turns &middot; 2 sources with news, 10 unreachable, 14 items dropped</span>
-    <span>API cost of this run: <span class="cost">$0.35</span> (covered by Max plan)</span>
+    <span>Edited by Claude (sonnet) at 07:01 &middot; 1 min &middot; 24 turns &middot; 3 sources with news, 5 unreachable, 14 items dropped</span>
+    <span>API cost of this run: <span class="cost">$0.41</span> (covered by Max plan)</span>
   </div>
-  <div class="checked">Checked: <span class="st-nothing-new" title="Latest items dated Oct 8; none after Oct 11">Anthropic News</span> · <span class="st-new" title="Oct 6-8 posts only; used Haiku 5.5 and Dashboards">Claude blog</span> · <span class="st-unreachable" title="Page loaded without changelog entries">Claude Code changelog</span> · <span class="st-nothing-new" title="Only a pelican sighting on Oct 11">Simon Willison</span> · <span class="st-new" title="Decompilation, MASS, Plimsoll, Pensieve">Hacker News front page</span> · <span class="st-unreachable" title="Only the landing page text loaded">Latent Space</span> · <span class="st-unreachable" title="Only the description page loaded, no issue items">TLDR AI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/ClaudeAI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/algotrading</span> · <span class="st-nothing-new" title="Only the earnings calls post, already published">TradingView blog</span> · <span class="st-nothing-new" title="Mostly general AI tools, no trading or agent-team repos">GitHub trending (Python)</span> · <span class="st-nothing-new" title="Macro and price recaps, no setups or data">CoinDesk markets</span> · <span class="st-unreachable" title="No visible recent posts in search">@AnthropicAI</span> · <span class="st-unreachable" title="Search returned only profile pages">@bcherny</span> · <span class="st-unreachable" title="Not searched, to save budget">@karpathy</span> · <span class="st-unreachable" title="Not searched, to save budget">@markminervini</span> · <span class="st-unreachable" title="Not searched, to save budget">@TradingView</span> · <span class="st-nothing-new" title="Only older evergreen tool pages found">X topic sweep</span></div>
-  <div>Back issues: <a href="2026-10-12.html" target="_top">10-12</a> · <a href="2026-10-11.html" target="_top">10-11</a></div>
+  <div class="checked">Checked: <span class="st-nothing-new" title="Newest items dated Oct 8; none after last edition">Anthropic News</span> · <span class="st-nothing-new" title="Newest posts Oct 8; one older eval post reused as a read">Claude blog</span> · <span class="st-unreachable" title="Page content did not load; also already published">Claude Code changelog</span> · <span class="st-new" title="Python 3.15 post dated Oct 12">Simon Willison</span> · <span class="st-new" title="Agent37 launch, Ars and essay items">Hacker News front page</span> · <span class="st-unreachable" title="Fetch returned no post listing">Latent Space</span> · <span class="st-unreachable" title="Fetch returned only landing page">TLDR AI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/ClaudeAI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/algotrading</span> · <span class="st-nothing-new" title="Only an AMP Futures contest result on Oct 12">TradingView blog</span> · <span class="st-nothing-new" title="No trading or backtesting repos trending">GitHub trending (Python)</span> · <span class="st-new" title="Three data-driven pieces from Oct 9 and 10">CoinDesk markets</span> · <span class="st-nothing-new" title="Search showed no recent posts">@AnthropicAI</span> · <span class="st-nothing-new" title="Search showed only older feature posts">@bcherny</span> · <span class="st-nothing-new" title="No recent posts found in search">@karpathy</span> · <span class="st-nothing-new" title="No recent posts found in search">@markminervini</span> · <span class="st-nothing-new" title="No recent posts found in search">@TradingView</span> · <span class="st-nothing-new" title="Searches returned only generic or older pages">X topic sweep</span></div>
+  <div>Back issues: <a href="2026-10-13.html" target="_top">10-13</a> · <a href="2026-10-12.html" target="_top">10-12</a> · <a href="2026-10-11.html" target="_top">10-11</a></div>
 </footer>
 </body></html>
