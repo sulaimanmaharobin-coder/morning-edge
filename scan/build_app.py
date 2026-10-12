@@ -90,6 +90,21 @@ def jev(jev_dir):
     return out
 
 
+def buy_zone(rows, ranked):
+    """Every buy-zone name, crypto and stocks: ranked pre-breakouts first, then the rest
+    by distance to the 20-day high. Compact fields only."""
+    order = {r["sym"]: i for i, r in enumerate(ranked)}
+    keep = ("sym", "kind", "close", "d20", "rsi", "e50", "stop_pct", "stop_atr", "to_hi", "pre_breakout")
+    buys = [r for r in rows if r["status"] == "buy"]
+    buys.sort(key=lambda r: (r["sym"] not in order, order.get(r["sym"], 0), r["to_hi"]))
+    out = []
+    for r in buys:
+        row = {k: r.get(k) for k in keep}
+        row["ranked"] = r["sym"] in order
+        out.append(row)
+    return out
+
+
 def main():
     site = sys.argv[1]
     jev_dir = sys.argv[2] if len(sys.argv) > 2 else None
@@ -107,7 +122,7 @@ def main():
                         key=lambda r: r["stop_atr"])
         data["pullback"] = dict(scanned=pb.get("scanned_sgt"), notes=pb.get("notes", []), total=len(pre),
                                 noise=len(pre) - len(ranked), buy_zone=sum(r["status"] == "buy" for r in pb["rows"]),
-                                rows=ranked[:pullback_scan.TOP_N])
+                                rows=ranked[:pullback_scan.TOP_N], all=buy_zone(pb["rows"], ranked))
     except Exception as e:
         data["pullback"], data["errors"]["pullback"] = None, type(e).__name__
     try:
@@ -128,6 +143,10 @@ def main():
     blob = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
     open(os.path.join(site, "app.html"), "w", encoding="utf-8").write(tpl.replace("__APP_DATA__", blob))
     print("app.html built;", "errors:", data["errors"] or "none")
+    for r in (data.get("pullback") or {}).get("all", []):  # readable in the Actions log
+        print(f"buy-zone {r['kind']:6} {r['sym']:8} d20 {r['d20']:+5.1f}% rsi {r['rsi']:4.1f} "
+              f"stop {r['stop_pct']:4.1f}% atr {r['stop_atr'] if r['stop_atr'] is not None else 'n/a'} "
+              f"to-high {r['to_hi']:5.1f}%{' PRE' if r['pre_breakout'] else ''}")
 
 
 if __name__ == "__main__":
