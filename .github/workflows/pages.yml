@@ -1,0 +1,46 @@
+# Builds the site and adds the daily pullback scan to the latest edition.
+# Runs after every edition push and at 07:30 SGT. Never commits to main.
+# Requires Settings -> Pages -> Source: "GitHub Actions".
+name: Publish with pullback scan
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "30 23 * * *"   # 07:30 SGT
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run scan
+        continue-on-error: true   # a failed scan must never block the paper
+        timeout-minutes: 15
+        run: python scan/pullback_scan.py
+      - name: Build site
+        run: |
+          mkdir _site
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name _site -exec cp -r {} _site/ \;
+          python scan/inject.py _site || true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
