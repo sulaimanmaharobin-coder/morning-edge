@@ -125,11 +125,11 @@ def watchlist_setups():
         else:
             miss = []
             if c[-1] > e50 and r < 45:
-                miss.append(f"RSI {r:.0f} below 45 above EMA50")
+                miss.append(f"RSI {r:.1f} below 45 above EMA50")
             elif c[-1] > e50 and r > 70:
-                miss.append(f"RSI {r:.0f} above 70")
+                miss.append(f"RSI {r:.1f} above 70")
             elif c[-1] < e50 and r > 45:
-                miss.append(f"below EMA50 but RSI {r:.0f} above 45")
+                miss.append(f"below EMA50 but RSI {r:.1f} above 45")
             if struct == "no clear structure":
                 miss.append("no clear 4H structure")
             elif (struct == "HH+HL") != (c[-1] > e50):
