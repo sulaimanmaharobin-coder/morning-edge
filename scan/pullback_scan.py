@@ -33,6 +33,7 @@ STABLE = {"USDT", "USDC", "DAI", "FDUSD", "TUSD", "PYUSD", "USDE", "USD1", "RLUS
 TOUCH = 0.005        # low within 0.5% of the 20 EMA counts as a touch
 ZONE = (-1.5, 2.0)   # close vs 20 EMA, % (below 0 = needs a close back above)
 WATCH_MAX = 3.0      # close up to 3% above the 20 EMA = waiting for a pullback
+TOP_N = 15           # pre-breakout rows shown in the paper
 
 
 def get_json(url, tries=3):
@@ -188,10 +189,9 @@ def fmt(x):
 
 def render(crypto, stocks, notes, stamp):
     rows = crypto + stocks
-    buys = sorted((r for r in rows if r["status"] == "buy"),
-                  key=lambda r: (not r["pre_breakout"], r["stop_pct"]))
-    watch = sorted((r for r in rows if r["status"] == "watch"), key=lambda r: r["d20"])
-    pre = [r["sym"] for r in buys if r["pre_breakout"]]
+    buys = [r for r in rows if r["status"] == "buy"]
+    pre_all = sorted((r for r in buys if r["pre_breakout"]), key=lambda r: r["stop_pct"])
+    pre = pre_all[:TOP_N]
     e = html.escape
     out = ['<!-- pullback:start -->', '<section class="pb reads">',
            '<style>.pb .pb-wrap{overflow-x:auto}.pb table{border-collapse:collapse;width:100%;font-size:13.5px;margin:6px 0 10px}'
@@ -200,29 +200,26 @@ def render(crypto, stocks, notes, stamp):
            '.pb th:first-child,.pb td:first-child,.pb th:nth-child(2),.pb td:nth-child(2){text-align:left}'
            '@media (max-width:600px){.pb th:nth-child(2),.pb td:nth-child(2){display:none}}'
            '.pb .tldr{font:italic 400 18px/1.4 "Playfair Display",Georgia,serif;margin:10px 0 6px}'
-           '.pb .hot td:first-child{color:var(--accent);font-weight:700}.pb p{font-size:14.5px;margin:0 0 6px}'
+           '.pb td:first-child{font-weight:700}.pb p{font-size:14.5px;margin:0 0 6px}'
            '.pb .pb-note{font-size:12.5px;color:var(--muted);margin-top:8px}</style>',
            '<h2>Pullback Setups &middot; 20/50 EMA &amp; RSI</h2>',
-           f'<p class="tldr">Pre-breakout: {e(", ".join(pre)) or "none"}. '
-           f'In the buy zone: {len(buys)}. Waiting for a pullback: {len(watch)}.</p>']
-    if buys:
+           f'<p class="tldr">Pre-breakout setups today: {len(pre_all)}'
+           + (f', top {len(pre)} by stop distance shown' if len(pre_all) > len(pre) else '')
+           + f'. Other buy-zone names not listed: {len(buys) - len(pre)}.</p>']
+    if pre:
         out.append('<div class="pb-wrap"><table><tr><th>Name</th><th>Type</th><th>Close</th><th>vs 20 EMA</th>'
                    '<th>RSI</th><th>Stop (50 EMA)</th><th>Risk</th><th>To 20d high</th></tr>')
-        for r in buys:
-            cls = ' class="hot"' if r["pre_breakout"] else ""
-            out.append(f'<tr{cls}><td>{e(r["sym"])}</td><td>{r["kind"]}</td><td>{fmt(r["close"])}</td>'
+        for r in pre:
+            out.append(f'<tr><td>{e(r["sym"])}</td><td>{r["kind"]}</td><td>{fmt(r["close"])}</td>'
                        f'<td>{r["d20"]:+.1f}%</td><td>{r["rsi"]:.1f}</td><td>{fmt(r["e50"])}</td>'
                        f'<td>{r["stop_pct"]:.1f}%</td><td>{r["to_hi"]:.1f}%</td></tr>')
         out.append('</table></div>')
     else:
-        out.append('<p>No name is in the buy zone today.</p>')
-    below = [r["sym"] for r in buys if r["d20"] < 0]
+        out.append('<p>No pre-breakout setup today.</p>')
+    below = [r["sym"] for r in pre if r["d20"] < 0]
     if below:
         out.append(f'<p>Closed just under the 20 EMA, wait for a daily close back above: {e(", ".join(below))}.</p>')
-    if watch:
-        out.append('<p><b>Watch</b> (trend and RSI pass, up to 3% above the 20 EMA): '
-                   + e(", ".join(f'{r["sym"]} +{r["d20"]:.1f}%' for r in watch[:15])) + '.</p>')
-    out.append('<p class="pb-note">Highlighted = pre-breakout: stop within 5% and price within 5% of its 20-day high. '
+    out.append('<p class="pb-note">Pre-breakout = in the buy zone, stop within 5% and price within 5% of its 20-day high; sorted by stop distance. '
                'Buy zone = 20 EMA above 50 EMA, 50 EMA rising, daily low touched the 20 EMA in the last two bars, RSI(14) above 50. '
                'Exit when the 20 EMA closes below the 50 EMA or price closes below the 50 EMA. '
                f'Scanned {e(stamp)} SGT. ' + e(" ".join(notes)) +
