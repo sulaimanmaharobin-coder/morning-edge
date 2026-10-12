@@ -135,6 +135,18 @@ details summary { cursor:pointer; color:var(--muted); font-size:13.5px; margin:6
     h += table(["Name", "Close", "vs 20 EMA", "RSI", "Stop", "Risk", "ATR", "To high"], pb.rows.map(function (r) {
       return tr([e(r.sym), px(r.close), pct(r.d20, true), r.rsi.toFixed(1), px(r.e50), pct(r.stop_pct), r.stop_atr.toFixed(1), pct(r.to_hi)]);
     }));
+    if (pb.all && pb.all.length) {
+      h += "<details><summary>Full buy zone, crypto and stocks (" + pb.all.length + ")</summary>";
+      h += '<p class="muted">Pre-breakouts ranked by stop in ATR come first, then the rest by distance to the 20-day high. Flags: <b>pre</b> = pre-breakout, <b>&lt;1 ATR</b> = stop inside a normal day\'s range, <b>close</b> = wait for a daily close back above the 20 EMA.</p>';
+      h += table(["Name", "Flag", "vs 20 EMA", "ATR", "To high", "RSI", "Stop", "Close"], pb.all.map(function (r) {
+        var flags = [];
+        if (r.pre_breakout) flags.push("pre");
+        if (r.stop_atr != null && r.stop_atr < 1) flags.push("&lt;1 ATR");
+        if (r.d20 < 0) flags.push("close");
+        return tr([e(r.sym) + ' <span class="muted">' + (r.kind === "crypto" ? "crypto" : "") + "</span>", flags.join(" · "), pct(r.d20, true), r.stop_atr == null ? "n/a" : r.stop_atr.toFixed(1), pct(r.to_hi), r.rsi.toFixed(1), pct(r.stop_pct), px(r.close)]);
+      }));
+      h += "</details>";
+    }
     h += "<details><summary>Rules and sources</summary><p class=\"muted\">Buy zone: 20 EMA above 50 EMA, 50 EMA rising, daily low touched the 20 EMA in the last two bars, RSI(14) above 50. Pre-breakout: stop (50 EMA) within 5% and price within 5% of its 20-day high. Exit when the 20 EMA closes below the 50 EMA or price closes below the 50 EMA. " + e(pb.notes.join(" ")) + "</p></details>";
   }
   h += "<h2>jev-trader scan</h2>";
