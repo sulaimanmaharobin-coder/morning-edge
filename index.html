@@ -101,10 +101,10 @@ footer .cost { color:var(--ink); font-weight:700; }
 
 </style></head>
 <body>
-<div class="ears"><span>Vol. I &middot; No. 3</span><span>All the news that's fit for one reader</span><span>Price: $0.41</span></div>
+<div class="ears"><span>Vol. I &middot; No. 4</span><span>All the news that's fit for one reader</span><span>Price: $0.48</span></div>
 <div class="masthead">The Morning Edge</div>
 <div class="motto">The internet, read for you overnight &middot; 18 sources checked</div>
-<div class="dateline"><span>Tuesday, 13 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
+<div class="dateline"><span>Wednesday, 14 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
 
 <nav class="sister" id="sister" hidden>Also this morning: <a href="desk.html" target="_top">The Contract Desk</a> &middot; <a href="brief.html" target="_top">The Repo Brief</a></nav>
 <div class="notice" id="stale" hidden></div>
@@ -112,7 +112,7 @@ footer .cost { color:var(--ink); font-weight:700; }
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementById("sister").hidden = false;  // laptop only
 (function () {
-  var ed = "2026-10-13", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-14", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)") && location.pathname.indexOf(ed) < 0) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition hasn't arrived yet. This is the edition of " + ed + ".";
@@ -123,48 +123,48 @@ if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementByI
 <main class="front">
   <section class="lead">
     <div class="kicker">Top story</div>
-    <h1><a href="https://news.ycombinator.com/item?id=50059096" target="_top" rel="noopener">YC-backed Agent37 launches sandboxes for agents at under $5 a month</a></h1>
-    <p class="dek">The Fall 2026 startup says it runs agent harnesses, including Claude Code, at a fraction of typical sandbox prices.</p>
-    <div class="byline">From Hacker News (Launch HN) &middot; 2026-10-13</div>
+    <h1><a href="https://www.anthropic.com/engineering/redesigning-source-control" target="_top" rel="noopener">Anthropic replaces Git with in-house Scion as merges hit 30,000 a day</a></h1>
+    <p class="dek">A seven-person team built a new source control system, built around agents that are always online, in five months.</p>
+    <div class="byline">From Anthropic Engineering &middot; 2026-10-13</div>
     <div class="story">
-      <p>Agent37, a Y Combinator Fall 2026 company, launched on Hacker News with low-cost cloud sandboxes built for running AI agents. The founder, Vishnu Kool, says the service costs under 10% of most sandbox providers.</p>
-<p>Paid plans start at about $4.94 a month for a 2 vCPU, 4 GB configuration. The company says the average paid customer spends about $0.37 a month per sandbox. A free tier is available, which the company says costs it roughly $0.05 to $0.10 in infrastructure per user each month. It claims to be 2.8 times cheaper than Boat.dev and 94% cheaper than Fly.io Sprites. Those figures come from the company, not from independent tests.</p>
-<p>The platform offers both gVisor-based containers and full VM sandboxes. It supports several agent harnesses, naming Hermes, OpenClaw and Claude Code. It also provides OpenAI-compatible API endpoints and managed integrations including Composio and BraveSearch. The launch thread had 77 points when checked and was ranked #10 on the front page.</p>
-      <div class="why-box"><b>Why it matters to you</b>If you run Claude Code teams unattended overnight, an isolated, cheap sandbox is a way to cap blast radius and cost, though the pricing claims need testing against your own workloads.</div>
+      <p>Anthropic has published an engineering account of Scion, an in-house version control system that replaces Git for its monorepo. The team also built Antique, a code review tool, plus code search and source-control access management. A seven-person team did all of it in five months.</p>
+<p>The cause was volume. Merged changes rose from about 2,500 a day in May 2026 to more than 30,000 a day in September, a twelvefold increase. Repository history is close to 100 GB, compressed working copies exceed 25 GB, and CI performs roughly 25 million checkouts a day. Anthropic says fetching that naively would mean over 600 PB of Git traffic daily.</p>
+<p>Scion assumes clients are always online, which matches how agents behave. Commits, merges and rebases run on the server rather than locally. Agents can query the repository through an API without materializing it, use sparse checkouts, and commit without locks, so cost scales with the size of a change, not the size of the repo. Anthropic reports a 200x smaller footprint than its previous Git mirroring setup, CI jobs that finish in seconds, and 25% more CI CPU capacity.</p>
+      <div class="why-box"><b>Why it matters to you</b>If you run many Claude Code agents against one repo overnight, this shows where Git&#x27;s local-checkout model breaks first: checkout cost and merge contention.</div>
     </div>
-    <p class="editor-note">Quiet day with several sources unreachable; some briefs and reads are 3 to 6 days old and unpublished.</p>
+    <p class="editor-note">Quiet day for trading and X sources; two reads and one brief are older than the last edition&#x27;s cutoff window, so treat them as evergreen.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/10/one-year-after-10-10-bitcoin-and-ether-liquidity-have-rebuilt-but-other-altcoins-still-face-risks" target="_top" rel="noopener">Bitcoin and ether order books rebuilt a year after 10/10 crash</a></h3>
-          <p>Bitcoin depth within 1% of price reached $11.7 million on Oct 7, 75% deeper than on the crash day. ETH depth within 1% rose 75% to $5.3 million, but altcoin depth at 5% fell about a third to roughly $2 million.</p>
-          <p class="why"><span>Why it matters</span> For perps breakout-reclaim entries, thin altcoin books mean more slippage, so size alts smaller than majors.</p>
-          <p class="src">CoinDesk</p>
+          <h3><a href="https://claude.com/resources/articles/uber-s-ciso-on-building-an-insider-threat-program-for-ai" target="_top" rel="noopener">Uber&#x27;s CISO: treat AI agents like insiders</a></h3>
+          <p>Philip Martin describes Uber&#x27;s layered monitoring for agents: Anthropic&#x27;s Enterprise Frontier Safeguards classifiers, Uber&#x27;s open-source ADR tool that collects telemetry from agent harnesses, and an internal LLM gateway. The emphasis is on real-time detection close to the prompt.</p>
+          <p class="why"><span>Why it matters</span> Your unattended Claude teams could use the same pattern of harness telemetry plus a gateway to catch off-script behaviour overnight.</p>
+          <p class="src">Claude blog</p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/09/bitcoin-s-volatility-has-plunged-but-extreme-price-swings-are-more-frequent-than-in-2018" target="_top" rel="noopener">Bitcoin logs 10 three-sigma days in 2026 despite falling volatility</a></h3>
-          <p>Annualized volatility fell to 46% from 84%, yet 2026 already has 10 three-sigma days against eight in all of 2018. Analysts warn that value-at-risk models built on recent volatility understate tail risk.</p>
-          <p class="why"><span>Why it matters</span> If your backtests size positions from trailing volatility, stress-test them against fat-tail days.</p>
-          <p class="src">CoinDesk</p>
-        </article>
-<article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/09/ether-bets-were-wiped-out-at-six-times-bitcoin-s-rate-in-crypto-s-usd1-billion-flush" target="_top" rel="noopener">ETH longs wiped out at six times bitcoin&#x27;s rate in $1B flush</a></h3>
-          <p>About $356 million of ETH positions were liquidated over 24 hours, more than bitcoin&#x27;s despite ETH&#x27;s smaller market cap, in a crypto-wide liquidation of roughly $1 billion.</p>
-          <p class="why"><span>Why it matters</span> Liquidation clusters like this are the failed-breakout and reclaim setups your perps scanner should log with volume data.</p>
-          <p class="src">CoinDesk</p>
-        </article>
-<article class="brief">
-          <h3><a href="https://simonwillison.net/2026/Oct/12/python-3-15/" target="_top" rel="noopener">Python 3.15 arrives; Simon Willison drops 3.10 support</a></h3>
-          <p>3.15 adds explicit lazy imports, unpacking in comprehensions and a built-in sampling profiler called Tachyon. Willison says dropping 3.10 lets his projects use 3.11 features such as asyncio TaskGroup and tomllib. He found performance gains modest outside the experimental JIT.</p>
-          <p class="why"><span>Why it matters</span> Tachyon could help you profile slow loops when porting Pine Script indicators to local Python backtests.</p>
+          <h3><a href="https://simonwillison.net/2026/Oct/13/geoffrey-huntley/" target="_top" rel="noopener">Huntley: enforce agent rules with pre-commit hooks</a></h3>
+          <p>Geoffrey Huntley fails any commit whose diff calls observability modules directly, bypassing his diagnostics library, and injects a prompt telling the agent to use the library. He reports compliance went from inconsistent to perfect, which beat documenting the rule.</p>
+          <p class="why"><span>Why it matters</span> A hook like this in your agent repos is cheaper than longer CLAUDE.md rules, and it works when nobody is watching.</p>
           <p class="src">Simon Willison</p>
         </article>
 <article class="brief">
-          <h3><a href="https://yyhh.org/blog/2026/10/ai-is-a-tool/" target="_top" rel="noopener">Essay: LLMs are tools that reward skill, not automation</a></h3>
-          <p>Huahai replies to Rich Hickey&#x27;s claim that LLMs are automation rather than tools. The essay argues the real divide is between skilled operation and delegating without understanding, since tools amplify poor judgment as readily as good.</p>
-          <p class="why"><span>Why it matters</span> It supports a habit worth keeping for unattended Claude agents: review their trading and code output yourself.</p>
-          <p class="src">yyhh.org</p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/13/bitcoin-diverges-from-south-korean-stocks-as-ai-concerns-deepen-the-kospi-selloff" target="_top" rel="noopener">Bitcoin decouples from Kospi rout, holds near $83,500</a></h3>
+          <p>Kospi fell 5.5% and sits about 38% below its June peak on AI-spending worries, with SK Hynix down roughly 10%. Bitcoin rebounded about 40% from roughly $58,000 to as high as $87,000, and the 20-day correlation with Kospi is -0.41.</p>
+          <p class="why"><span>Why it matters</span> A negative correlation with AI-linked equities matters if your stock and perp books are both exposed to that trade.</p>
+          <p class="src">CoinDesk</p>
+        </article>
+<article class="brief">
+          <h3><a href="https://www.coindesk.com/markets/2026/10/12/altcoins-rally-on-thin-trading-as-bitcoin-holds-near-usd84-000" target="_top" rel="noopener">Altcoin rally comes on thin volume as ETFs see outflows</a></h3>
+          <p>The CoinDesk 80 index gained about 3% in 24 hours, well ahead of the majors, while spot Bitcoin ETFs recorded substantial outflows. Bitcoin stayed below $83,500.</p>
+          <p class="why"><span>Why it matters</span> Thin-volume altcoin moves are the kind your volume-confirmed reclaim rule should refuse to chase.</p>
+          <p class="src">CoinDesk</p>
+        </article>
+<article class="brief">
+          <h3><a href="https://simonwillison.net/2026/Oct/12/web-edit/" target="_top" rel="noopener">Willison builds web-edit to edit files from a phone</a></h3>
+          <p>web-edit 0.1a0 is a Python web app using CodeMirror 6 to view and edit a folder&#x27;s files over Tailscale. Willison had Codex build it so he could edit credentials files without passing secrets through an LLM.</p>
+          <p class="why"><span>Why it matters</span> It is a ready pattern for tweaking your agent runner&#x27;s config remotely without exposing keys to a model.</p>
+          <p class="src">Simon Willison</p>
         </article>
   </aside>
 </main>
@@ -172,29 +172,29 @@ if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementByI
   <h2>Worth Reading in Full</h2>
   <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/" target="_top" rel="noopener">AI coding agents generate more code, but not more software</a></h4>
-          <p class="src">Ars Technica</p>
-          <p class="why">A 284-point HN discussion on agent output versus shipped software, relevant to judging your own overnight agent teams (I could not open the article itself).</p>
+          <h4><a href="https://kylekukshtel.com/ai-harness-engineering-game-development-claude-code" target="_top" rel="noopener">The Harness Approach to AI-Assisted Game Development</a></h4>
+          <p class="src">Kyle Kukshtel</p>
+          <p class="why">Seeded determinism, externalized data and command patterns apply directly to making a backtester that an agent can iterate on in seconds.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://simonwillison.net/2026/Oct/9/built-using-my-voice/" target="_top" rel="noopener">A new feature for my blog, built using my voice</a></h4>
-          <p class="src">Simon Willison</p>
-          <p class="why">A concrete example of voice-driven development that you could adapt for Claude Code sessions.</p>
+          <h4><a href="https://www.marketcalls.in/claude/how-experienced-traders-should-actually-prompt-claude-to-build-strategies.html" target="_top" rel="noopener">How experienced traders should actually prompt Claude to build strategies</a></h4>
+          <p class="src">MarketCalls</p>
+          <p class="why">Covers prototyping in Pine Script and then porting survivors to Python, which is your local-backtest workflow.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://claude.dev/blog/automating-eval-design-and-hillclimbing/" target="_top" rel="noopener">Automating eval design and hillclimbing with Claude</a></h4>
-          <p class="src">Claude Developer Blog</p>
-          <p class="why">Eval methodology you could reuse to score your scanner and strategy agents systematically.</p>
+          <h4><a href="https://tripolskypetr-backtest-kit-docs.static.hf.space/documents/article_03_claude_trader.html" target="_top" rel="noopener">How AI Got Hands for Stock Trading</a></h4>
+          <p class="src">backtest-kit docs</p>
+          <p class="why">A worked example of Claude Code analysing backtest logs and editing Pine Script, useful for your strategy-iteration loop.</p>
         </article></div>
 </section>
 <footer>
   <div class="row">
-    <span>Edited by Claude (sonnet) at 07:01 &middot; 1 min &middot; 24 turns &middot; 3 sources with news, 5 unreachable, 14 items dropped</span>
-    <span>API cost of this run: <span class="cost">$0.41</span> (covered by Max plan)</span>
+    <span>Edited by Claude (sonnet) at 07:01 &middot; 1 min &middot; 26 turns &middot; 4 sources with news, 5 unreachable, 14 items dropped</span>
+    <span>API cost of this run: <span class="cost">$0.48</span> (covered by Max plan)</span>
   </div>
-  <div class="checked">Checked: <span class="st-nothing-new" title="Newest items dated Oct 8; none after last edition">Anthropic News</span> · <span class="st-nothing-new" title="Newest posts Oct 8; one older eval post reused as a read">Claude blog</span> · <span class="st-unreachable" title="Page content did not load; also already published">Claude Code changelog</span> · <span class="st-new" title="Python 3.15 post dated Oct 12">Simon Willison</span> · <span class="st-new" title="Agent37 launch, Ars and essay items">Hacker News front page</span> · <span class="st-unreachable" title="Fetch returned no post listing">Latent Space</span> · <span class="st-unreachable" title="Fetch returned only landing page">TLDR AI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/ClaudeAI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/algotrading</span> · <span class="st-nothing-new" title="Only an AMP Futures contest result on Oct 12">TradingView blog</span> · <span class="st-nothing-new" title="No trading or backtesting repos trending">GitHub trending (Python)</span> · <span class="st-new" title="Three data-driven pieces from Oct 9 and 10">CoinDesk markets</span> · <span class="st-nothing-new" title="Search showed no recent posts">@AnthropicAI</span> · <span class="st-nothing-new" title="Search showed only older feature posts">@bcherny</span> · <span class="st-nothing-new" title="No recent posts found in search">@karpathy</span> · <span class="st-nothing-new" title="No recent posts found in search">@markminervini</span> · <span class="st-nothing-new" title="No recent posts found in search">@TradingView</span> · <span class="st-nothing-new" title="Searches returned only generic or older pages">X topic sweep</span></div>
-  <div>Back issues: <a href="2026-10-13.html" target="_top">10-13</a> · <a href="2026-10-12.html" target="_top">10-12</a> · <a href="2026-10-11.html" target="_top">10-11</a></div>
+  <div class="checked">Checked: <span class="st-nothing-new" title="Latest listing is Oct 8">Anthropic News</span> · <span class="st-new" title="Uber CISO agent-security piece, Oct 13">Claude blog</span> · <span class="st-unreachable" title="Page content did not render">Claude Code changelog</span> · <span class="st-new" title="Huntley hooks quote, web-edit">Simon Willison</span> · <span class="st-new" title="Anthropic Scion post, harness article">Hacker News front page</span> · <span class="st-nothing-new" title="Only a paywalled meetup post">Latent Space</span> · <span class="st-unreachable" title="Only landing page returned">TLDR AI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/ClaudeAI</span> · <span class="st-unreachable" title="Reddit fetch blocked; search found nothing">r/algotrading</span> · <span class="st-nothing-new" title="Newest relevant post Oct 12, a paper-trading contest">TradingView blog</span> · <span class="st-nothing-new" title="No trading or agent-infra repos of note">GitHub trending (Python)</span> · <span class="st-new" title="Kospi divergence, altcoin rally">CoinDesk markets</span> · <span class="st-nothing-new" title="No visible posts in search">@AnthropicAI</span> · <span class="st-nothing-new" title="No recent posts visible in search">@bcherny</span> · <span class="st-nothing-new" title="No recent posts visible in search">@karpathy</span> · <span class="st-unreachable" title="X not searchable; no results">@markminervini</span> · <span class="st-nothing-new" title="No recent posts visible in search">@TradingView</span> · <span class="st-nothing-new" title="Only older tutorials surfaced">X topic sweep</span></div>
+  <div>Back issues: <a href="2026-10-14.html" target="_top">10-14</a> · <a href="2026-10-13.html" target="_top">10-13</a> · <a href="2026-10-12.html" target="_top">10-12</a> · <a href="2026-10-11.html" target="_top">10-11</a></div>
 </footer>
 </body></html>
