@@ -101,10 +101,10 @@ footer .cost { color:var(--ink); font-weight:700; }
 
 </style></head>
 <body>
-<div class="ears"><span>Vol. I &middot; No. 5</span><span>All the news that's fit for one reader</span><span>Price: $0.47</span></div>
+<div class="ears"><span>Vol. I &middot; No. 6</span><span>All the news that's fit for one reader</span><span>Price: $0.44</span></div>
 <div class="masthead">The Morning Edge</div>
 <div class="motto">The internet, read for you overnight &middot; 18 sources checked</div>
-<div class="dateline"><span>Friday, 16 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
+<div class="dateline"><span>Sunday, 18 October 2026</span><span>Singapore</span><span>Morning edition</span></div>
 
 <nav class="sister" id="sister" hidden>Also this morning: <a href="desk.html" target="_top">The Contract Desk</a> &middot; <a href="brief.html" target="_top">The Repo Brief</a></nav>
 <div class="notice" id="stale" hidden></div>
@@ -112,7 +112,7 @@ footer .cost { color:var(--ink); font-weight:700; }
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementById("sister").hidden = false;  // laptop only
 (function () {
-  var ed = "2026-10-16", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-18", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)") && location.pathname.indexOf(ed) < 0) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition hasn't arrived yet. This is the edition of " + ed + ".";
@@ -123,48 +123,49 @@ if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementByI
 <main class="front">
   <section class="lead">
     <div class="kicker">Top story</div>
-    <h1><a href="https://claude.com/resources/articles/agent-observability-on-the-claude-platform" target="_top" rel="noopener">Claude Platform adds OpenTelemetry tracing for managed agents and API calls</a></h1>
-    <p class="dek">Public beta exports every agent turn, model call and tool use as standard traces to Datadog, Grafana, Langfuse and others.</p>
-    <div class="byline">From Claude &middot; 2026-10-14</div>
+    <h1><a href="https://www.coindesk.com/tech/2026/10/17/wow-it-s-a-real-discovery-claude-cracks-a-25-year-nsa-number-mystery" target="_top" rel="noopener">Claude traces NSA&#x27;s 25-year-old elliptic-curve seeds to a plain random-number generator</a></h1>
+    <p class="dek">An Anthropic employee used Claude to reproduce the NIST P-256 seed in about 30 minutes, making a hidden backdoor less likely.</p>
+    <div class="byline">From CoinDesk &middot; 2026-10-17</div>
     <div class="story">
-      <p>Anthropic put OpenTelemetry (OTel) tracing into public beta on October 14. It covers Claude Managed Agents, the Messages API and the Claude SDKs. Each agent turn, model call, tool use and MCP server interaction appears as a trace with latency, token counts and IDs.</p>
-<p>The traces follow the OpenTelemetry GenAI semantic conventions. Anthropic lists Grafana Cloud, Honeycomb, Sentry, Splunk, Datadog, Langfuse, LangSmith, New Relic, PostHog, Arize AI, Braintrust and Databricks Unity Gateway as supported destinations. For Managed Agents and the Messages API, you add a destination in the Claude Console. The SDKs export traces automatically.</p>
-<p>Anthropic&#x27;s page quotes Foxglove, Ramp, Sterling Labs and FloQast. Their use cases include robotics debugging, token optimization, market analysis and financial compliance tracking.</p>
-      <div class="why-box"><b>Why it matters to you</b>If your overnight multi-agent runs or market-scanner agents fail at 3am, a trace of each tool call and token spend shows where, without you reading raw logs.</div>
+      <p>Claude has solved a puzzle that cryptographers left open for 25 years: where the unexplained &quot;seed&quot; numbers behind the NIST elliptic-curve standards came from. The NSA supplied the seeds to NIST in the late 1990s, and some researchers suspected they hid a weakness.</p>
+<p>According to CoinDesk, an Anthropic employee started the investigation with Claude. In roughly 30 minutes the model traced five NIST curve seeds to lrand48, an ordinary random-number generator from older C libraries. It reproduced the P-256 sequence and found an exact match at the 1,842nd candidate position. The result can be checked independently.</p>
+<p>The finding makes a concealed NSA weakness significantly less likely. Bitcoin is unaffected because it uses a different, simpler curve (secp256k1) with few adjustable parameters. A $36,864 bounty tied to the puzzle was directed to the Internet Security Research Group, which runs Let&#x27;s Encrypt.</p>
+<p>Cryptographers Neal Koblitz and Alfred Menezes examined the controversy in 2015, and Steve Weis spent years on it, including FOIA requests. The new result is a concrete case of an agent doing search-and-verify work that humans had not finished.</p>
+      <div class="why-box"><b>Why it matters to you</b>It is a worked example of the pattern you use for overnight research agents: generate candidates, test them against a reproducible check, and report only what verifies.</div>
     </div>
-    <p class="editor-note">Quiet day for trading and X sources; the lead item is dated October 14, the last edition&#x27;s date, and was not in that edition.</p>
+    <p class="editor-note">Quiet weekend: briefs from Oct 14-16 are slightly older, and Reddit and TLDR could not be read.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://claude.com/resources/articles/code-review-is-now-generally-available" target="_top" rel="noopener">Claude Code Review reaches general availability</a></h3>
-          <p>Code Review is GA for Team and Enterprise organizations. It offers Quick, Standard and Deep review levels per repository, and most reviews finish in 6 to 10 minutes, roughly 3x faster than the preview. Enterprise customers can claim at least $10,000 in credits by January 15, 2027.</p>
-          <p class="why"><span>Why it matters</span> You could put it on the repos where your unattended agents open PRs, as a bug check before you review them.</p>
-          <p class="src">Claude</p>
+          <h3><a href="https://simonwillison.net/2026/Oct/16/code-review/" target="_top" rel="noopener">Claude Code team moves code review from gate to continuous check</a></h3>
+          <p>Addy Osmani, Morgan Westlee Lunt and Qing Wang describe Claude reviewing and correcting changes before humans look. Their argument is that &quot;did a human read the code?&quot; is an imprecise proxy for which safeguard should catch which failure. Humans are freed for architecture-level scrutiny.</p>
+          <p class="why"><span>Why it matters</span> You can apply this to your unattended Claude Code runs by adding an automated review pass before you read the diff in the morning.</p>
+          <p class="src">Simon Willison</p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/15/nearly-usd1-billion-in-crypto-bets-liquidated-as-bitcoin-ether-and-xrp-slide" target="_top" rel="noopener">Nearly $1 billion in crypto bets liquidated as ether falls 6%</a></h3>
-          <p>About $483 million of bitcoin and ether futures were liquidated in 24 hours: roughly $286 million in ether and $197 million in bitcoin. Ether fell to about $2,350 and bitcoin to about $81,000. Solana futures saw about $31 million in liquidations. CoinDesk cites uncertainty over the Fed&#x27;s next rate decision.</p>
-          <p class="why"><span>Why it matters</span> Ether has about $30 billion of open interest against bitcoin&#x27;s $52 billion but took more liquidations, which is a data point for sizing and stops on your perps.</p>
-          <p class="src">CoinDesk</p>
+          <h3><a href="https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/" target="_top" rel="noopener">Anthropic quarterly revenue reaches $16.8B, up from $4.8B in Q1</a></h3>
+          <p>Per figures Anthropic gave investors, revenue was about $4.8B in Q1, $11.5B in Q2 and $16.8B in Q3, with an 11% adjusted operating margin. Distillation by rivals was 5-7% of revenue before being cut back materially in Q3.</p>
+          <p class="why"><span>Why it matters</span> Compute demand at this scale is the backdrop for the rate limits and pricing that affect your overnight agent budgets.</p>
+          <p class="src">Simon Willison</p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/14/s-and-p-500-options-are-the-hottest-bet-on-this-hyperliquid-exchange" target="_top" rel="noopener">Hypercall&#x27;s S&amp;P 500 options draw $640 million on Hyperliquid</a></h3>
-          <p>Since its June launch, Hypercall has traded $640 million in notional volume, over 80% of it S&amp;P 500 options. Open interest is $49 million with two active market makers. Volume is concentrated in next-day expiries, and single-stock options on SpaceX, Nvidia, Micron and SanDisk make up over half of trades.</p>
-          <p class="why"><span>Why it matters</span> It is another 24/7 on-chain venue for equity exposure, relevant if you run systematic stock and perp strategies outside US hours.</p>
-          <p class="src">CoinDesk</p>
+          <h3><a href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_top" rel="noopener">AutoHedge swarm trading repo trends on GitHub</a></h3>
+          <p>The-Swarm-Corporation/AutoHedge chains a Director, Quant, Risk Manager and Execution agent, with JSON outputs and audit logging. Live trading is limited to Solana and it needs Jupiter, OpenAI or Anthropic, and wallet keys. The project is still in active development.</p>
+          <p class="why"><span>Why it matters</span> Its risk-before-execution stage ordering is a template to compare with your own scanner-to-order pipeline, though you would want your own backtests first.</p>
+          <p class="src">GitHub Trending</p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.anthropic.com/news/singapore-office-opening" target="_top" rel="noopener">Anthropic opens Singapore office, signs MOU with the government</a></h3>
-          <p>Anthropic opened its fifth Asia-Pacific office in Singapore and signed an MOU with the Ministry of Digital Development and Information. It covers AI safety, security, model evaluation and adoption. Singapore ranks second globally in Claude.ai usage per capita. GovTech, DBS and Grab are named users.</p>
-          <p class="why"><span>Why it matters</span> You are based in Singapore, and a local Anthropic presence may bring local events and support.</p>
-          <p class="src">Anthropic</p>
+          <h3><a href="https://www.latent.space/p/crossing-the-threshold" target="_top" rel="noopener">Latent Space: how OpenAI and Anthropic approach autonomy in financial agents</a></h3>
+          <p>Frontier labs and financial firms discuss deploying autonomous agents with safety constraints. This item is from October 14, older than usual, because the last two days were quiet for trading-agent coverage.</p>
+          <p class="why"><span>Why it matters</span> It shows what guardrails are expected around agents that touch money, relevant to your perps and stock execution bots.</p>
+          <p class="src">Latent Space</p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.tradingview.com/blog/en/nested-drawings-groups-61714/" target="_top" rel="noopener">TradingView adds nested groups for chart drawings</a></h3>
-          <p>TradingView now lets you nest drawing groups, so you can organize chart analysis in a hierarchy. It was announced on the company blog on October 15.</p>
-          <p class="why"><span>Why it matters</span> It helps keep VCP base and pivot markups tidy when you review many charts from your screener.</p>
-          <p class="src">TradingView Blog</p>
+          <h3><a href="https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d" target="_top" rel="noopener">Modal reaches $1B ARR and $16B valuation on sandbox demand</a></h3>
+          <p>Latent Space&#x27;s AINews covers Modal&#x27;s Series D at a $16B valuation and $1B annual revenue, summarised as &quot;Sandboxes are all you need.&quot; Agent execution environments are becoming core infrastructure.</p>
+          <p class="why"><span>Why it matters</span> Sandboxed execution is the safer way to run your unattended Claude agents and backtest jobs.</p>
+          <p class="src">Latent Space</p>
         </article>
   </aside>
 </main>
@@ -172,29 +173,29 @@ if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) document.getElementByI
   <h2>Worth Reading in Full</h2>
   <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://github.com/iFixAi-ai/iFixAi" target="_top" rel="noopener">iFixAi: independent auditing framework for AI agents</a></h4>
-          <p class="src">GitHub (trending, Python)</p>
-          <p class="why">It is an Apache 2.0 CLI and Claude Code skill that grades agents A to F on fabrication, manipulation and transparency, a possible check for your unattended agents.</p>
+          <h4><a href="https://blog.scottstevenson.net/p/pattern-matching-beats-narrative" target="_top" rel="noopener">Pattern Matching Beats Narrative Reasoning</a></h4>
+          <p class="src">Scott Stevenson (via Hacker News)</p>
+          <p class="why">It argues for studying 10-20 correlated attributes of past wins and losses, which is how you would build a VCP or reclaim scanner&#x27;s feature list.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://simonwillison.net/2026/Oct/14/tree-appreciator/" target="_top" rel="noopener">Tree Appreciator</a></h4>
-          <p class="src">Simon Willison</p>
-          <p class="why">A one-prompt Opus 5.5 Max session ran 3 hours 7 minutes, a concrete data point on long unattended runs.</p>
+          <h4><a href="https://claudemarketplaces.com/mcp/pineforge-4pass/pineforge-codegen-mcp" target="_top" rel="noopener">pineforge codegen mcp</a></h4>
+          <p class="src">Claude Marketplaces</p>
+          <p class="why">An MCP server that transpiles Pine v6 and backtests on Binance data, claiming TradingView parity on 245 of 246 reference strategies, relevant to your Pine-to-Python porting.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://www.anthropic.com/news/an-update-on-independent-evaluators" target="_top" rel="noopener">An update on independent evaluators</a></h4>
-          <p class="src">Anthropic</p>
-          <p class="why">It describes tiered access for outside evaluators such as METR and SecureBio, a model for how you might audit your own agent teams.</p>
+          <h4><a href="https://twitter.com/opencode/status/2111516673953935833" target="_top" rel="noopener">OpenCode Hacked: User credentials leaked</a></h4>
+          <p class="src">Hacker News (@opencode on X)</p>
+          <p class="why">A credential leak at a coding-agent platform is a prompt to audit which API and exchange keys your unattended agents can reach.</p>
         </article></div>
 </section>
 <footer>
   <div class="row">
-    <span>Edited by Claude (sonnet) at 07:01 &middot; 1 min &middot; 27 turns &middot; 6 sources with news, 5 unreachable, 14 items dropped</span>
-    <span>API cost of this run: <span class="cost">$0.47</span> (covered by Max plan)</span>
+    <span>Edited by Claude (sonnet) at 06:33 &middot; 1 min &middot; 26 turns &middot; 5 sources with news, 4 unreachable, 14 items dropped</span>
+    <span>API cost of this run: <span class="cost">$0.44</span> (covered by Max plan)</span>
   </div>
-  <div class="checked">Checked: <span class="st-new" title="Evaluators and Singapore office posts">Anthropic News</span> · <span class="st-new" title="Code Review GA, OTel agent observability">Claude blog</span> · <span class="st-unreachable" title="Page returned no changelog content">Claude Code changelog</span> · <span class="st-new" title="Tree Appreciator, Chirp Pong; mostly off-topic">Simon Willison</span> · <span class="st-nothing-new" title="No agent, Claude or trading items">Hacker News front page</span> · <span class="st-unreachable" title="Archive not visible in fetch">Latent Space</span> · <span class="st-unreachable" title="Only landing page returned">TLDR AI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/ClaudeAI</span> · <span class="st-unreachable" title="Reddit fetch blocked">r/algotrading</span> · <span class="st-new" title="Nested drawing groups; others mostly off-topic">TradingView blog</span> · <span class="st-new" title="iFixAi audit tool, agent plugin repos">GitHub trending (Python)</span> · <span class="st-new" title="Liquidations and Hypercall options stories">CoinDesk markets</span> · <span class="st-nothing-new" title="No visible posts in search">@AnthropicAI</span> · <span class="st-nothing-new" title="No visible recent posts in search">@bcherny</span> · <span class="st-nothing-new" title="No visible recent posts in search">@karpathy</span> · <span class="st-nothing-new" title="Only old VCP chart ideas found">@markminervini</span> · <span class="st-nothing-new" title="No visible posts beyond the blog">@TradingView</span> · <span class="st-nothing-new" title="No dated viral threads found">X topic sweep</span></div>
-  <div>Back issues: <a href="2026-10-16.html" target="_top">10-16</a> · <a href="2026-10-14.html" target="_top">10-14</a> · <a href="2026-10-13.html" target="_top">10-13</a> · <a href="2026-10-12.html" target="_top">10-12</a> · <a href="2026-10-11.html" target="_top">10-11</a></div>
+  <div class="checked">Checked: <span class="st-nothing-new" title="Latest item Oct 15, already covered.">Anthropic News</span> · <span class="st-nothing-new" title="Newest post Oct 8.">Claude blog</span> · <span class="st-unreachable" title="Page returned metadata only, no entries.">Claude Code changelog</span> · <span class="st-new" title="Code review and Anthropic revenue posts.">Simon Willison</span> · <span class="st-new" title="Pattern-matching essay and OpenCode leak.">Hacker News front page</span> · <span class="st-new" title="Financial agents and Modal sandboxes posts.">Latent Space</span> · <span class="st-unreachable" title="Only landing and archive blurbs, no items.">TLDR AI</span> · <span class="st-unreachable" title="Reddit fetch blocked.">r/ClaudeAI</span> · <span class="st-unreachable" title="Reddit fetch blocked.">r/algotrading</span> · <span class="st-nothing-new" title="Newest posts Oct 15, mostly bonds and widgets.">TradingView blog</span> · <span class="st-new" title="AutoHedge swarm trading repo.">GitHub trending (Python)</span> · <span class="st-new" title="Claude NSA seed story, Oct 17.">CoinDesk markets</span> · <span class="st-nothing-new" title="No recent posts visible in search.">@AnthropicAI</span> · <span class="st-nothing-new" title="Only older profile coverage found.">@bcherny</span> · <span class="st-nothing-new" title="No recent posts visible in search.">@karpathy</span> · <span class="st-nothing-new" title="No dated posts found.">@markminervini</span> · <span class="st-nothing-new" title="No dated posts found.">@TradingView</span> · <span class="st-nothing-new" title="Searches returned only generic or older pages.">X topic sweep</span></div>
+  <div>Back issues: <a href="2026-10-18.html" target="_top">10-18</a> · <a href="2026-10-16.html" target="_top">10-16</a> · <a href="2026-10-14.html" target="_top">10-14</a> · <a href="2026-10-13.html" target="_top">10-13</a> · <a href="2026-10-12.html" target="_top">10-12</a> · <a href="2026-10-11.html" target="_top">10-11</a></div>
 </footer>
 </body></html>
