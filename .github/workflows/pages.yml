@@ -49,7 +49,8 @@ jobs:
       - name: Build site
         run: |
           mkdir _site
-          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name _site -exec cp -r {} _site/ \;
+          # Site files only: the scan code, its config and the README stay off the public site.
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name _site ! -name scan ! -name README.md ! -name .gitignore -exec cp -r {} _site/ \;
           python scan/inject.py _site || true
           timeout 600 python scan/build_app.py _site /tmp/jev || true
       - uses: actions/upload-pages-artifact@v3
