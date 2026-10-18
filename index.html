@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Sun 18 Oct 2026</title>
+<title>The Morning Edge: Mon 19 Oct 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -123,20 +123,20 @@ footer b { color:var(--ink); }
 
 </style></head>
 <body>
-<div class="ears"><span>Edition 6</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
+<div class="ears"><span>Edition 7</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
 <div class="motto">The Morning Edge is a daily news summary that AI (Claude) writes for one person. &ldquo;You&rdquo; on this page means that reader.</div>
-<div class="dateline"><span>Sunday, 18 October 2026</span><span>Singapore</span><span>Made at 06:33</span></div>
+<div class="dateline"><span>Monday, 19 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
 <nav class="toolbar" aria-label="Page"><a href="#editions">All editions &darr;</a><a href="#about">About this page &darr;</a></nav>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-10-18", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-19", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
-    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Sunday, 18 October 2026.";
+    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Monday, 19 October 2026.";
     n.hidden = false;
   }
 })();
@@ -152,85 +152,85 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 <main class="front">
   <section class="lead">
     <div class="kicker">Top story</div>
-    <h1><a href="https://www.coindesk.com/tech/2026/10/17/wow-it-s-a-real-discovery-claude-cracks-a-25-year-nsa-number-mystery" target="_top" rel="noopener">Claude traces NSA&#x27;s 25-year-old elliptic-curve seeds to a plain random-number generator</a></h1>
-    <p class="dek">An Anthropic employee used Claude to reproduce the NIST P-256 seed in about 30 minutes, making a hidden backdoor less likely.</p>
-    <div class="byline">Summary by AI. Source: CoinDesk &middot; Sat 17 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/tech/2026/10/17/wow-it-s-a-real-discovery-claude-cracks-a-25-year-nsa-number-mystery" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day" target="_top" rel="noopener">Anthropic sales rep runs five-agent crew that he says saves 60 hours a week</a></h1>
+    <p class="dek">A business development representative in Japan describes a fleet of scheduled Claude Managed Agents handling leads, email, Salesforce updates and meeting follow-ups.</p>
+    <div class="byline">Summary by AI. Source: Claude (Anthropic) &middot; Fri 16 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Claude has solved a puzzle that cryptographers left open for 25 years: where the unexplained &quot;seed&quot; numbers behind the NIST elliptic-curve standards came from. The NSA supplied the seeds to NIST in the late 1990s, and some researchers suspected they hid a weakness.</p>
-<p>According to CoinDesk, an Anthropic employee started the investigation with Claude. In roughly 30 minutes the model traced five NIST curve seeds to lrand48, an ordinary random-number generator from older C libraries. It reproduced the P-256 sequence and found an exact match at the 1,842nd candidate position. The result can be checked independently.</p>
-<p>The finding makes a concealed NSA weakness significantly less likely. Bitcoin is unaffected because it uses a different, simpler curve (secp256k1) with few adjustable parameters. A $36,864 bounty tied to the puzzle was directed to the Internet Security Research Group, which runs Let&#x27;s Encrypt.</p>
-<p>Cryptographers Neal Koblitz and Alfred Menezes examined the controversy in 2015, and Steve Weis spent years on it, including FOIA requests. The new result is a concrete case of an agent doing search-and-verify work that humans had not finished.</p>
-      <div class="why-box"><b>Why it matters to you</b>It is a worked example of the pattern you use for overnight research agents: generate candidates, test them against a reproducible check, and report only what verifies.</div>
+      <p>Shahboz Ibragimov, a business development representative (BDR) at Anthropic Japan, published a write-up on October 16 of how he runs his day with Claude Managed Agents. He says the setup saves about 60 hours per week. The figure is his own estimate, not an independent measurement.</p>
+<p>He calls the system &quot;the Nakama&quot; (Japanese for &quot;crew&quot;): five specialised agents plus a sixth coordinator. One sorts inbound leads and routes them to teammates. One qualifies leads and drafts first replies. One prepares hourly email responses in Japanese or English. One updates Salesforce records from customer interactions. One summarises meetings and drafts follow-ups. The coordinator manages instructions and a shared knowledge base.</p>
+<p>The article lists the building blocks: scheduled deployments that run in the background, shared memory stores, managed vaults for credentials with scoped permissions, and a tool called Claude Tag that escalates complex decisions to a human in Slack. He uses Sonnet for rule-based tasks and Opus for judgment-heavy work, plus an &quot;advisor&quot; strategy to keep costs down.</p>
+<p>The post is a first-party Anthropic case study, so it shows the design but gives no failure rates or error figures.</p>
+      <div class="why-box"><b>Why it matters to you</b>It is a concrete blueprint for the 24/7 outreach and unattended multi-agent setups you build: split roles, shared memory, scoped credentials, human escalation, and cheaper models for routine steps.</div>
     </div>
-    <p class="editor-note">Quiet weekend: briefs from Oct 14-16 are slightly older, and Reddit and TLDR could not be read.</p>
+    <p class="editor-note">Quiet day: several items are 3-4 days old or undated trending-page listings, and Reddit and X could not be read.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://simonwillison.net/2026/Oct/16/code-review/" target="_top" rel="noopener">Claude Code team moves code review from gate to continuous check</a></h3>
-          <p>Addy Osmani, Morgan Westlee Lunt and Qing Wang describe Claude reviewing and correcting changes before humans look. Their argument is that &quot;did a human read the code?&quot; is an imprecise proxy for which safeguard should catch which failure. Humans are freed for architecture-level scrutiny.</p>
-          <p class="why"><span>Why it matters</span> You can apply this to your unattended Claude Code runs by adding an automated review pass before you read the diff in the morning.</p>
-          <p class="src">Source: Simon Willison &middot; Fri 16 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/16/code-review/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.anthropic.com/news/public-benefit-fund" target="_top" rel="noopener">Anthropic plans public benefit fund backed by 5% of shares</a></h3>
+          <p>Anthropic says it will commit 5% of its shares to a fund set up as a wholly owned limited liability company (LLC), with a further 2% added for each 50% rise in company valuation above a baseline. The plan is subject to stockholder approval, and Anthropic says $200 million is already committed to studying AI&#x27;s labour-market effects.</p>
+          <p class="why"><span>Why it matters</span> It shows how Anthropic is structuring its long-term governance, which matters if you build products and income on Claude.</p>
+          <p class="src">Source: Anthropic &middot; Sun 18 Oct 2026 &middot; <a class="orig" href="https://www.anthropic.com/news/public-benefit-fund" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/" target="_top" rel="noopener">Anthropic quarterly revenue reaches $16.8B, up from $4.8B in Q1</a></h3>
-          <p>Per figures Anthropic gave investors, revenue was about $4.8B in Q1, $11.5B in Q2 and $16.8B in Q3, with an 11% adjusted operating margin. Distillation by rivals was 5-7% of revenue before being cut back materially in Q3.</p>
-          <p class="why"><span>Why it matters</span> Compute demand at this scale is the backdrop for the rate limits and pricing that affect your overnight agent budgets.</p>
-          <p class="src">Source: Simon Willison &middot; Thu 15 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/TauricResearch/TradingAgents" target="_top" rel="noopener">TradingAgents multi-agent trading framework ships v0.7.0 with backtesting</a></h3>
+          <p>The open-source framework, which assigns LLM agents to analyst, trader and risk-manager roles, lists in v0.7.0 a backtester that scores decisions from the first close after each analysis, plus checkpoint resume and point-in-time data. It supports Anthropic models. The authors say it is for research only and results vary with model and settings. The repo is trending on GitHub today; the release date is shown only as October 2026.</p>
+          <p class="why"><span>Why it matters</span> Its point-in-time data handling and checkpoint resume are patterns you could borrow for your own overnight market-scanning agents and backtests.</p>
+          <p class="src">Source: GitHub (TauricResearch) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/TauricResearch/TradingAgents" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_top" rel="noopener">AutoHedge swarm trading repo trends on GitHub</a></h3>
-          <p>The-Swarm-Corporation/AutoHedge chains a Director, Quant, Risk Manager and Execution agent, with JSON outputs and audit logging. Live trading is limited to Solana and it needs Jupiter, OpenAI or Anthropic, and wallet keys. The project is still in active development.</p>
-          <p class="why"><span>Why it matters</span> Its risk-before-execution stage ordering is a template to compare with your own scanner-to-order pipeline, though you would want your own backtests first.</p>
-          <p class="src">Source: GitHub Trending &middot; Sun 18 Oct 2026 &middot; <a class="orig" href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/anthropics/claude-plugins-official" target="_top" rel="noopener">Anthropic&#x27;s official Claude Code plugin directory trends on GitHub</a></h3>
+          <p>The anthropics/claude-plugins-official repository, described as a directory of high-quality Claude Code plugins maintained by Anthropic, appears on GitHub&#x27;s daily Python trending list with about 42,600 stars. The trending page gives no changelog for what was added.</p>
+          <p class="why"><span>Why it matters</span> It is a vetted place to look for plugins before writing your own for your Claude Code agent setups.</p>
+          <p class="src">Source: GitHub (Anthropic) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/anthropics/claude-plugins-official" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.latent.space/p/crossing-the-threshold" target="_top" rel="noopener">Latent Space: how OpenAI and Anthropic approach autonomy in financial agents</a></h3>
-          <p>Frontier labs and financial firms discuss deploying autonomous agents with safety constraints. This item is from October 14, older than usual, because the last two days were quiet for trading-agent coverage.</p>
-          <p class="why"><span>Why it matters</span> It shows what guardrails are expected around agents that touch money, relevant to your perps and stock execution bots.</p>
-          <p class="src">Source: Latent Space &middot; Wed 14 Oct 2026 &middot; <a class="orig" href="https://www.latent.space/p/crossing-the-threshold" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/HKUDS/CLI-Anything" target="_top" rel="noopener">CLI-Anything aims to make existing software usable by agents</a></h3>
+          <p>HKUDS&#x27;s CLI-Anything, trending with about 54,600 stars, describes itself as &quot;Making ALL Software Agent-Native&quot;, turning applications into command-line interfaces that agents can drive. We only saw the repo&#x27;s tagline, so its quality and coverage are unverified.</p>
+          <p class="why"><span>Why it matters</span> A command-line wrapper over desktop tools could let your unattended Claude agents drive software that has no API.</p>
+          <p class="src">Source: GitHub (HKUDS) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/HKUDS/CLI-Anything" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d" target="_top" rel="noopener">Modal reaches $1B ARR and $16B valuation on sandbox demand</a></h3>
-          <p>Latent Space&#x27;s AINews covers Modal&#x27;s Series D at a $16B valuation and $1B annual revenue, summarised as &quot;Sandboxes are all you need.&quot; Agent execution environments are becoming core infrastructure.</p>
-          <p class="why"><span>Why it matters</span> Sandboxed execution is the safer way to run your unattended Claude agents and backtest jobs.</p>
-          <p class="src">Source: Latent Space &middot; Thu 15 Oct 2026 &middot; <a class="orig" href="https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/Graphify-Labs/graphify" target="_top" rel="noopener">graphify turns codebases into queryable knowledge graphs for agents</a></h3>
+          <p>Graphify-Labs&#x27; graphify, listed at about 128,400 stars on the daily trending page, converts a codebase into a knowledge graph that AI agents can query. The listing gives no benchmarks, so any token-saving or accuracy claims are untested here.</p>
+          <p class="why"><span>Why it matters</span> If it works, it could cut how much code your Claude Code sessions must read when porting Pine Script indicators into a Python backtester.</p>
+          <p class="src">Source: GitHub (Graphify-Labs) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/Graphify-Labs/graphify" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://blog.scottstevenson.net/p/pattern-matching-beats-narrative" target="_top" rel="noopener">Pattern Matching Beats Narrative Reasoning</a></h4>
-          <p class="src">Source: Scott Stevenson (via Hacker News) &middot; <a class="orig" href="https://blog.scottstevenson.net/p/pattern-matching-beats-narrative" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It argues for studying 10-20 correlated attributes of past wins and losses, which is how you would build a VCP or reclaim scanner&#x27;s feature list.</p>
+          <h4><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_top" rel="noopener">How the Claude Code team does code review</a></h4>
+          <p class="src">Source: Claude blog (claude.dev) &middot; Thu 15 Oct 2026 &middot; <a class="orig" href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Anthropic says merged pull requests more than doubled from June to September while the revert rate fell over 40%, using a seven-layer pipeline you can copy for agent-written code.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://claudemarketplaces.com/mcp/pineforge-4pass/pineforge-codegen-mcp" target="_top" rel="noopener">pineforge codegen mcp</a></h4>
-          <p class="src">Source: Claude Marketplaces &middot; <a class="orig" href="https://claudemarketplaces.com/mcp/pineforge-4pass/pineforge-codegen-mcp" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">An MCP server that transpiles Pine v6 and backtests on Binance data, claiming TradingView parity on 245 of 246 reference strategies, relevant to your Pine-to-Python porting.</p>
+          <h4><a href="https://simonwillison.net/2026/Oct/17/document-currentscript/" target="_top" rel="noopener">Inline rendering with document.currentScript</a></h4>
+          <p class="src">Source: Simon Willison &middot; Sat 17 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/17/document-currentscript/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A short trick for tiny inline templating that is handy for generating static report pages from your scanner output without a framework.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://twitter.com/opencode/status/2111516673953935833" target="_top" rel="noopener">OpenCode Hacked: User credentials leaked</a></h4>
-          <p class="src">Source: Hacker News (@opencode on X) &middot; <a class="orig" href="https://twitter.com/opencode/status/2111516673953935833" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A credential leak at a coding-agent platform is a prompt to audit which API and exchange keys your unattended agents can reach.</p>
+          <h4><a href="https://claudemarketplaces.com/skills/tradermonty/claude-trading-skills/breakout-trade-planner" target="_top" rel="noopener">Breakout trade planner (Claude trading skill)</a></h4>
+          <p class="src">Source: claudemarketplaces.com &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://claudemarketplaces.com/skills/tradermonty/claude-trading-skills/breakout-trade-planner" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">It turns Volatility Contraction Pattern (VCP) screener output into trade plans with position sizing, stops and Alpaca order templates; the page is undated, so check its freshness.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Sunday, 18 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Monday, 19 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
   <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
 </nav>
 </main>
 <footer id="about">
   <h2>About this page</h2>
-  <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 06:33 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
+  <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 07:01 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
   <p><b>Who it's for:</b> one reader, chosen by their interests (AI agents and systematic trading). It has no subscribers, ads or sign-up.</p>
-  <p><b>Cost:</b> free to read. Making this edition used $0.44 of AI time, paid by the owner's Claude plan.</p>
+  <p><b>Cost:</b> free to read. Making this edition used $0.47 of AI time, paid by the owner's Claude plan.</p>
   <p><b>Privacy:</b> no cookies, no tracking, no sign-up. The only outside request is for fonts from Google Fonts.</p>
-  <p><b>Sources checked (18):</b> <b>Had news:</b> Simon Willison, Hacker News front page, Latent Space, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, TradingView blog, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Claude Code changelog, TLDR AI, r/ClaudeAI, r/algotrading. Items left out as old, off-topic or repeated: 14.</p>
+  <p><b>Sources checked (18):</b> <b>Had news:</b> Anthropic News, Claude blog, Simon Willison, GitHub trending (Python). <b>Nothing new:</b> Hacker News front page, Latent Space, TLDR AI, TradingView blog, CoinDesk markets, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Claude Code changelog, r/ClaudeAI, r/algotrading. Items left out as old, off-topic or repeated: 14.</p>
   <p><b>Contact and corrections:</b> <a href="https://github.com/sulaimanmaharobin-coder/morning-edge">github.com/sulaimanmaharobin-coder/morning-edge</a></p>
 </footer>
 </body></html>
