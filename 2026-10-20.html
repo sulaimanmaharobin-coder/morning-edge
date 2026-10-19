@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Morning Edge: Tue 20 Oct 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="icon.png"><link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>addEventListener("load", function () { var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=optional"; document.head.appendChild(l); });</script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=optional"></noscript>
+<style>
+:root { --paper:#f3eee2; --ink:#1b1916; --muted:#5d574c; --rule:#1b1916; --hair:#bfb6a3; --accent:#8a1c12; --box:#e9e2d1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#1d1b18; --ink:#ebe5d8; --muted:#a59d8e; --rule:#ebe5d8; --hair:#4a453d; --accent:#e0806f; --box:#26231f; } }
+:root[data-theme="dark"] { --paper:#1d1b18; --ink:#ebe5d8; --muted:#a59d8e; --rule:#ebe5d8; --hair:#4a453d; --accent:#e0806f; --box:#26231f; }
+* { box-sizing:border-box; }
+html { background:var(--paper); }
+body { margin:0 auto; max-width:1180px; padding:22px 32px 40px; background:var(--paper); color:var(--ink);
+  font:16px/1.55 "Libre Caslon Text", Georgia, "Times New Roman", serif; overflow-wrap:break-word; }
+.front > *, .read { min-width:0; overflow-wrap:anywhere; }
+a { color:inherit; text-decoration:none; }
+a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.ears { display:flex; justify-content:space-between; gap:12px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+  border-bottom:1px solid var(--rule); padding-bottom:6px; }
+.masthead { text-align:center; font:400 clamp(30px,9vw,96px)/1.05 "UnifrakturMaguntia", "Old English Text MT", Georgia, serif; margin:10px 0 4px; }
+.masthead a:hover { text-decoration:none; }
+.motto { text-align:center; font-style:italic; color:var(--muted); font-size:13px; margin-bottom:8px; }
+.dateline { display:flex; justify-content:space-between; gap:12px; border-top:3px double var(--rule); border-bottom:1px solid var(--rule);
+  padding:5px 2px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+.notice { margin:12px 0 0; padding:8px 12px; border:1px solid var(--accent); color:var(--accent); font-size:14px; }
+.notice a, .toolbar a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.notice a { font-weight:700; }
+.notice a, footer a { display:inline-block; padding:5px 0; }
+.toolbar { display:flex; justify-content:center; flex-wrap:wrap; gap:4px 22px; font-size:14px; padding:4px 0; border-bottom:1px solid var(--hair); }
+.toolbar a { display:inline-block; padding:8px 4px; color:var(--accent); }
+.front { display:grid; grid-template-columns:minmax(0,2.15fr) minmax(0,1fr); grid-template-areas:"lead side" "reads side" "editions side"; grid-template-rows:auto auto 1fr; gap:0; margin-top:18px; }
+.lead { grid-area:lead; padding-right:26px; border-right:1px solid var(--hair); }
+.lead h1 a, .brief h3 a, .read h4 a { text-decoration:underline; text-decoration-color:var(--hair); text-decoration-thickness:2px; text-underline-offset:5px; }
+.lead h1 a:hover, .brief h3 a:hover, .read h4 a:hover { text-decoration-color:var(--accent); }
+.orig { display:inline-block; padding:5px 0; color:var(--accent); white-space:nowrap; }
+.kicker { font:700 12px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
+.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:8px 0 10px; letter-spacing:-.01em; }
+.dek { font:italic 400 21px/1.35 "Playfair Display", Georgia, serif; color:var(--muted); margin:0 0 12px; }
+.byline { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair); padding:5px 0; margin-bottom:14px; }
+.story { column-count:2; column-gap:26px; column-rule:1px solid var(--hair); text-align:justify; hyphens:auto; }
+.story p { margin:0 0 .8em; }
+.story p:first-child::first-letter { float:left; font:900 64px/.82 "Playfair Display", Georgia, serif; padding:6px 8px 0 0; }
+.why-box { break-inside:avoid; margin:6px 0 0; padding:10px 14px; background:var(--box); border-left:3px solid var(--accent); font-style:italic; text-align:left; }
+.why-box b { font-style:normal; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:2px; }
+.editor-note { font-style:italic; color:var(--muted); font-size:14px; margin:14px 0 0; }
+.side { grid-area:side; padding-left:24px; }
+.side h2, .reads h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
+  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:0 0 4px; }
+.brief { padding:12px 0; border-bottom:1px solid var(--hair); }
+.brief:last-child { border-bottom:none; }
+.brief h3 { font:700 19px/1.2 "Playfair Display", Georgia, serif; margin:0 0 5px; }
+.brief p { margin:0 0 5px; font-size:14.5px; line-height:1.5; }
+.why { font-style:italic; }
+.why span { font-style:normal; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-right:4px; }
+.src { font-size:12px !important; letter-spacing:.06em; color:var(--muted); }
+.reads { grid-area:reads; padding:26px 26px 0 0; border-right:1px solid var(--hair); }
+.reads-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+.read { padding:14px 20px 4px; border-right:1px solid var(--hair); position:relative; }
+.read:first-child { padding-left:0; }
+.read:last-child { border-right:none; padding-right:0; }
+.read .num { font:900 40px/1 "Playfair Display", Georgia, serif; color:var(--hair); float:left; margin:0 10px 0 0; }
+.read h4 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:0 0 6px; }
+.read p { margin:0 0 6px; font-size:14.5px; }
+.editions { margin-top:28px; }
+.front .editions { grid-area:editions; padding-right:26px; border-right:1px solid var(--hair); margin-top:0; padding-top:28px; }
+.front .editions ul { grid-template-columns:1fr; }
+.editions h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
+  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:0 0 10px; }
+.editions ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px; }
+.editions li a, .editions li .here { display:block; padding:10px 12px; border:1px solid var(--hair); font-size:15px; min-height:44px; }
+.editions li .here { background:var(--box); border-color:var(--ink); }
+.editions small { color:var(--muted); font-size:13px; }
+.editions p { color:var(--muted); font-size:14px; margin:10px 0 0; }
+footer { margin-top:28px; border-top:3px double var(--rule); padding-top:10px; font-size:14px; color:var(--muted); line-height:1.6; }
+footer h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; color:var(--ink); margin:4px 0 8px; }
+footer p { margin:0 0 8px; }
+footer b { color:var(--ink); }
+.sister { text-align:center; font-size:13px; letter-spacing:.08em; text-transform:uppercase; padding:6px 0; border-bottom:1px solid var(--hair); }
+.sister a { color:var(--accent); }
+.prose { column-count:2; column-gap:30px; column-rule:1px solid var(--hair); margin-top:18px; }
+.prose h1 { display:none; }
+.prose h2 { column-span:all; font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
+  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:22px 0 10px; }
+.prose h2:first-of-type { margin-top:4px; }
+.prose h3 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:12px 0 4px; break-after:avoid; }
+.prose p, .prose li { font-size:15px; line-height:1.55; }
+.prose p:first-of-type { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
+.prose ul, .prose ol { padding-left:20px; margin:0 0 12px; }
+.prose li { margin-bottom:7px; break-inside:avoid; }
+.prose code { font:13px/1.4 Consolas, "Courier New", monospace; overflow-wrap:anywhere; background:var(--box); padding:0 3px; }
+.prose table { border-collapse:collapse; width:100%; font-size:13.5px; margin:8px 0 14px; column-span:all; }
+.prose th, .prose td { border-bottom:1px solid var(--hair); padding:5px 6px; text-align:left; vertical-align:top; }
+.prose th { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.prose a { text-decoration:underline; text-decoration-color:var(--hair); }
+@media print {
+  @page { size:148mm 240mm; margin:0; }
+  :root { --paper:#f3eee2; --ink:#1b1916; --muted:#5d574c; --rule:#1b1916; --hair:#bfb6a3; --accent:#8a1c12; --box:#e9e2d1; }
+  html, body { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { padding:9mm 8mm; max-width:none; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  .prose h2, .prose h3 { break-after:avoid; page-break-after:avoid; }
+  .prose li, .prose p { break-inside:auto; orphans:2; widows:2; }
+  .no-print { display:none !important; }
+}
+@media (max-width:860px) {
+  body { padding:16px 16px 32px; }
+  .front { grid-template-columns:1fr; grid-template-areas:"lead" "side" "reads" "editions"; }
+  .front .editions { padding-right:0; border-right:none; }
+  .lead, .reads { padding-right:0; border-right:none; }
+  .side { padding-left:0; margin-top:22px; }
+  .story, .prose { column-count:1; }
+  .story { text-align:left; hyphens:manual; }
+  .editions ul { grid-template-columns:1fr; }
+  .reads-row { grid-template-columns:1fr; }
+  .read, .read:first-child, .read:last-child { padding:12px 0; border-right:none; border-bottom:1px solid var(--hair); }
+  .ears span:nth-child(2), .dateline span:nth-child(3) { display:none; }
+}
+
+</style></head>
+<body>
+<div class="ears"><span>Edition 8</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
+<div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
+<div class="motto">The Morning Edge is a daily news summary that AI (Claude) writes for one person. &ldquo;You&rdquo; on this page means that reader.</div>
+<div class="dateline"><span>Tuesday, 20 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
+<nav class="toolbar" aria-label="Page"><a href="#editions">All editions &darr;</a><a href="#about">About this page &darr;</a></nav>
+
+<div class="notice" id="stale" hidden></div>
+<script>
+// Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
+(function () {
+  var ed = "2026-10-20", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  if (ed < today && !document.querySelector(".notice:not(#stale)")) {
+    var n = document.getElementById("stale");
+    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Tuesday, 20 October 2026.";
+    n.hidden = false;
+  }
+})();
+</script>
+<script>
+document.addEventListener("click", function (e) {  // in-page jumps: scroll without adding a Back-button stop
+  var a = e.target.closest && e.target.closest('a[href^="#"]');
+  var t = a && document.getElementById(a.getAttribute("href").slice(1));
+  if (!t) return;
+  e.preventDefault(); t.scrollIntoView(); history.replaceState(null, "", a.getAttribute("href"));
+});
+</script>
+<main class="front">
+  <section class="lead">
+    <div class="kicker">Top story</div>
+    <h1><a href="https://benjamincongdon.me/blog/2026/10/19/Agentic-Monitoring/" target="_top" rel="noopener">Engineer argues AI agents can now monitor production systems around the clock</a></h1>
+    <p class="dek">Ben Congdon says token costs have fallen enough to run monitoring agents continuously, focused on deployments and config changes.</p>
+    <div class="byline">Summary by AI. Source: Ben Congdon (via Hacker News) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://benjamincongdon.me/blog/2026/10/19/Agentic-Monitoring/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <div class="story">
+      <p>In a post dated 19 October, software engineer Ben Congdon argues that operations teams should start deploying monitoring agents now. He says agents work without fatigue, read code and metrics faster than people, and can run several investigations in parallel, which helps most when the operator does not know the system deeply.</p>
+<p>He proposes three tactics. First, have the agent write a monitoring specification instead of running a constant loop, which cuts token use. Second, spend the most effort around deployments and configuration changes, because he cites a baseline that roughly 70% of outages come from changes to a live system. Third, when something looks wrong, launch parallel agent threads that each investigate a different possible cause.</p>
+<p>On cost, Congdon estimates that a large technology company could watch its entire infrastructure for about $100 a day. He also describes one case where an agent&#x27;s investigation found a 50% heap saving and a 30% latency reduction in an optimized library. These figures are his own estimates and anecdotes, not independent measurements.</p>
+      <div class="why-box"><b>Why it matters to you</b>If you run Claude agent teams unattended overnight, the spec-first, watch-the-change-points pattern is a cheap way to catch a failed run or a bad deploy of your trading scanners before morning.</div>
+    </div>
+    <p class="editor-note">Quiet day with several sources unreachable; one brief (Oct 15) and one read (2025) are older than usual.</p>
+  </section>
+  <aside class="side">
+    <h2>In Brief</h2>
+    <article class="brief">
+          <h3><a href="https://news.ycombinator.com/item?id=50154029" target="_top" rel="noopener">Laminar launches model that finds errors in agent traces</a></h3>
+          <p>Laminar (Y Combinator S24) says its reinforcement-learning-trained model, flow-1, spots subtle agent failures such as clicking the wrong button or citing the wrong source. Laminar says it matches GPT-6-sol in detection quality at 23 times lower cost; that is the company&#x27;s own benchmark. The code is Apache 2.0 licensed and can be self-hosted.</p>
+          <p class="why"><span>Why it matters</span> You could point a self-hosted trace checker at your overnight Claude runs to flag silent failures instead of reading logs.</p>
+          <p class="src">Source: Laminar, via Hacker News &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://news.ycombinator.com/item?id=50154029" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://www.coindesk.com/markets/2026/10/19/bitcoin-extends-bounce-above-usd82-000-as-stocks-rebound-defi-tokens-lead-altcoin-gains" target="_top" rel="noopener">Crypto futures volume jumps 51% as Bitcoin holds near $82,000</a></h3>
+          <p>According to CoinDesk, 24-hour crypto futures volume rose 51% to $146 billion while open interest (money in open contracts) rose only 1.25% to $141 billion, and liquidations stayed at $329 million. Pump.fun&#x27;s token rose 7.6% on volume that doubled to $215 million, and Arbitrum rose 6.7%.</p>
+          <p class="why"><span>Why it matters</span> Volume surging without matching open-interest growth is the kind of context to check before trusting a volume-confirmed reclaim entry on perpetual futures (perps).</p>
+          <p class="src">Source: CoinDesk &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/19/bitcoin-extends-bounce-above-usd82-000-as-stocks-rebound-defi-tokens-lead-altcoin-gains" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://www.coindesk.com/markets/2026/10/18/wall-street-freaked-out-friday-vix-and-bitcoin-say-it-may-not-last" target="_top" rel="noopener">After Friday&#x27;s fear spike, VIX history favors a Monday drop</a></h3>
+          <p>CoinDesk reports the VIX (the stock market&#x27;s volatility index) jumped 21.5% on Friday to 19.99 as the S&amp;P 500 fell 1.09%. Since 1990 the VIX has risen 20% or more on a Friday 32 times; it fell the next Monday in 25 of them. Bitcoin&#x27;s own volatility index slipped only 1% and stayed near 40%.</p>
+          <p class="why"><span>Why it matters</span> It gives a base rate for sizing your stock swing setups after a volatility spike, though it is a historical tendency, not a forecast.</p>
+          <p class="src">Source: CoinDesk &middot; Sun 18 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/18/wall-street-freaked-out-friday-vix-and-bitcoin-say-it-may-not-last" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg" target="_top" rel="noopener">JPMorgan puts its JPM Coin deposit token on Ethereum</a></h3>
+          <p>Bloomberg first reported, and CoinDesk confirmed, that JPMorgan deployed JPM Coin, a token representing dollar deposits at the bank, on Ethereum&#x27;s main network. It was previously available on Base. JPMorgan says its private Kinexys network processes over $7 billion in transactions daily.</p>
+          <p class="why"><span>Why it matters</span> Bank-issued tokens on Ethereum add settlement flow to the network you may trade perps on, a slow-moving background factor rather than a signal.</p>
+          <p class="src">Source: Bloomberg, via CoinDesk &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://mistral.ai/news/timestral/" target="_top" rel="noopener">Mistral releases Timestral time-series forecasting models</a></h3>
+          <p>Mistral says its Timestral family comes in four sizes, from 5 million to 209 million parameters, and the largest ranks first on three public benchmarks (GIFT-Eval, TIME and fev-bench) in zero-shot tests. It runs on a standard CPU and uses a modified MIT license. Note: published 15 October, older than usual for this page.</p>
+          <p class="why"><span>Why it matters</span> A CPU-sized forecasting model could be tested as a feature or baseline in your local Python backtests, though benchmark rankings don&#x27;t prove trading edge.</p>
+          <p class="src">Source: Mistral AI, via Hacker News &middot; Thu 15 Oct 2026 &middot; <a class="orig" href="https://mistral.ai/news/timestral/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+  </aside>
+  <section class="reads">
+    <h2>Worth Reading in Full</h2>
+    <div class="reads-row"><article class="read">
+          <div class="num">1</div>
+          <h4><a href="https://news.ycombinator.com/item?id=50151036" target="_top" rel="noopener">Ask HN: How to deal with shipping AI-written code you don&#x27;t understand?</a></h4>
+          <p class="src">Source: Hacker News &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://news.ycombinator.com/item?id=50151036" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Top comments suggest designing first, testing heavily, and reviewing harder for financial logic, which maps directly onto trading code written by Claude.</p>
+        </article>
+<article class="read">
+          <div class="num">2</div>
+          <h4><a href="https://www.youtube.com/watch?v=cNm4zyUtWj0" target="_top" rel="noopener">RuneScape Bench: MMOs for Agents</a></h4>
+          <p class="src">Source: Hacker News &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://www.youtube.com/watch?v=cNm4zyUtWj0" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A video benchmark of autonomous agents in a long-running game world; I only saw the listing, so judge the method yourself.</p>
+        </article>
+<article class="read">
+          <div class="num">3</div>
+          <h4><a href="https://github.com/shiyu-coder/Kronos" target="_top" rel="noopener">Kronos: A Foundation Model for the Language of Financial Markets</a></h4>
+          <p class="src">Source: GitHub (shiyu-coder/Kronos) &middot; Fri 1 Aug 2025 &middot; <a class="orig" href="https://github.com/shiyu-coder/Kronos" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">An MIT-licensed model for candlestick forecasting from OHLCV (open, high, low, close, volume) data, trending again on GitHub; not new, and the date is approximate.</p>
+        </article></div>
+  </section>
+  <nav class="editions" id="editions" aria-label="All editions">
+  <h2>All editions</h2>
+  <ul><li><span class="here" aria-current="page">Tuesday, 20 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
+</nav>
+</main>
+<footer id="about">
+  <h2>About this page</h2>
+  <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 07:01 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
+  <p><b>Who it's for:</b> one reader, chosen by their interests (AI agents and systematic trading). It has no subscribers, ads or sign-up.</p>
+  <p><b>Cost:</b> free to read. Making this edition used $0.61 of AI time, paid by the owner's Claude plan.</p>
+  <p><b>Privacy:</b> no cookies, no tracking, no sign-up. The only outside request is for fonts from Google Fonts.</p>
+  <p><b>Sources checked (18):</b> <b>Had news:</b> Hacker News front page, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, TradingView blog, GitHub trending (Python), X topic sweep. <b>Could not be read:</b> Latent Space, TLDR AI, r/ClaudeAI, r/algotrading, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Items left out as old, off-topic or repeated: 14.</p>
+  <p><b>Contact and corrections:</b> <a href="https://github.com/sulaimanmaharobin-coder/morning-edge">github.com/sulaimanmaharobin-coder/morning-edge</a></p>
+</footer>
+</body></html>

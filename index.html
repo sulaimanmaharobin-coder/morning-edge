@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Mon 19 Oct 2026</title>
+<title>The Morning Edge: Tue 20 Oct 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -123,20 +123,20 @@ footer b { color:var(--ink); }
 
 </style></head>
 <body>
-<div class="ears"><span>Edition 7</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
+<div class="ears"><span>Edition 8</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
 <div class="motto">The Morning Edge is a daily news summary that AI (Claude) writes for one person. &ldquo;You&rdquo; on this page means that reader.</div>
-<div class="dateline"><span>Monday, 19 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
+<div class="dateline"><span>Tuesday, 20 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
 <nav class="toolbar" aria-label="Page"><a href="#editions">All editions &darr;</a><a href="#about">About this page &darr;</a></nav>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-10-19", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-20", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
-    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Monday, 19 October 2026.";
+    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Tuesday, 20 October 2026.";
     n.hidden = false;
   }
 })();
@@ -152,75 +152,74 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 <main class="front">
   <section class="lead">
     <div class="kicker">Top story</div>
-    <h1><a href="https://claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day" target="_top" rel="noopener">Anthropic sales rep runs five-agent crew that he says saves 60 hours a week</a></h1>
-    <p class="dek">A business development representative in Japan describes a fleet of scheduled Claude Managed Agents handling leads, email, Salesforce updates and meeting follow-ups.</p>
-    <div class="byline">Summary by AI. Source: Claude (Anthropic) &middot; Fri 16 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://benjamincongdon.me/blog/2026/10/19/Agentic-Monitoring/" target="_top" rel="noopener">Engineer argues AI agents can now monitor production systems around the clock</a></h1>
+    <p class="dek">Ben Congdon says token costs have fallen enough to run monitoring agents continuously, focused on deployments and config changes.</p>
+    <div class="byline">Summary by AI. Source: Ben Congdon (via Hacker News) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://benjamincongdon.me/blog/2026/10/19/Agentic-Monitoring/" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Shahboz Ibragimov, a business development representative (BDR) at Anthropic Japan, published a write-up on October 16 of how he runs his day with Claude Managed Agents. He says the setup saves about 60 hours per week. The figure is his own estimate, not an independent measurement.</p>
-<p>He calls the system &quot;the Nakama&quot; (Japanese for &quot;crew&quot;): five specialised agents plus a sixth coordinator. One sorts inbound leads and routes them to teammates. One qualifies leads and drafts first replies. One prepares hourly email responses in Japanese or English. One updates Salesforce records from customer interactions. One summarises meetings and drafts follow-ups. The coordinator manages instructions and a shared knowledge base.</p>
-<p>The article lists the building blocks: scheduled deployments that run in the background, shared memory stores, managed vaults for credentials with scoped permissions, and a tool called Claude Tag that escalates complex decisions to a human in Slack. He uses Sonnet for rule-based tasks and Opus for judgment-heavy work, plus an &quot;advisor&quot; strategy to keep costs down.</p>
-<p>The post is a first-party Anthropic case study, so it shows the design but gives no failure rates or error figures.</p>
-      <div class="why-box"><b>Why it matters to you</b>It is a concrete blueprint for the 24/7 outreach and unattended multi-agent setups you build: split roles, shared memory, scoped credentials, human escalation, and cheaper models for routine steps.</div>
+      <p>In a post dated 19 October, software engineer Ben Congdon argues that operations teams should start deploying monitoring agents now. He says agents work without fatigue, read code and metrics faster than people, and can run several investigations in parallel, which helps most when the operator does not know the system deeply.</p>
+<p>He proposes three tactics. First, have the agent write a monitoring specification instead of running a constant loop, which cuts token use. Second, spend the most effort around deployments and configuration changes, because he cites a baseline that roughly 70% of outages come from changes to a live system. Third, when something looks wrong, launch parallel agent threads that each investigate a different possible cause.</p>
+<p>On cost, Congdon estimates that a large technology company could watch its entire infrastructure for about $100 a day. He also describes one case where an agent&#x27;s investigation found a 50% heap saving and a 30% latency reduction in an optimized library. These figures are his own estimates and anecdotes, not independent measurements.</p>
+      <div class="why-box"><b>Why it matters to you</b>If you run Claude agent teams unattended overnight, the spec-first, watch-the-change-points pattern is a cheap way to catch a failed run or a bad deploy of your trading scanners before morning.</div>
     </div>
-    <p class="editor-note">Quiet day: several items are 3-4 days old or undated trending-page listings, and Reddit and X could not be read.</p>
+    <p class="editor-note">Quiet day with several sources unreachable; one brief (Oct 15) and one read (2025) are older than usual.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://www.anthropic.com/news/public-benefit-fund" target="_top" rel="noopener">Anthropic plans public benefit fund backed by 5% of shares</a></h3>
-          <p>Anthropic says it will commit 5% of its shares to a fund set up as a wholly owned limited liability company (LLC), with a further 2% added for each 50% rise in company valuation above a baseline. The plan is subject to stockholder approval, and Anthropic says $200 million is already committed to studying AI&#x27;s labour-market effects.</p>
-          <p class="why"><span>Why it matters</span> It shows how Anthropic is structuring its long-term governance, which matters if you build products and income on Claude.</p>
-          <p class="src">Source: Anthropic &middot; Sun 18 Oct 2026 &middot; <a class="orig" href="https://www.anthropic.com/news/public-benefit-fund" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://news.ycombinator.com/item?id=50154029" target="_top" rel="noopener">Laminar launches model that finds errors in agent traces</a></h3>
+          <p>Laminar (Y Combinator S24) says its reinforcement-learning-trained model, flow-1, spots subtle agent failures such as clicking the wrong button or citing the wrong source. Laminar says it matches GPT-6-sol in detection quality at 23 times lower cost; that is the company&#x27;s own benchmark. The code is Apache 2.0 licensed and can be self-hosted.</p>
+          <p class="why"><span>Why it matters</span> You could point a self-hosted trace checker at your overnight Claude runs to flag silent failures instead of reading logs.</p>
+          <p class="src">Source: Laminar, via Hacker News &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://news.ycombinator.com/item?id=50154029" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/TauricResearch/TradingAgents" target="_top" rel="noopener">TradingAgents multi-agent trading framework ships v0.7.0 with backtesting</a></h3>
-          <p>The open-source framework, which assigns LLM agents to analyst, trader and risk-manager roles, lists in v0.7.0 a backtester that scores decisions from the first close after each analysis, plus checkpoint resume and point-in-time data. It supports Anthropic models. The authors say it is for research only and results vary with model and settings. The repo is trending on GitHub today; the release date is shown only as October 2026.</p>
-          <p class="why"><span>Why it matters</span> Its point-in-time data handling and checkpoint resume are patterns you could borrow for your own overnight market-scanning agents and backtests.</p>
-          <p class="src">Source: GitHub (TauricResearch) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/TauricResearch/TradingAgents" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/19/bitcoin-extends-bounce-above-usd82-000-as-stocks-rebound-defi-tokens-lead-altcoin-gains" target="_top" rel="noopener">Crypto futures volume jumps 51% as Bitcoin holds near $82,000</a></h3>
+          <p>According to CoinDesk, 24-hour crypto futures volume rose 51% to $146 billion while open interest (money in open contracts) rose only 1.25% to $141 billion, and liquidations stayed at $329 million. Pump.fun&#x27;s token rose 7.6% on volume that doubled to $215 million, and Arbitrum rose 6.7%.</p>
+          <p class="why"><span>Why it matters</span> Volume surging without matching open-interest growth is the kind of context to check before trusting a volume-confirmed reclaim entry on perpetual futures (perps).</p>
+          <p class="src">Source: CoinDesk &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/19/bitcoin-extends-bounce-above-usd82-000-as-stocks-rebound-defi-tokens-lead-altcoin-gains" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/anthropics/claude-plugins-official" target="_top" rel="noopener">Anthropic&#x27;s official Claude Code plugin directory trends on GitHub</a></h3>
-          <p>The anthropics/claude-plugins-official repository, described as a directory of high-quality Claude Code plugins maintained by Anthropic, appears on GitHub&#x27;s daily Python trending list with about 42,600 stars. The trending page gives no changelog for what was added.</p>
-          <p class="why"><span>Why it matters</span> It is a vetted place to look for plugins before writing your own for your Claude Code agent setups.</p>
-          <p class="src">Source: GitHub (Anthropic) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/anthropics/claude-plugins-official" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/18/wall-street-freaked-out-friday-vix-and-bitcoin-say-it-may-not-last" target="_top" rel="noopener">After Friday&#x27;s fear spike, VIX history favors a Monday drop</a></h3>
+          <p>CoinDesk reports the VIX (the stock market&#x27;s volatility index) jumped 21.5% on Friday to 19.99 as the S&amp;P 500 fell 1.09%. Since 1990 the VIX has risen 20% or more on a Friday 32 times; it fell the next Monday in 25 of them. Bitcoin&#x27;s own volatility index slipped only 1% and stayed near 40%.</p>
+          <p class="why"><span>Why it matters</span> It gives a base rate for sizing your stock swing setups after a volatility spike, though it is a historical tendency, not a forecast.</p>
+          <p class="src">Source: CoinDesk &middot; Sun 18 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/18/wall-street-freaked-out-friday-vix-and-bitcoin-say-it-may-not-last" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/HKUDS/CLI-Anything" target="_top" rel="noopener">CLI-Anything aims to make existing software usable by agents</a></h3>
-          <p>HKUDS&#x27;s CLI-Anything, trending with about 54,600 stars, describes itself as &quot;Making ALL Software Agent-Native&quot;, turning applications into command-line interfaces that agents can drive. We only saw the repo&#x27;s tagline, so its quality and coverage are unverified.</p>
-          <p class="why"><span>Why it matters</span> A command-line wrapper over desktop tools could let your unattended Claude agents drive software that has no API.</p>
-          <p class="src">Source: GitHub (HKUDS) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/HKUDS/CLI-Anything" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg" target="_top" rel="noopener">JPMorgan puts its JPM Coin deposit token on Ethereum</a></h3>
+          <p>Bloomberg first reported, and CoinDesk confirmed, that JPMorgan deployed JPM Coin, a token representing dollar deposits at the bank, on Ethereum&#x27;s main network. It was previously available on Base. JPMorgan says its private Kinexys network processes over $7 billion in transactions daily.</p>
+          <p class="why"><span>Why it matters</span> Bank-issued tokens on Ethereum add settlement flow to the network you may trade perps on, a slow-moving background factor rather than a signal.</p>
+          <p class="src">Source: Bloomberg, via CoinDesk &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/19/jpmorgan-s-jpm-coin-representing-dollar-deposits-is-coming-to-ethereum-bloomberg" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/Graphify-Labs/graphify" target="_top" rel="noopener">graphify turns codebases into queryable knowledge graphs for agents</a></h3>
-          <p>Graphify-Labs&#x27; graphify, listed at about 128,400 stars on the daily trending page, converts a codebase into a knowledge graph that AI agents can query. The listing gives no benchmarks, so any token-saving or accuracy claims are untested here.</p>
-          <p class="why"><span>Why it matters</span> If it works, it could cut how much code your Claude Code sessions must read when porting Pine Script indicators into a Python backtester.</p>
-          <p class="src">Source: GitHub (Graphify-Labs) &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://github.com/Graphify-Labs/graphify" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://mistral.ai/news/timestral/" target="_top" rel="noopener">Mistral releases Timestral time-series forecasting models</a></h3>
+          <p>Mistral says its Timestral family comes in four sizes, from 5 million to 209 million parameters, and the largest ranks first on three public benchmarks (GIFT-Eval, TIME and fev-bench) in zero-shot tests. It runs on a standard CPU and uses a modified MIT license. Note: published 15 October, older than usual for this page.</p>
+          <p class="why"><span>Why it matters</span> A CPU-sized forecasting model could be tested as a feature or baseline in your local Python backtests, though benchmark rankings don&#x27;t prove trading edge.</p>
+          <p class="src">Source: Mistral AI, via Hacker News &middot; Thu 15 Oct 2026 &middot; <a class="orig" href="https://mistral.ai/news/timestral/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_top" rel="noopener">How the Claude Code team does code review</a></h4>
-          <p class="src">Source: Claude blog (claude.dev) &middot; Thu 15 Oct 2026 &middot; <a class="orig" href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Anthropic says merged pull requests more than doubled from June to September while the revert rate fell over 40%, using a seven-layer pipeline you can copy for agent-written code.</p>
+          <h4><a href="https://news.ycombinator.com/item?id=50151036" target="_top" rel="noopener">Ask HN: How to deal with shipping AI-written code you don&#x27;t understand?</a></h4>
+          <p class="src">Source: Hacker News &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://news.ycombinator.com/item?id=50151036" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Top comments suggest designing first, testing heavily, and reviewing harder for financial logic, which maps directly onto trading code written by Claude.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://simonwillison.net/2026/Oct/17/document-currentscript/" target="_top" rel="noopener">Inline rendering with document.currentScript</a></h4>
-          <p class="src">Source: Simon Willison &middot; Sat 17 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/17/document-currentscript/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A short trick for tiny inline templating that is handy for generating static report pages from your scanner output without a framework.</p>
+          <h4><a href="https://www.youtube.com/watch?v=cNm4zyUtWj0" target="_top" rel="noopener">RuneScape Bench: MMOs for Agents</a></h4>
+          <p class="src">Source: Hacker News &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://www.youtube.com/watch?v=cNm4zyUtWj0" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A video benchmark of autonomous agents in a long-running game world; I only saw the listing, so judge the method yourself.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://claudemarketplaces.com/skills/tradermonty/claude-trading-skills/breakout-trade-planner" target="_top" rel="noopener">Breakout trade planner (Claude trading skill)</a></h4>
-          <p class="src">Source: claudemarketplaces.com &middot; Mon 19 Oct 2026 &middot; <a class="orig" href="https://claudemarketplaces.com/skills/tradermonty/claude-trading-skills/breakout-trade-planner" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It turns Volatility Contraction Pattern (VCP) screener output into trade plans with position sizing, stops and Alpaca order templates; the page is undated, so check its freshness.</p>
+          <h4><a href="https://github.com/shiyu-coder/Kronos" target="_top" rel="noopener">Kronos: A Foundation Model for the Language of Financial Markets</a></h4>
+          <p class="src">Source: GitHub (shiyu-coder/Kronos) &middot; Fri 1 Aug 2025 &middot; <a class="orig" href="https://github.com/shiyu-coder/Kronos" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">An MIT-licensed model for candlestick forecasting from OHLCV (open, high, low, close, volume) data, trending again on GitHub; not new, and the date is approximate.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Monday, 19 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Tuesday, 20 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
   <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
 </nav>
 </main>
@@ -228,9 +227,9 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
   <h2>About this page</h2>
   <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 07:01 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
   <p><b>Who it's for:</b> one reader, chosen by their interests (AI agents and systematic trading). It has no subscribers, ads or sign-up.</p>
-  <p><b>Cost:</b> free to read. Making this edition used $0.47 of AI time, paid by the owner's Claude plan.</p>
+  <p><b>Cost:</b> free to read. Making this edition used $0.61 of AI time, paid by the owner's Claude plan.</p>
   <p><b>Privacy:</b> no cookies, no tracking, no sign-up. The only outside request is for fonts from Google Fonts.</p>
-  <p><b>Sources checked (18):</b> <b>Had news:</b> Anthropic News, Claude blog, Simon Willison, GitHub trending (Python). <b>Nothing new:</b> Hacker News front page, Latent Space, TLDR AI, TradingView blog, CoinDesk markets, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Claude Code changelog, r/ClaudeAI, r/algotrading. Items left out as old, off-topic or repeated: 14.</p>
+  <p><b>Sources checked (18):</b> <b>Had news:</b> Hacker News front page, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, TradingView blog, GitHub trending (Python), X topic sweep. <b>Could not be read:</b> Latent Space, TLDR AI, r/ClaudeAI, r/algotrading, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Items left out as old, off-topic or repeated: 14.</p>
   <p><b>Contact and corrections:</b> <a href="https://github.com/sulaimanmaharobin-coder/morning-edge">github.com/sulaimanmaharobin-coder/morning-edge</a></p>
 </footer>
 </body></html>
