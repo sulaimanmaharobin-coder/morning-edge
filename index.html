@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Thu 22 Oct 2026</title>
+<title>The Morning Edge: Fri 23 Oct 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -123,20 +123,20 @@ footer b { color:var(--ink); }
 
 </style></head>
 <body>
-<div class="ears"><span>Edition 10</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
+<div class="ears"><span>Edition 11</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
 <div class="motto">The Morning Edge is a daily news summary that AI (Claude) writes for one person. &ldquo;You&rdquo; on this page means that reader.</div>
-<div class="dateline"><span>Thursday, 22 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
+<div class="dateline"><span>Friday, 23 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
 <nav class="toolbar" aria-label="Page"><a href="#editions">All editions &darr;</a><a href="#about">About this page &darr;</a></nav>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-10-22", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-23", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
-    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Thursday, 22 October 2026.";
+    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Friday, 23 October 2026.";
     n.hidden = false;
   }
 })();
@@ -152,75 +152,75 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 <main class="front">
   <section class="lead">
     <div class="kicker">Top story</div>
-    <h1><a href="https://claude.com/resources/articles/claude-duet" target="_top" rel="noopener">Anthropic previews Claude Duet, an agent that keeps working while you are away</a></h1>
-    <p class="dek">The research preview runs tasks in its own cloud browser and asks approval before sending, paying, signing or deleting.</p>
-    <div class="byline">Summary by AI. Source: Anthropic (Claude blog) &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/claude-duet" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop" target="_top" rel="noopener">Anthropic: Fold Subagents Back Into One Agent Loop Unless You Must Split</a></h1>
+    <p class="dek">A new Claude guide says single agents with progressively loaded context often beat multi-agent orchestrators on quality, cost and speed.</p>
+    <div class="byline">Summary by AI. Source: Claude blog (Anthropic) &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Anthropic introduced Claude Duet on October 21 as a proactive agent app. According to Anthropic, it brings you what needs attention, completes tasks you ask for, keeps working when you step away, and checks with you before it acts. It is a research preview behind a waitlist, starting with US Pro and Max subscribers, on iOS, Android and claude.ai.</p>
-<p>Anthropic says Duet sends a morning briefing of important items from connected apps, then monitors through the day and notifies you only when something needs attention. It runs on a virtual machine with its own browser, so work continues when your devices are offline. Tasks range from scheduling meetings to building dashboards with dozens of tools.</p>
-<p>The approval gate is the central design choice: before it sends a message, makes a payment, signs a document or deletes anything, Duet shows exactly what it is about to do and waits for approval. Anthropic lists caveats: it is early, may misread threads or misjudge urgency, personal errands such as ticket booking are not fully developed, it shares usage limits with your regular Claude plan, and its browser cannot yet be displayed.</p>
-<p>The launch drew attention on Hacker News, where the product page had 270 points and 218 comments about three hours after posting.</p>
-      <div class="why-box"><b>Why it matters to you</b>If you run Claude agents unattended overnight, Duet&#x27;s approval-gate and background-VM design is a reference for how much autonomy to grant your own scanner and outreach bots, though it is US-only for now.</div>
+      <p>Anthropic published &quot;Building agents: When to fold subagents into your main agent loop&quot; on 22 October. It argues that, in comparisons across several enterprise deployments, a single agent that loads context progressively often outperforms an orchestrator that delegates to subagents, at lower cost and latency.</p>
+<p>The article gives figures from those deployments. One enterprise cut its system prompt by &quot;over 80%&quot; after restructuring, and consolidating multi-agent systems into single-agent loops gave roughly 2x faster runtime. It recommends keeping tool definitions under 30 to 50 to preserve tool-selection accuracy. The reasoning: shared context &quot;produces better answers&quot; because several task results stay in one window instead of being handed back as summaries.</p>
+<p>Anthropic says subagents still make sense in three cases: context bloat is degrading performance, parallel work needs fresh context windows, or the agent struggles to choose among tools. It also warns that teams too often copy their org chart into agent architecture (Conway&#x27;s Law), which adds sprawl without better results.</p>
+<p>The suggested method is to build end-to-end evaluation sets, fold subagents in one at a time, and compare metrics after each change. Anthropic cautions that results vary by use case and that a single evaluation run can miss problems, so tests should be repeated. The evidence is Anthropic&#x27;s own and the deployments are not named.</p>
+      <div class="why-box"><b>Why it matters to you</b>If your overnight Claude Code teams use a planner plus many workers, this gives you a concrete test: collapse one worker into the main loop and compare cost and output quality.</div>
     </div>
-    <p class="editor-note">Thin day for trading sources; Reddit, Latent Space, TLDR and the changelog could not be read, and OpenAI pages were not opened.</p>
+    <p class="editor-note">Thin day for X, Reddit and newsletters, which could not be read; reads lean on Simon Willison and CoinDesk.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes" target="_top" rel="noopener">Claude Security now scans repositories continuously and tracks fixes</a></h3>
-          <p>Anthropic says Claude Security, in public beta for Claude Enterprise customers, now scans as code changes and marks findings resolved when fixes ship, reopening them if an issue returns. Anthropic reports over 1 million vulnerabilities found since its April public beta, and offers $25,000 in monthly credits for two months through December 31, 2026.</p>
-          <p class="why"><span>Why it matters</span> You can pipe findings into Claude Code through the new Model Context Protocol (MCP) connector, a pattern worth copying for your own overnight agent loops.</p>
-          <p class="src">Source: Anthropic (Claude blog) &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_top" rel="noopener">Anthropic donates Agent Skills standard to Linux Foundation body</a></h3>
+          <p>Anthropic says it is donating the Agent Skills standard to the Agentic AI Foundation, part of the Linux Foundation. It reports more than 70 agent platforms support it, about 1 million skills are published and installs total nearly 280 million. A skill is a folder with a SKILL.md file plus any scripts or reference material.</p>
+          <p class="why"><span>Why it matters</span> Skills you write for your trading or outreach agents should now work across Cursor, Copilot and others, not only Claude Code.</p>
+          <p class="src">Source: Anthropic &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/omnara-ai/omnara" target="_top" rel="noopener">Omnara: open-source, model-agnostic alternative to Claude Managed Agents</a></h3>
-          <p>The Apache-2.0 project saves every agent step in Postgres so agents resume after crashes, supports cron triggers with time zones, and runs on sandboxes from eleven providers or your own machines. Its README says it works with Anthropic, OpenAI, OpenRouter, Bedrock and self-hosted models; it appeared on Hacker News as a Show HN with few votes so far.</p>
-          <p class="why"><span>Why it matters</span> Durable state plus cron scheduling is exactly what an unattended market-scanning agent team needs, and you could self-host it instead of relying on one vendor.</p>
-          <p class="src">Source: GitHub (omnara-ai), via Hacker News &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://github.com/omnara-ai/omnara" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.tradingview.com/blog/en/crypto-coins-screener-now-with-ai-61910/" target="_top" rel="noopener">TradingView adds plain-language AI to its crypto screener</a></h3>
+          <p>TradingView&#x27;s Crypto Coins Screener now accepts requests such as &quot;coins above $1B market cap with positive performance this week&quot; and turns them into filters, with an explanation of how it read the request. It is on all paid plans with monthly request limits, and an AI request replaces any filters you set by hand. TradingView says results support your own research and are not financial advice.</p>
+          <p class="why"><span>Why it matters</span> It could speed up your pre-breakout coin scans, though the replace-your-filters behavior and request caps limit it next to a local Python scanner.</p>
+          <p class="src">Source: TradingView blog &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/crypto-coins-screener-now-with-ai-61910/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/Panniantong/Agent-Reach" target="_top" rel="noopener">Agent-Reach trends: one command-line tool for agents to search X, Reddit, YouTube</a></h3>
-          <p>GitHub&#x27;s daily Python trending list shows Agent-Reach with about 461 new stars today. Its description says it lets an AI agent read and search Twitter, Reddit, YouTube, GitHub and others through one command-line tool with no API fees. We have not tested it or verified that claim.</p>
-          <p class="why"><span>Why it matters</span> A cheap way to feed sentiment and chatter into your crypto and stock scanners, if the no-fee claim holds up and terms of service allow it.</p>
-          <p class="src">Source: GitHub trending (Python) &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://github.com/Panniantong/Agent-Reach" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/NVIDIA/OpenShell" target="_top" rel="noopener">NVIDIA OpenShell sandboxes fleets of autonomous AI agents</a></h3>
+          <p>NVIDIA&#x27;s open-source OpenShell (Apache 2.0, 0.1.x releases) runs agents in kernel-enforced sandboxes limiting files, system calls and network access. Per the README, agents never see real credentials, which are added only for approved endpoints. It runs on Linux, Apple-silicon macOS or Windows via WSL 2 (experimental), and telemetry is on by default.</p>
+          <p class="why"><span>Why it matters</span> Credential isolation is directly useful if you let unattended agents touch exchange API keys or brokerage accounts.</p>
+          <p class="src">Source: GitHub (NVIDIA), via Hacker News &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://github.com/NVIDIA/OpenShell" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/21/crypto-rises-with-asian-tech-stocks-zcash-extends-gain-after-setting-upgrade-date" target="_top" rel="noopener">Crypto futures volume up 19% to $190 billion as bitcoin hits one-week high</a></h3>
-          <p>According to CoinDesk, bitcoin rose to about $84,000 as Asian tech stocks rebounded, with 24-hour futures volume at $190 billion, open interest near $145 billion and liquidations of $284 million, up 76%. The taker ratio was 53% long to 47% short, and zcash gained after setting an upgrade date.</p>
-          <p class="why"><span>Why it matters</span> Rising volume and open interest on a bounce is the context for your volume-confirmed reclaim entries, but a 53/47 long skew argues against chasing.</p>
-          <p class="src">Source: CoinDesk &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/21/crypto-rises-with-asian-tech-stocks-zcash-extends-gain-after-setting-upgrade-date" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed" target="_top" rel="noopener">Full Claude Platform, including Managed Agents, now on Google Cloud</a></h3>
+          <p>Anthropic says the full Claude Platform is generally available on Google Cloud with Google IAM credentials and billing. It lists Managed Agents (beta), code execution, web search and an MCP connector. Opus 5.5 fast mode is priced at $8 input and $40 output per million tokens, with up to 2.5x faster output, according to Anthropic.</p>
+          <p class="why"><span>Why it matters</span> Fast-mode pricing helps you estimate the cost of speeding up overnight Opus runs.</p>
+          <p class="src">Source: Claude blog (Anthropic) &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.tradingview.com/blog/en/taifex-options-now-on-tradingview-61899/" target="_top" rel="noopener">TradingView adds Taiwan Futures Exchange options data</a></h3>
-          <p>TradingView says options from the Taiwan Futures Exchange (TAIFEX) are now available on the platform. The post is in its data feeds and exchanges category.</p>
-          <p class="why"><span>Why it matters</span> A minor data addition, but relevant if your Asian chip-stock watchlist, which has been driving bitcoin moves this week, includes Taiwan names.</p>
-          <p class="src">Source: TradingView blog &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/taifex-options-now-on-tradingview-61899/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/22/bitcoin-slides-below-usd82-000-as-ai-doubts-return-with-defi-tokens-leading-declines" target="_top" rel="noopener">Bitcoin slips toward $81,600 as AI-spending doubts return</a></h3>
+          <p>According to CoinDesk, bitcoin fell as much as 2.9% to about $81,600 after mixed Tesla and Meta earnings revived AI-spending worries. The CoinDesk 80 index lost 3.5% and DeFi tokens fell 6%. Altcoin volume rose while derivatives open interest fell, and implied volatility stayed near yearly lows.</p>
+          <p class="why"><span>Why it matters</span> Rising volume with falling open interest is the kind of reading to check before trusting a breakout-reclaim entry on altcoin perpetual futures.</p>
+          <p class="src">Source: CoinDesk &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/22/bitcoin-slides-below-usd82-000-as-ai-doubts-return-with-defi-tokens-leading-declines" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://www.coindesk.com/markets/2026/10/21/live-updates-bitcoin-clings-to-usd82-500-as-spacex-results-lift-stock-futures" target="_top" rel="noopener">Live updates: Bitcoin holds above $84,000 as Middle East worries resurface</a></h4>
-          <p class="src">Source: CoinDesk &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/21/live-updates-bitcoin-clings-to-usd82-500-as-spacex-results-lift-stock-futures" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Names concrete levels ($87,000 up, $82,500 as support) and the strengthening bitcoin-tech stock correlation to check against your reclaim setups.</p>
+          <h4><a href="https://simonwillison.net/2026/Oct/22/donating-agent-skills/" target="_top" rel="noopener">Donating Agent Skills to the Agentic AI Foundation (Simon Willison)</a></h4>
+          <p class="src">Source: Simon Willison &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/22/donating-agent-skills/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Short take that includes a working example of Claude searching a blog through a datasette-mcp plugin.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data/" target="_top" rel="noopener">Using thousands of AI agents to uncover new leads in biological data</a></h4>
-          <p class="src">Source: OpenAI, via Hacker News &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://openai.com/index/scaling-ai-research-for-complex-biological-data/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A large-scale multi-agent research case study; we could not open the page, so check its method before borrowing ideas for your Claude deep-research setups.</p>
+          <h4><a href="https://simonwillison.net/2026/Oct/21/php-security-release/" target="_top" rel="noopener">Today&#x27;s PHP Security Release</a></h4>
+          <p class="src">Source: Simon Willison &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/21/php-security-release/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A case study in a leaked embargo; the CVSS 9.2 flaws affect all PHP 8.x, so patch any PHP you run.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/" target="_top" rel="noopener">Patch the Planet: global response coordination as agents uncover vulnerabilities</a></h4>
-          <p class="src">Source: OpenAI, via Hacker News &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Shows how agent-found issues are being disclosed at scale, useful background if you publish or run agents that find bugs.</p>
+          <h4><a href="https://www.coindesk.com/markets/2026/10/22/asian-stocks-tumble-bitcoin-retreats-as-china-enters-bear-market" target="_top" rel="noopener">Asian stocks tumble, bitcoin retreats as China enters bear market</a></h4>
+          <p class="src">Source: CoinDesk &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/22/asian-stocks-tumble-bitcoin-retreats-as-china-enters-bear-market" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Gives the macro backdrop (CSI 300 down 20%, Brent above $112, VIX near 18) for your swing and perp risk sizing.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Thursday, 22 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Friday, 23 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
   <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
 </nav>
 </main>
@@ -228,9 +228,9 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
   <h2>About this page</h2>
   <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 07:01 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
   <p><b>Who it's for:</b> one reader, chosen by their interests (AI agents and systematic trading). It has no subscribers, ads or sign-up.</p>
-  <p><b>Cost:</b> free to read. Making this edition used $0.49 of AI time, paid by the owner's Claude plan.</p>
+  <p><b>Cost:</b> free to read. Making this edition used $0.59 of AI time, paid by the owner's Claude plan.</p>
   <p><b>Privacy:</b> no cookies, no tracking, no sign-up. The only outside request is for fonts from Google Fonts.</p>
-  <p><b>Sources checked (18):</b> <b>Had news:</b> Anthropic News, Claude blog, Hacker News front page, TradingView blog, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Simon Willison, @AnthropicAI, @bcherny, @karpathy, @TradingView, X topic sweep. <b>Could not be read:</b> Claude Code changelog, Latent Space, TLDR AI, r/ClaudeAI, r/algotrading, @markminervini. Items left out as old, off-topic or repeated: 14.</p>
+  <p><b>Sources checked (18):</b> <b>Had news:</b> Anthropic News, Claude blog, Simon Willison, Hacker News front page, TradingView blog, CoinDesk markets. <b>Nothing new:</b> Claude Code changelog, Latent Space, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @TradingView, X topic sweep. <b>Could not be read:</b> TLDR AI, r/ClaudeAI, r/algotrading, @markminervini. Items left out as old, off-topic or repeated: 12.</p>
   <p><b>Contact and corrections:</b> <a href="https://github.com/sulaimanmaharobin-coder/morning-edge">github.com/sulaimanmaharobin-coder/morning-edge</a></p>
 </footer>
 </body></html>

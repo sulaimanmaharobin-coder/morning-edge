@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Morning Edge: Fri 23 Oct 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="icon.png"><link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>addEventListener("load", function () { var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=optional"; document.head.appendChild(l); });</script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=optional"></noscript>
+<style>
+:root { --paper:#f3eee2; --ink:#1b1916; --muted:#5d574c; --rule:#1b1916; --hair:#bfb6a3; --accent:#8a1c12; --box:#e9e2d1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#1d1b18; --ink:#ebe5d8; --muted:#a59d8e; --rule:#ebe5d8; --hair:#4a453d; --accent:#e0806f; --box:#26231f; } }
+:root[data-theme="dark"] { --paper:#1d1b18; --ink:#ebe5d8; --muted:#a59d8e; --rule:#ebe5d8; --hair:#4a453d; --accent:#e0806f; --box:#26231f; }
+* { box-sizing:border-box; }
+html { background:var(--paper); }
+body { margin:0 auto; max-width:1180px; padding:22px 32px 40px; background:var(--paper); color:var(--ink);
+  font:16px/1.55 "Libre Caslon Text", Georgia, "Times New Roman", serif; overflow-wrap:break-word; }
+.front > *, .read { min-width:0; overflow-wrap:anywhere; }
+a { color:inherit; text-decoration:none; }
+a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.ears { display:flex; justify-content:space-between; gap:12px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+  border-bottom:1px solid var(--rule); padding-bottom:6px; }
+.masthead { text-align:center; font:400 clamp(30px,9vw,96px)/1.05 "UnifrakturMaguntia", "Old English Text MT", Georgia, serif; margin:10px 0 4px; }
+.masthead a:hover { text-decoration:none; }
+.motto { text-align:center; font-style:italic; color:var(--muted); font-size:13px; margin-bottom:8px; }
+.dateline { display:flex; justify-content:space-between; gap:12px; border-top:3px double var(--rule); border-bottom:1px solid var(--rule);
+  padding:5px 2px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+.notice { margin:12px 0 0; padding:8px 12px; border:1px solid var(--accent); color:var(--accent); font-size:14px; }
+.notice a, .toolbar a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.notice a { font-weight:700; }
+.notice a, footer a { display:inline-block; padding:5px 0; }
+.toolbar { display:flex; justify-content:center; flex-wrap:wrap; gap:4px 22px; font-size:14px; padding:4px 0; border-bottom:1px solid var(--hair); }
+.toolbar a { display:inline-block; padding:8px 4px; color:var(--accent); }
+.front { display:grid; grid-template-columns:minmax(0,2.15fr) minmax(0,1fr); grid-template-areas:"lead side" "reads side" "editions side"; grid-template-rows:auto auto 1fr; gap:0; margin-top:18px; }
+.lead { grid-area:lead; padding-right:26px; border-right:1px solid var(--hair); }
+.lead h1 a, .brief h3 a, .read h4 a { text-decoration:underline; text-decoration-color:var(--hair); text-decoration-thickness:2px; text-underline-offset:5px; }
+.lead h1 a:hover, .brief h3 a:hover, .read h4 a:hover { text-decoration-color:var(--accent); }
+.orig { display:inline-block; padding:5px 0; color:var(--accent); white-space:nowrap; }
+.kicker { font:700 12px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
+.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:8px 0 10px; letter-spacing:-.01em; }
+.dek { font:italic 400 21px/1.35 "Playfair Display", Georgia, serif; color:var(--muted); margin:0 0 12px; }
+.byline { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair); padding:5px 0; margin-bottom:14px; }
+.story { column-count:2; column-gap:26px; column-rule:1px solid var(--hair); text-align:justify; hyphens:auto; }
+.story p { margin:0 0 .8em; }
+.story p:first-child::first-letter { float:left; font:900 64px/.82 "Playfair Display", Georgia, serif; padding:6px 8px 0 0; }
+.why-box { break-inside:avoid; margin:6px 0 0; padding:10px 14px; background:var(--box); border-left:3px solid var(--accent); font-style:italic; text-align:left; }
+.why-box b { font-style:normal; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:2px; }
+.editor-note { font-style:italic; color:var(--muted); font-size:14px; margin:14px 0 0; }
+.side { grid-area:side; padding-left:24px; }
+.side h2, .reads h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
+  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:0 0 4px; }
+.brief { padding:12px 0; border-bottom:1px solid var(--hair); }
+.brief:last-child { border-bottom:none; }
+.brief h3 { font:700 19px/1.2 "Playfair Display", Georgia, serif; margin:0 0 5px; }
+.brief p { margin:0 0 5px; font-size:14.5px; line-height:1.5; }
+.why { font-style:italic; }
+.why span { font-style:normal; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-right:4px; }
+.src { font-size:12px !important; letter-spacing:.06em; color:var(--muted); }
+.reads { grid-area:reads; padding:26px 26px 0 0; border-right:1px solid var(--hair); }
+.reads-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+.read { padding:14px 20px 4px; border-right:1px solid var(--hair); position:relative; }
+.read:first-child { padding-left:0; }
+.read:last-child { border-right:none; padding-right:0; }
+.read .num { font:900 40px/1 "Playfair Display", Georgia, serif; color:var(--hair); float:left; margin:0 10px 0 0; }
+.read h4 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:0 0 6px; }
+.read p { margin:0 0 6px; font-size:14.5px; }
+.editions { margin-top:28px; }
+.front .editions { grid-area:editions; padding-right:26px; border-right:1px solid var(--hair); margin-top:0; padding-top:28px; }
+.front .editions ul { grid-template-columns:1fr; }
+.editions h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
+  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:0 0 10px; }
+.editions ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px; }
+.editions li a, .editions li .here { display:block; padding:10px 12px; border:1px solid var(--hair); font-size:15px; min-height:44px; }
+.editions li .here { background:var(--box); border-color:var(--ink); }
+.editions small { color:var(--muted); font-size:13px; }
+.editions p { color:var(--muted); font-size:14px; margin:10px 0 0; }
+footer { margin-top:28px; border-top:3px double var(--rule); padding-top:10px; font-size:14px; color:var(--muted); line-height:1.6; }
+footer h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; color:var(--ink); margin:4px 0 8px; }
+footer p { margin:0 0 8px; }
+footer b { color:var(--ink); }
+.sister { text-align:center; font-size:13px; letter-spacing:.08em; text-transform:uppercase; padding:6px 0; border-bottom:1px solid var(--hair); }
+.sister a { color:var(--accent); }
+.prose { column-count:2; column-gap:30px; column-rule:1px solid var(--hair); margin-top:18px; }
+.prose h1 { display:none; }
+.prose h2 { column-span:all; font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
+  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:22px 0 10px; }
+.prose h2:first-of-type { margin-top:4px; }
+.prose h3 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:12px 0 4px; break-after:avoid; }
+.prose p, .prose li { font-size:15px; line-height:1.55; }
+.prose p:first-of-type { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
+.prose ul, .prose ol { padding-left:20px; margin:0 0 12px; }
+.prose li { margin-bottom:7px; break-inside:avoid; }
+.prose code { font:13px/1.4 Consolas, "Courier New", monospace; overflow-wrap:anywhere; background:var(--box); padding:0 3px; }
+.prose table { border-collapse:collapse; width:100%; font-size:13.5px; margin:8px 0 14px; column-span:all; }
+.prose th, .prose td { border-bottom:1px solid var(--hair); padding:5px 6px; text-align:left; vertical-align:top; }
+.prose th { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.prose a { text-decoration:underline; text-decoration-color:var(--hair); }
+@media print {
+  @page { size:148mm 240mm; margin:0; }
+  :root { --paper:#f3eee2; --ink:#1b1916; --muted:#5d574c; --rule:#1b1916; --hair:#bfb6a3; --accent:#8a1c12; --box:#e9e2d1; }
+  html, body { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { padding:9mm 8mm; max-width:none; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  .prose h2, .prose h3 { break-after:avoid; page-break-after:avoid; }
+  .prose li, .prose p { break-inside:auto; orphans:2; widows:2; }
+  .no-print { display:none !important; }
+}
+@media (max-width:860px) {
+  body { padding:16px 16px 32px; }
+  .front { grid-template-columns:1fr; grid-template-areas:"lead" "side" "reads" "editions"; }
+  .front .editions { padding-right:0; border-right:none; }
+  .lead, .reads { padding-right:0; border-right:none; }
+  .side { padding-left:0; margin-top:22px; }
+  .story, .prose { column-count:1; }
+  .story { text-align:left; hyphens:manual; }
+  .editions ul { grid-template-columns:1fr; }
+  .reads-row { grid-template-columns:1fr; }
+  .read, .read:first-child, .read:last-child { padding:12px 0; border-right:none; border-bottom:1px solid var(--hair); }
+  .ears span:nth-child(2), .dateline span:nth-child(3) { display:none; }
+}
+
+</style></head>
+<body>
+<div class="ears"><span>Edition 11</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
+<div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
+<div class="motto">The Morning Edge is a daily news summary that AI (Claude) writes for one person. &ldquo;You&rdquo; on this page means that reader.</div>
+<div class="dateline"><span>Friday, 23 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
+<nav class="toolbar" aria-label="Page"><a href="#editions">All editions &darr;</a><a href="#about">About this page &darr;</a></nav>
+
+<div class="notice" id="stale" hidden></div>
+<script>
+// Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
+(function () {
+  var ed = "2026-10-23", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  if (ed < today && !document.querySelector(".notice:not(#stale)")) {
+    var n = document.getElementById("stale");
+    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Friday, 23 October 2026.";
+    n.hidden = false;
+  }
+})();
+</script>
+<script>
+document.addEventListener("click", function (e) {  // in-page jumps: scroll without adding a Back-button stop
+  var a = e.target.closest && e.target.closest('a[href^="#"]');
+  var t = a && document.getElementById(a.getAttribute("href").slice(1));
+  if (!t) return;
+  e.preventDefault(); t.scrollIntoView(); history.replaceState(null, "", a.getAttribute("href"));
+});
+</script>
+<main class="front">
+  <section class="lead">
+    <div class="kicker">Top story</div>
+    <h1><a href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop" target="_top" rel="noopener">Anthropic: Fold Subagents Back Into One Agent Loop Unless You Must Split</a></h1>
+    <p class="dek">A new Claude guide says single agents with progressively loaded context often beat multi-agent orchestrators on quality, cost and speed.</p>
+    <div class="byline">Summary by AI. Source: Claude blog (Anthropic) &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <div class="story">
+      <p>Anthropic published &quot;Building agents: When to fold subagents into your main agent loop&quot; on 22 October. It argues that, in comparisons across several enterprise deployments, a single agent that loads context progressively often outperforms an orchestrator that delegates to subagents, at lower cost and latency.</p>
+<p>The article gives figures from those deployments. One enterprise cut its system prompt by &quot;over 80%&quot; after restructuring, and consolidating multi-agent systems into single-agent loops gave roughly 2x faster runtime. It recommends keeping tool definitions under 30 to 50 to preserve tool-selection accuracy. The reasoning: shared context &quot;produces better answers&quot; because several task results stay in one window instead of being handed back as summaries.</p>
+<p>Anthropic says subagents still make sense in three cases: context bloat is degrading performance, parallel work needs fresh context windows, or the agent struggles to choose among tools. It also warns that teams too often copy their org chart into agent architecture (Conway&#x27;s Law), which adds sprawl without better results.</p>
+<p>The suggested method is to build end-to-end evaluation sets, fold subagents in one at a time, and compare metrics after each change. Anthropic cautions that results vary by use case and that a single evaluation run can miss problems, so tests should be repeated. The evidence is Anthropic&#x27;s own and the deployments are not named.</p>
+      <div class="why-box"><b>Why it matters to you</b>If your overnight Claude Code teams use a planner plus many workers, this gives you a concrete test: collapse one worker into the main loop and compare cost and output quality.</div>
+    </div>
+    <p class="editor-note">Thin day for X, Reddit and newsletters, which could not be read; reads lean on Simon Willison and CoinDesk.</p>
+  </section>
+  <aside class="side">
+    <h2>In Brief</h2>
+    <article class="brief">
+          <h3><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_top" rel="noopener">Anthropic donates Agent Skills standard to Linux Foundation body</a></h3>
+          <p>Anthropic says it is donating the Agent Skills standard to the Agentic AI Foundation, part of the Linux Foundation. It reports more than 70 agent platforms support it, about 1 million skills are published and installs total nearly 280 million. A skill is a folder with a SKILL.md file plus any scripts or reference material.</p>
+          <p class="why"><span>Why it matters</span> Skills you write for your trading or outreach agents should now work across Cursor, Copilot and others, not only Claude Code.</p>
+          <p class="src">Source: Anthropic &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://www.tradingview.com/blog/en/crypto-coins-screener-now-with-ai-61910/" target="_top" rel="noopener">TradingView adds plain-language AI to its crypto screener</a></h3>
+          <p>TradingView&#x27;s Crypto Coins Screener now accepts requests such as &quot;coins above $1B market cap with positive performance this week&quot; and turns them into filters, with an explanation of how it read the request. It is on all paid plans with monthly request limits, and an AI request replaces any filters you set by hand. TradingView says results support your own research and are not financial advice.</p>
+          <p class="why"><span>Why it matters</span> It could speed up your pre-breakout coin scans, though the replace-your-filters behavior and request caps limit it next to a local Python scanner.</p>
+          <p class="src">Source: TradingView blog &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/crypto-coins-screener-now-with-ai-61910/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://github.com/NVIDIA/OpenShell" target="_top" rel="noopener">NVIDIA OpenShell sandboxes fleets of autonomous AI agents</a></h3>
+          <p>NVIDIA&#x27;s open-source OpenShell (Apache 2.0, 0.1.x releases) runs agents in kernel-enforced sandboxes limiting files, system calls and network access. Per the README, agents never see real credentials, which are added only for approved endpoints. It runs on Linux, Apple-silicon macOS or Windows via WSL 2 (experimental), and telemetry is on by default.</p>
+          <p class="why"><span>Why it matters</span> Credential isolation is directly useful if you let unattended agents touch exchange API keys or brokerage accounts.</p>
+          <p class="src">Source: GitHub (NVIDIA), via Hacker News &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://github.com/NVIDIA/OpenShell" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed" target="_top" rel="noopener">Full Claude Platform, including Managed Agents, now on Google Cloud</a></h3>
+          <p>Anthropic says the full Claude Platform is generally available on Google Cloud with Google IAM credentials and billing. It lists Managed Agents (beta), code execution, web search and an MCP connector. Opus 5.5 fast mode is priced at $8 input and $40 output per million tokens, with up to 2.5x faster output, according to Anthropic.</p>
+          <p class="why"><span>Why it matters</span> Fast-mode pricing helps you estimate the cost of speeding up overnight Opus runs.</p>
+          <p class="src">Source: Claude blog (Anthropic) &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+<article class="brief">
+          <h3><a href="https://www.coindesk.com/markets/2026/10/22/bitcoin-slides-below-usd82-000-as-ai-doubts-return-with-defi-tokens-leading-declines" target="_top" rel="noopener">Bitcoin slips toward $81,600 as AI-spending doubts return</a></h3>
+          <p>According to CoinDesk, bitcoin fell as much as 2.9% to about $81,600 after mixed Tesla and Meta earnings revived AI-spending worries. The CoinDesk 80 index lost 3.5% and DeFi tokens fell 6%. Altcoin volume rose while derivatives open interest fell, and implied volatility stayed near yearly lows.</p>
+          <p class="why"><span>Why it matters</span> Rising volume with falling open interest is the kind of reading to check before trusting a breakout-reclaim entry on altcoin perpetual futures.</p>
+          <p class="src">Source: CoinDesk &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/22/bitcoin-slides-below-usd82-000-as-ai-doubts-return-with-defi-tokens-leading-declines" target="_top" rel="noopener">Read the original &#8599;</a></p>
+        </article>
+  </aside>
+  <section class="reads">
+    <h2>Worth Reading in Full</h2>
+    <div class="reads-row"><article class="read">
+          <div class="num">1</div>
+          <h4><a href="https://simonwillison.net/2026/Oct/22/donating-agent-skills/" target="_top" rel="noopener">Donating Agent Skills to the Agentic AI Foundation (Simon Willison)</a></h4>
+          <p class="src">Source: Simon Willison &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/22/donating-agent-skills/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Short take that includes a working example of Claude searching a blog through a datasette-mcp plugin.</p>
+        </article>
+<article class="read">
+          <div class="num">2</div>
+          <h4><a href="https://simonwillison.net/2026/Oct/21/php-security-release/" target="_top" rel="noopener">Today&#x27;s PHP Security Release</a></h4>
+          <p class="src">Source: Simon Willison &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/21/php-security-release/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A case study in a leaked embargo; the CVSS 9.2 flaws affect all PHP 8.x, so patch any PHP you run.</p>
+        </article>
+<article class="read">
+          <div class="num">3</div>
+          <h4><a href="https://www.coindesk.com/markets/2026/10/22/asian-stocks-tumble-bitcoin-retreats-as-china-enters-bear-market" target="_top" rel="noopener">Asian stocks tumble, bitcoin retreats as China enters bear market</a></h4>
+          <p class="src">Source: CoinDesk &middot; Thu 22 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/22/asian-stocks-tumble-bitcoin-retreats-as-china-enters-bear-market" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Gives the macro backdrop (CSI 300 down 20%, Brent above $112, VIX near 18) for your swing and perp risk sizing.</p>
+        </article></div>
+  </section>
+  <nav class="editions" id="editions" aria-label="All editions">
+  <h2>All editions</h2>
+  <ul><li><span class="here" aria-current="page">Friday, 23 October 2026 <small>(latest)</small><br><small>You are reading this edition</small></span></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
+</nav>
+</main>
+<footer id="about">
+  <h2>About this page</h2>
+  <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 07:01 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
+  <p><b>Who it's for:</b> one reader, chosen by their interests (AI agents and systematic trading). It has no subscribers, ads or sign-up.</p>
+  <p><b>Cost:</b> free to read. Making this edition used $0.59 of AI time, paid by the owner's Claude plan.</p>
+  <p><b>Privacy:</b> no cookies, no tracking, no sign-up. The only outside request is for fonts from Google Fonts.</p>
+  <p><b>Sources checked (18):</b> <b>Had news:</b> Anthropic News, Claude blog, Simon Willison, Hacker News front page, TradingView blog, CoinDesk markets. <b>Nothing new:</b> Claude Code changelog, Latent Space, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @TradingView, X topic sweep. <b>Could not be read:</b> TLDR AI, r/ClaudeAI, r/algotrading, @markminervini. Items left out as old, off-topic or repeated: 12.</p>
+  <p><b>Contact and corrections:</b> <a href="https://github.com/sulaimanmaharobin-coder/morning-edge">github.com/sulaimanmaharobin-coder/morning-edge</a></p>
+</footer>
+</body></html>
