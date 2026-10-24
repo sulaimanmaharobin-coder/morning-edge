@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Sat 24 Oct 2026</title>
+<title>The Morning Edge: Sun 25 Oct 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Saturday, 24 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 12</span></div>
+<div class="dateline"><span>Sunday, 25 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 13</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-10-24", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-25", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,80 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://www.tradingview.com/blog/en/pine-screener-40-request-calls-61952/" target="_top" rel="noopener">TradingView Pine Screener Raises Data-Request Limit From 5 to 40 Per Script</a></h1>
-    <p class="dek">Scripts that pull in other timeframes, symbols or indexes can now run in the screener the same way they run on the chart.</p>
-    <div class="byline">TradingView Blog &middot; Fri 23 Oct 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/pine-screener-40-request-calls-61952/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" target="_top" rel="noopener">Brotli flaw spreads from Node.js to Python HTTP libraries</a></h1>
+    <p class="dek">A memory-corruption bug in Google&#x27;s Brotli decoder now affects Python packages used by requests, httpx and aiohttp.</p>
+    <div class="byline">Aikido Security, via Hacker News &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>TradingView says its Pine Screener now supports up to 40 request.*() calls per script, up from 5. The company states this matches the limit already in place on its main charting view (Supercharts), where the same script could previously make up to 40 calls.</p>
-<p>Each time a script asks for data it does not already have, such as a value from another timeframe, another symbol, an index or financials, it counts as one request call. According to TradingView, identical calls with matching arguments count as a single request. The post lists three uses this opens up: combining conditions across several timeframes, comparing a symbol against a benchmark index, and running library-based indicators without simplifying them.</p>
-<p>The limit still applies only to the screener&#x27;s supported timeframes: 1, 5, 15, 30 minutes; 1, 2, 4 hours; and 1 day, 1 week and 1 month. TradingView says the change came from user feedback and needs no changes to existing scripts. The post is dated October 23, 2026.</p>
-<p>TradingView&#x27;s support pages elsewhere describe a separate cap of 40 unique requests for non-professional plans and 64 for Professional plans on Pine v6 scripts. The announcement does not say how that interacts with the screener, so check your own plan before relying on the higher number.</p>
-      <div class="why-box">If your Volatility Contraction Pattern (VCP) or relative-strength scans in Pine were trimmed to fit 5 requests, you can now restore the benchmark and multi-timeframe checks before porting them to Python.</div>
+      <p>Security firm Aikido reports that CVE-2026-111497, an out-of-bounds write in Google&#x27;s Brotli decoder, affects versions 1.0.3 through 1.2.0 on all platforms. According to Aikido, a malicious Brotli-compressed response can corrupt memory, leak data, crash a process or, in the worst case, execute code.</p>
+<p>Node.js disclosed the flaw on October 21 to 22. On October 23 the impact widened to Python (Brotli up to 1.2.0 and brotlicffi up to 1.2.0.x), Bun, Envoy, Istio and C++ users. Aikido says HTTP libraries such as requests, httpx and aiohttp load these packages automatically when present, so a project can be exposed without importing Brotli directly.</p>
+<p>Fixes: Brotli 1.2.1 or later and brotlicffi 1.2.1.0 or later for Python; Node.js 22.23.4, 24.22.1 or 26.12.1 and later. Aikido adds a caveat: as of October 23 advisory databases had not mapped the CVE to PyPI packages, so pip-audit and Dependabot may not flag affected versions at first. Aikido also says OpenAI found the issue in February 2026 but did not recognise it as a security vulnerability.</p>
+      <div class="why-box">Your overnight agents and local Python scanners likely fetch web or exchange data through requests, httpx or aiohttp, so check the Brotli version in each environment and upgrade by hand.</div>
     </div>
-    <p class="editor-note">Quiet day for X and Reddit; two reads are 1-3 days old, and the Claude Mods read&#x27;s date comes from its listing.</p>
+    <p class="editor-note">Quiet Sunday: X yielded nothing visible, and Reddit items rely on the posts&#x27; listing text because Reddit blocked fetching.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://simonwillison.net/2026/Oct/23/kimi-k31-pro/" target="_top" rel="noopener">Kimi K3.1 Pro Priced at Half of Opus 5.5</a></h3>
-          <p>Moonshot&#x27;s Kimi K3.1 Pro costs $2 per million input tokens and $10 per million output tokens, according to Simon Willison, and scores 55 on the Artificial Analysis index against 53 for several rival frontier models. Weights are promised by November 4, 2026; for now it is API-only. Moonshot&#x27;s own benchmarks put it roughly level with Opus 5.5, not clearly ahead.</p>
-          <p class="why">A cheaper model could cut the cost of overnight scanner or research agents, but treat the benchmark lead as unverified until you test it on your own tasks.</p>
-          <p class="src">Simon Willison &middot; Fri 23 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/23/kimi-k31-pro/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://latent.space/p/ainews-kimi-31/" target="_top" rel="noopener">Kimi 3.1 Pro: open weights promised for November 4</a></h3>
+          <p>Latent Space&#x27;s AINews says Moonshot&#x27;s Kimi 3.1 Pro is a mixture-of-experts model with 2.8 trillion total and 104 billion active parameters and a 1-million-token context window. API pricing is $2 per million input tokens and $10 per million output tokens, with a Highspeed tier at roughly double the price for 2-3x faster output. Weights are promised for November 4, with licence terms undisclosed; Artificial Analysis scores it 55 on its Intelligence Index, fourth overall.</p>
+          <p class="why">A cheap, fast agentic model could serve as a low-cost worker in your multi-agent runs, though its size rules out local use.</p>
+          <p class="src">Latent Space (AINews) &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://latent.space/p/ainews-kimi-31/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://claude.com/resources/articles/claude-duet-safety-privacy-and-security" target="_top" rel="noopener">Claude Duet Publishes Its Safety and Security Design</a></h3>
-          <p>Anthropic says Claude Duet asks for approval before payments, sent messages or deletions, showing the action, destination and every recipient. A separate classifier screens sensitive information, and passwords, cookies and sign-in tokens never reach the model. Anthropic acknowledges the safeguards will occasionally miss something or flag a harmless message.</p>
-          <p class="why">The approval-gate and credential-isolation pattern is a useful template for any unattended agent of yours that touches exchange or broker accounts.</p>
-          <p class="src">Anthropic (Claude blog) &middot; Fri 23 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/claude-duet-safety-privacy-and-security" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/vectorize-io/hindsight" target="_top" rel="noopener">Hindsight: open-source memory layer that learns across runs</a></h3>
+          <p>The MIT-licensed Hindsight repository (vectorize-io) offers retain, recall and reflect operations. Recall combines semantic, keyword, graph and temporal retrieval, and memories are held in isolated banks. The project claims state-of-the-art results on the LongMemEval benchmark; that is the authors&#x27; own claim. It trended on GitHub with 342 stars today.</p>
+          <p class="why">Unattended Claude agents lose context between sessions, and this is a candidate for persisting lessons from one overnight run to the next.</p>
+          <p class="src">GitHub (vectorize-io) &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://github.com/vectorize-io/hindsight" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://claude.com/resources/articles/unified-claude-enterprise" target="_top" rel="noopener">Claude Chat and Cowork Merge for Enterprise Plans</a></h3>
-          <p>Anthropic says the unified chat-and-Cowork experience is now generally available on Claude Enterprise, with work continuing in cloud environments after a device is closed. Admins get four cost controls: Efficient mode, model entitlements, spend limits and pooled group budgets. Anthropic says Opus 5.5 costs 40% less than Opus 5.</p>
-          <p class="why">Cloud sessions that keep running after you close the laptop, plus spend caps, are the same ingredients your overnight agent runs need.</p>
-          <p class="src">Anthropic (Claude blog) &middot; Fri 23 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/unified-claude-enterprise" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/24/crypto-under-weekend-pressure-bitcoin-slides-below-usd80-000-on-u-s-middle-east-evacuations" target="_top" rel="noopener">Bitcoin slips below $80,000 on Middle East evacuations</a></h3>
+          <p>According to CoinDesk, bitcoin fell to about $79,700, down 2.2% in 24 hours and its weakest level in over a month. Ether, XRP and Solana each lost 3-4%. CoinDesk ties the move to US evacuations from Middle East embassies and bases amid intelligence of Iranian attack plans.</p>
+          <p class="why">A break of the $80,000 area on a weekend headline is a poor environment for breakout-reclaim perps entries, so wait for a reclaim with volume rather than chasing.</p>
+          <p class="src">CoinDesk &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/24/crypto-under-weekend-pressure-bitcoin-slides-below-usd80-000-on-u-s-middle-east-evacuations" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/23/live-updates-bitcoin-holds-above-usd81-000-as-the-ai-rout-fades-and-oil-climbs" target="_top" rel="noopener">Bitcoin Holds $81,000 as Spot ETF Outflows Hit $635 Million</a></h3>
-          <p>CoinDesk reports U.S. spot bitcoin exchange-traded funds (ETFs) lost $635 million on Thursday, the largest daily outflow since June 25, leaving bitcoin below the funds&#x27; $82,313 average cost basis. Brent crude rose above $116 per barrel and gold fell below $4,000. CoinDesk notes the Federal Reserve meets October 27-28.</p>
-          <p class="why">A reclaim of the $82,313 ETF cost basis with volume behind it is a concrete level to watch for your perps breakout-reclaim entries.</p>
-          <p class="src">CoinDesk &middot; Fri 23 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/23/live-updates-bitcoin-holds-above-usd81-000-as-the-ai-rout-fades-and-oil-climbs" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_top" rel="noopener">Simon Willison adds four-player map to Battledrones, built with Claude</a></h3>
+          <p>Willison released Battledrones v14, with a four-player map called Compass Rose, by prompting Claude for a four-way rotationally symmetric map supporting up to four AI players over WebSocket. A Reddit thread on r/ClaudeAI separately credits him with building the game over 321 agent commits and sharing lessons.</p>
+          <p class="why">It is a worked example of directing a coding agent with a short, specific prompt, a habit that carries over to your unattended Claude Code jobs.</p>
+          <p class="src">Simon Willison &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/23/bitcoin-steadies-near-usd81-700-as-altcoins-rebound-pepe-climbs-13" target="_top" rel="noopener">Futures Volume Falls 19% as Pepe Jumps 13%</a></h3>
-          <p>According to CoinDesk, crypto futures volume fell 19% and liquidations fell 23% over 24 hours, while bitcoin funding rose to 0.0067% from 0.0041%. Open interest rose about 1%. Pepe gained 13% on roughly $353 million of volume, and Zcash open interest dropped 8% on a 1.5% price decline, which CoinDesk reads as position closures.</p>
-          <p class="why">Falling volume under a rising price is the kind of unconfirmed move your never-chase rule is meant to skip.</p>
-          <p class="src">CoinDesk &middot; Fri 23 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/23/bitcoin-steadies-near-usd81-700-as-altcoins-rebound-pepe-climbs-13" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xef9sl/how_many_real_coding_tasks_fit_in_one_5hour/" target="_top" rel="noopener">User measures tasks per five-hour window on $20 plans</a></h3>
+          <p>An r/ClaudeAI poster ran the same eight-file WeasyPrint feature on each setup and read the usage meter before and after. They report roughly 33 tasks per window for Sonnet, 20 for Haiku, 18 for Codex and 6 for Opus. This is one user&#x27;s measurement on default settings, not an official figure.</p>
+          <p class="why">If your overnight agents run on Opus, this suggests routing routine steps to Sonnet to stretch your usage limits.</p>
+          <p class="src">r/ClaudeAI &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xef9sl/how_many_real_coding_tasks_fit_in_one_5hour/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://latent.space/p/claude-mods" target="_top" rel="noopener">Claude Mods: Flipping the Harness Inside Out</a></h4>
-          <p class="src">Latent Space (Dan McAteer) &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://latent.space/p/claude-mods" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It covers Claude Code plugins that change how the agent interrupts you, and flags the costs (about 5-6k tokens per supervisor check) and the lack of sandboxing by default. The page showed the year as 2024, which looks like a typo; the 2026 date comes from its listing.</p>
+          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xebwht/preregistered_a_wallet_score_on_polymarket_355k/" target="_top" rel="noopener">Pre-registered a wallet score on Polymarket (355k wallets). It passed out of sample, and a mechanism check showed it was measuring the wrong thing</a></h4>
+          <p class="src">r/algotrading &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xebwht/preregistered_a_wallet_score_on_polymarket_355k/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A candid case study in pre-registration and out-of-sample testing that applies to how you validate your own scanners.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://simedw.com/2026/10/21/world-model-terminal/" target="_top" rel="noopener">WorldTUI: 360M Terminal Model</a></h4>
-          <p class="src">simedw.com, via Hacker News &middot; Wed 21 Oct 2026 &middot; <a class="orig" href="https://simedw.com/2026/10/21/world-model-terminal/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It scored 608 points on Hacker News; the idea of a small model simulating terminal behavior could matter for cheap agent testing, though I only saw the listing, not the full post.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xehm9a/ok_opus_55_the_news_network_worked_now_create_the/" target="_top" rel="noopener">ok opus 5.5, the news network worked. now create the city around it...</a></h4>
+          <p class="src">r/ClaudeAI &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xehm9a/ok_opus_55_the_news_network_worked_now_create_the/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A 28-day follow-up on a 24/7 autonomous agent system built with Claude Code, useful for seeing what long-running setups need.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://www.coindesk.com/markets/2026/10/23/bitcoin-gold-trim-early-losses-as-yen-gives-up-gains-oil-stays-near-usd100" target="_top" rel="noopener">Bitcoin, gold trim early losses as yen gives up gains. Oil stays near $100</a></h4>
-          <p class="src">CoinDesk &middot; Fri 23 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/23/bitcoin-gold-trim-early-losses-as-yen-gives-up-gains-oil-stays-near-usd100" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It ties bitcoin&#x27;s moves to Japanese inflation data and Bank of Japan rate-hike expectations, a macro backdrop for your perps entries; I saw only the headline and a search snippet, not the full article.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xedrvq/claude_tested_my_game_with_bot_players_for_weeks/" target="_top" rel="noopener">Claude tested my game with bot players for weeks. Then 219 real players showed up and turned my difficulty curve upside down</a></h4>
+          <p class="src">r/ClaudeAI &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xedrvq/claude_tested_my_game_with_bot_players_for_weeks/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Shows how agent-simulated testing can mislead once real users arrive, the same risk as backtesting a strategy against simulated behaviour.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Saturday, 24 October 2026</span></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Sunday, 25 October 2026</span></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.80 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Claude blog, Simon Willison, Hacker News front page, Latent Space, TradingView blog, CoinDesk markets. <b>Nothing new:</b> Anthropic News, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Claude Code changelog, TLDR AI, r/ClaudeAI, r/algotrading. Dropped: 10.</p>
+  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.34 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Simon Willison, Hacker News front page, Latent Space, r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, TLDR AI, TradingView blog, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. Dropped: 14.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
