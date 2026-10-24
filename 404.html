@@ -29,8 +29,8 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .notice a { font-weight:700; }
 .notice a, footer a { display:inline-block; padding:5px 0; }
 .dateline { align-items:center; }
-.dateline nav { display:flex; gap:18px; }
-.dateline nav a { display:inline-block; padding:6px 2px; color:var(--accent); }
+.dateline nav { display:flex; gap:14px; margin-block:-5px; }
+.dateline nav a { display:inline-flex; align-items:center; min-height:44px; padding:0 4px; color:var(--accent); }
 .front { display:grid; grid-template-columns:minmax(0,2.15fr) minmax(0,1fr); grid-template-areas:"lead side" "reads side" "editions side"; grid-template-rows:auto auto 1fr; gap:0; margin-top:18px; }
 .lead { grid-area:lead; padding-right:26px; border-right:1px solid var(--hair); }
 .lead h1 a, .brief h3 a, .read h4 a { text-decoration:underline; text-decoration-color:var(--hair); text-decoration-thickness:2px; text-underline-offset:5px; }
