@@ -207,42 +207,36 @@ def render(crypto, stocks, notes, stamp):
     pre_all = [r for r in buys if r["pre_breakout"]]
     ranked = sorted((r for r in pre_all if r["stop_atr"] is not None and r["stop_atr"] >= MIN_STOP_ATR),
                     key=lambda r: r["stop_atr"])
-    noise = len(pre_all) - len(ranked)
     pre = ranked[:TOP_N]
     e = html.escape
+    method = ("Pre-breakout: in the buy zone, stop within 5% and price within 5% of its 20-day high, ranked by stop distance "
+              "in ATR(14), stops inside 1 ATR left out. Buy zone: 20 EMA above a rising 50 EMA, daily low touched the 20 EMA "
+              "in the last two bars, RSI(14) above 50. Exit: 20 EMA closes below 50 EMA, or price closes below 50 EMA. "
+              f"Scanned {stamp} SGT.")
+    # Only problems are shown; the routine coverage lines stay in latest.json.
+    warnings = [n for n in notes if "failed" in n or "incomplete" in n]
     out = ['<!-- pullback:start -->', '<section class="pb reads">',
            '<style>.pb .pb-wrap{overflow-x:auto}.pb table{border-collapse:collapse;width:100%;font-size:13.5px;margin:6px 0 10px}'
            '.pb th,.pb td{border-bottom:1px solid var(--hair);padding:5px 6px;text-align:right;white-space:nowrap}'
            '.pb th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}'
            '.pb th:first-child,.pb td:first-child,.pb th:nth-child(2),.pb td:nth-child(2){text-align:left}'
            '@media (max-width:600px){.pb th:nth-child(2),.pb td:nth-child(2){display:none}}'
-           '.pb .tldr{font:italic 400 18px/1.4 "Playfair Display",Georgia,serif;margin:10px 0 6px}'
            '.pb td:first-child{font-weight:700}.pb p{font-size:14.5px;margin:0 0 6px}'
-           '.pb .pb-note{font-size:12.5px;color:var(--muted);margin-top:8px}</style>',
-           '<h2>Pullback Setups &middot; 20/50 EMA &amp; RSI</h2>',
-           f'<p class="tldr">Pre-breakout setups today: {len(pre_all)}'
-           + (f', top {len(pre)} by stop distance in ATR shown' if len(ranked) > len(pre) else '')
-           + (f'. Left out with a stop inside one ATR: {noise}' if noise else '')
-           + f'. Other buy-zone names not listed: {len(buys) - len(pre_all)}.</p>']
+           '.pb .under{color:var(--accent)}.pb .pb-note{font-size:12.5px;color:var(--accent);margin-top:8px}</style>',
+           f'<h2 title="{e(method)}">Pullback Setups</h2>']
     if pre:
         out.append('<div class="pb-wrap"><table><tr><th>Name</th><th>Type</th><th>Close</th><th>vs 20 EMA</th>'
                    '<th>RSI</th><th>Stop (50 EMA)</th><th>Risk</th><th>Stop in ATR</th><th>To 20d high</th></tr>')
+        # Under the 20 EMA: wait for a daily close back above it, so the cell is marked.
         for r in pre:
             out.append(f'<tr><td>{e(r["sym"])}</td><td>{r["kind"]}</td><td>{fmt(r["close"])}</td>'
-                       f'<td>{r["d20"]:+.1f}%</td><td>{r["rsi"]:.1f}</td><td>{fmt(r["e50"])}</td>'
+                       f'<td{" class=under" if r["d20"] < 0 else ""}>{r["d20"]:+.1f}%</td><td>{r["rsi"]:.1f}</td><td>{fmt(r["e50"])}</td>'
                        f'<td>{r["stop_pct"]:.1f}%</td><td>{r["stop_atr"]:.1f}</td><td>{r["to_hi"]:.1f}%</td></tr>')
         out.append('</table></div>')
     else:
         out.append('<p>No pre-breakout setup today.</p>')
-    below = [r["sym"] for r in pre if r["d20"] < 0]
-    if below:
-        out.append(f'<p>Closed just under the 20 EMA, wait for a daily close back above: {e(", ".join(below))}.</p>')
-    out.append('<p class="pb-note">Pre-breakout = in the buy zone, stop within 5% and price within 5% of its 20-day high. '
-               'Ranked by stop distance in ATR(14), tightest first; stops closer than 1 ATR are left out as they sit inside a normal day\'s range. '
-               'Buy zone = 20 EMA above 50 EMA, 50 EMA rising, daily low touched the 20 EMA in the last two bars, RSI(14) above 50. '
-               'Exit when the 20 EMA closes below the 50 EMA or price closes below the 50 EMA. '
-               f'Scanned {e(stamp)} SGT. ' + e(" ".join(notes)) +
-               ' Research only, not advice.</p>')
+    if warnings:
+        out.append(f'<p class="pb-note">{e(" ".join(warnings))}</p>')
     out += ['</section>', '<!-- pullback:end -->']
     return "\n".join(out)
 
