@@ -20,26 +20,23 @@ body { margin:0 auto; max-width:1180px; padding:22px 32px 40px; background:var(-
 .front > *, .read { min-width:0; overflow-wrap:anywhere; }
 a { color:inherit; text-decoration:none; }
 a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
-.ears { display:flex; justify-content:space-between; gap:12px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
-  border-bottom:1px solid var(--rule); padding-bottom:6px; }
 .masthead { text-align:center; font:400 clamp(30px,9vw,96px)/1.05 "UnifrakturMaguntia", "Old English Text MT", Georgia, serif; margin:10px 0 4px; }
 .masthead a:hover { text-decoration:none; }
-.motto { text-align:center; font-style:italic; color:var(--muted); font-size:13px; margin-bottom:8px; }
 .dateline { display:flex; justify-content:space-between; gap:12px; border-top:3px double var(--rule); border-bottom:1px solid var(--rule);
   padding:5px 2px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
 .notice { margin:12px 0 0; padding:8px 12px; border:1px solid var(--accent); color:var(--accent); font-size:14px; }
-.notice a, .toolbar a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.notice a, .dateline nav a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
 .notice a { font-weight:700; }
 .notice a, footer a { display:inline-block; padding:5px 0; }
-.toolbar { display:flex; justify-content:center; flex-wrap:wrap; gap:4px 22px; font-size:14px; padding:4px 0; border-bottom:1px solid var(--hair); }
-.toolbar a { display:inline-block; padding:8px 4px; color:var(--accent); }
+.dateline { align-items:center; }
+.dateline nav { display:flex; gap:18px; }
+.dateline nav a { display:inline-block; padding:6px 2px; color:var(--accent); }
 .front { display:grid; grid-template-columns:minmax(0,2.15fr) minmax(0,1fr); grid-template-areas:"lead side" "reads side" "editions side"; grid-template-rows:auto auto 1fr; gap:0; margin-top:18px; }
 .lead { grid-area:lead; padding-right:26px; border-right:1px solid var(--hair); }
 .lead h1 a, .brief h3 a, .read h4 a { text-decoration:underline; text-decoration-color:var(--hair); text-decoration-thickness:2px; text-underline-offset:5px; }
 .lead h1 a:hover, .brief h3 a:hover, .read h4 a:hover { text-decoration-color:var(--accent); }
 .orig { display:inline-block; padding:5px 0; color:var(--accent); white-space:nowrap; }
-.kicker { font:700 12px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
-.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:8px 0 10px; letter-spacing:-.01em; }
+.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:0 0 10px; letter-spacing:-.01em; }
 .dek { font:italic 400 21px/1.35 "Playfair Display", Georgia, serif; color:var(--muted); margin:0 0 12px; }
 .byline { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border-top:1px solid var(--hair);
   border-bottom:1px solid var(--hair); padding:5px 0; margin-bottom:14px; }
@@ -47,7 +44,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .story p { margin:0 0 .8em; }
 .story p:first-child::first-letter { float:left; font:900 64px/.82 "Playfair Display", Georgia, serif; padding:6px 8px 0 0; }
 .why-box { break-inside:avoid; margin:6px 0 0; padding:10px 14px; background:var(--box); border-left:3px solid var(--accent); font-style:italic; text-align:left; }
-.why-box b { font-style:normal; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:2px; }
 .editor-note { font-style:italic; color:var(--muted); font-size:14px; margin:14px 0 0; }
 .side { grid-area:side; padding-left:24px; }
 .side h2, .reads h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
@@ -57,7 +53,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .brief h3 { font:700 19px/1.2 "Playfair Display", Georgia, serif; margin:0 0 5px; }
 .brief p { margin:0 0 5px; font-size:14.5px; line-height:1.5; }
 .why { font-style:italic; }
-.why span { font-style:normal; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-right:4px; }
 .src { font-size:12px !important; letter-spacing:.06em; color:var(--muted); }
 .reads { grid-area:reads; padding:26px 26px 0 0; border-right:1px solid var(--hair); }
 .reads-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
@@ -75,8 +70,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .editions ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px; }
 .editions li a, .editions li .here { display:block; padding:10px 12px; border:1px solid var(--hair); font-size:15px; min-height:44px; }
 .editions li .here { background:var(--box); border-color:var(--ink); }
-.editions small { color:var(--muted); font-size:13px; }
-.editions p { color:var(--muted); font-size:14px; margin:10px 0 0; }
 footer { margin-top:28px; border-top:3px double var(--rule); padding-top:10px; font-size:14px; color:var(--muted); line-height:1.6; }
 footer h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; color:var(--ink); margin:4px 0 8px; }
 footer p { margin:0 0 8px; }
@@ -90,7 +83,7 @@ footer b { color:var(--ink); }
 .prose h2:first-of-type { margin-top:4px; }
 .prose h3 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:12px 0 4px; break-after:avoid; }
 .prose p, .prose li { font-size:15px; line-height:1.55; }
-.prose p:first-of-type { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
+.prose > p:first-child, .prose > h1 + p { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
 .prose ul, .prose ol { padding-left:20px; margin:0 0 12px; }
 .prose li { margin-bottom:7px; break-inside:avoid; }
 .prose code { font:13px/1.4 Consolas, "Courier New", monospace; overflow-wrap:anywhere; background:var(--box); padding:0 3px; }
@@ -118,17 +111,14 @@ footer b { color:var(--ink); }
   .editions ul { grid-template-columns:1fr; }
   .reads-row { grid-template-columns:1fr; }
   .read, .read:first-child, .read:last-child { padding:12px 0; border-right:none; border-bottom:1px solid var(--hair); }
-  .ears span:nth-child(2), .dateline span:nth-child(3) { display:none; }
+  .dateline span:last-child { display:none; }
 }
 
 </style></head>
 <body>
-<div class="ears"><span>Edition 1</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="motto">The Morning Edge is a daily news summary that AI (Claude) writes for one person. &ldquo;You&rdquo; on this page means that reader.</div>
-<div class="dateline"><span>Sunday, 11 October 2026</span><span>Singapore</span><span>Made at 20:08</span></div>
-<nav class="toolbar" aria-label="Page"><a href="./" target="_top">Latest edition</a><a href="#editions">All editions &darr;</a><a href="#about">About this page &darr;</a></nav>
-<div class="notice">This is an older edition, from Sunday, 11 October 2026. <a href="./" target="_top">Go to the latest edition</a></div>
+<div class="dateline"><span>Sunday, 11 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span>No. 1</span></div>
+<div class="notice"><a href="./" target="_top">Go to the latest edition</a></div>
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
@@ -136,7 +126,7 @@ footer b { color:var(--ink); }
   var ed = "2026-10-11", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
-    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Sunday, 11 October 2026.";
+    n.textContent = "Today's edition is late.";
     n.hidden = false;
   }
 })();
@@ -151,15 +141,14 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <div class="kicker">Top story</div>
     <h1><a href="https://www.cockroachlabs.com/blog/experiment-running-hospital-code/" target="_top" rel="noopener">Cockroach Labs runs coding agents like a teaching hospital for five months</a></h1>
     <p class="dek">A role-based Claude pipeline merged 1,238 pull requests with seven reverts, at roughly $135,000 in tokens.</p>
-    <div class="byline">Summary by AI. Source: Cockroach Labs &middot; Fri 9 Oct 2026 &middot; <a class="orig" href="https://www.cockroachlabs.com/blog/experiment-running-hospital-code/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <div class="byline">Cockroach Labs &middot; Fri 9 Oct 2026 &middot; <a class="orig" href="https://www.cockroachlabs.com/blog/experiment-running-hospital-code/" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
       <p>Cockroach Labs has published results from a five-month experiment, April to September 2026, in which it ran its bug-fixing and feature work through a pipeline modelled on a teaching hospital. Agents take named roles: triage nurses, fellows, review attendings and discharge nurses. They move each change through GitHub Actions workflows, with human approval gates before anything reaches production.</p>
 <p>The numbers are specific. The pipeline processed more than one million lines of code and merged 1,238 pull requests, with only seven reverts. Claude token spend came to about $135,000. Adding IBM Db2 support took two days and $4,172, against nine months and roughly $160,000 for the Oracle port in 2024. Of 1,299 issues filed, nearly half were generated by agents.</p>
 <p>Two lessons stand out. Reviewing the plan before any code is written paid off: plan rejections were under 10% of cases but caught the critical problems early. Role-based prompting also worked well, with agents sticking to their personas. The failure mode was bureaucracy: duplicate handling and excessive rework rounds. Cockroach Labs added circuit-breakers to stop reviews that never converged.</p>
-      <div class="why-box"><b>Why it matters to you</b>If you run Claude agent teams overnight, the plan-review gate and the non-convergence circuit-breaker are two cheap patterns you can copy into your own setups.</div>
+      <div class="why-box">If you run Claude agent teams overnight, the plan-review gate and the non-convergence circuit-breaker are two cheap patterns you can copy into your own setups.</div>
     </div>
     <p class="editor-note">Quiet weekend with nothing dated after Oct 10 on most sources, so this edition uses items from Oct 3 to 10 that were not yet published; X, Reddit and two newsletters were not directly readable.</p>
   </section>
@@ -168,32 +157,32 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
     <article class="brief">
           <h3><a href="https://claude.dev/blog/building-effective-agent-automations/" target="_top" rel="noopener">Anthropic publishes reference design for scheduled Managed Agents</a></h3>
           <p>The &#x27;daily brief&#x27; reference implementation runs on a cron schedule with an explicit timezone, keeps per-source bookmarks instead of fixed time windows, and only records a post as sent after the destination confirms. Preferences are read-only to the agent, and spending caps are part of the guardrails.</p>
-          <p class="why"><span>Why it matters</span> The bookmark, ledger and confirm-before-recording patterns map directly onto an unattended market-scanner or outreach agent that must not repeat itself.</p>
-          <p class="src">Source: Claude blog &middot; Thu 8 Oct 2026 &middot; <a class="orig" href="https://claude.dev/blog/building-effective-agent-automations/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">The bookmark, ledger and confirm-before-recording patterns map directly onto an unattended market-scanner or outreach agent that must not repeat itself.</p>
+          <p class="src">Claude blog &middot; Thu 8 Oct 2026 &middot; <a class="orig" href="https://claude.dev/blog/building-effective-agent-automations/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://claude.com/resources/articles/how-block-orchestrates-claude-fable-across-thousands-of-pull-requests" target="_top" rel="noopener">Block uses Fable to plan and cheaper models to execute migrations</a></h3>
           <p>Block&#x27;s Bradley Axen says Fable handles upfront design (data models, API specs, algorithms) and then directs up to dozens of smaller, cheaper models. A single migration merges about a thousand orchestrated pull requests, with frontier tokens spent mainly on planning.</p>
-          <p class="why"><span>Why it matters</span> It is a concrete planner/worker split you can use to cut token cost in your multi-agent Claude Code teams.</p>
-          <p class="src">Source: Claude blog &middot; Thu 8 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/how-block-orchestrates-claude-fable-across-thousands-of-pull-requests" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">It is a concrete planner/worker split you can use to cut token cost in your multi-agent Claude Code teams.</p>
+          <p class="src">Claude blog &middot; Thu 8 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/how-block-orchestrates-claude-fable-across-thousands-of-pull-requests" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/" target="_top" rel="noopener">Microsoft ships Execution Containers 1.0 for sandboxing AI agents</a></h3>
           <p>MXC applies OS-enforced policies to agent file, network and process access. It has enforcement, learning and permissive modes, and runs on Windows 11, macOS and Linux. GitHub Copilot, Replit and OpenClaw already support it.</p>
-          <p class="why"><span>Why it matters</span> Learning mode, which blocks and records violations, is a useful model for deciding what permissions to give a Claude agent that runs unattended on your Windows machine.</p>
-          <p class="src">Source: Windows Developer Blog &middot; Wed 7 Oct 2026 &middot; <a class="orig" href="https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">Learning mode, which blocks and records violations, is a useful model for deciding what permissions to give a Claude agent that runs unattended on your Windows machine.</p>
+          <p class="src">Windows Developer Blog &middot; Wed 7 Oct 2026 &middot; <a class="orig" href="https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_top" rel="noopener">Claude Code 2.1.294 to 2.1.296 tighten hooks and subagents</a></h3>
           <p>2.1.294 fixed prompt and agent hooks that let through what they were meant to block, and improved Stop/SubagentStop judgement to avoid premature termination. 2.1.296 adds an autoCompactWindow setting for subagents and fixes token counting for adaptive-thinking models.</p>
-          <p class="why"><span>Why it matters</span> Stop-hook and subagent fixes affect whether your overnight runs finish their work or quit early, so update before your next unattended run.</p>
-          <p class="src">Source: Claude Code changelog &middot; Sat 10 Oct 2026 &middot; <a class="orig" href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">Stop-hook and subagent fixes affect whether your overnight runs finish their work or quit early, so update before your next unattended run.</p>
+          <p class="src">Claude Code changelog &middot; Sat 10 Oct 2026 &middot; <a class="orig" href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://www.tradingview.com/blog/en/earnings-calls-on-tradingview-61476/" target="_top" rel="noopener">TradingView adds live and recorded earnings calls to its platform</a></h3>
           <p>Earnings calls can now be played alongside the earnings documents, financial data, calendars and company pages. TradingView says this lets traders move from reported numbers to management commentary in one flow.</p>
-          <p class="why"><span>Why it matters</span> It makes checking management tone on a VCP candidate with an earnings date close, such as before a breakout, quicker without leaving your screener workflow.</p>
-          <p class="src">Source: TradingView blog &middot; Wed 7 Oct 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/earnings-calls-on-tradingview-61476/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">It makes checking management tone on a VCP candidate with an earnings date close, such as before a breakout, quicker without leaving your screener workflow.</p>
+          <p class="src">TradingView blog &middot; Wed 7 Oct 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/earnings-calls-on-tradingview-61476/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
@@ -201,35 +190,31 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
           <h4><a href="https://www.jsdelivr.com/package/npm/claude-overnight" target="_top" rel="noopener">claude-overnight (npm package)</a></h4>
-          <p class="src">Source: jsDelivr / npm &middot; <a class="orig" href="https://www.jsdelivr.com/package/npm/claude-overnight" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="src">jsDelivr / npm &middot; <a class="orig" href="https://www.jsdelivr.com/package/npm/claude-overnight" target="_top" rel="noopener">Read it &#8599;</a></p>
           <p class="why">Parallel coding agents in git worktrees with Opus planning and a self-curating skill memory; worth skimming for ideas to borrow in your unattended runs.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
           <h4><a href="https://br.tradingview.com/script/snHnWONt-Gaucho-VCP/" target="_top" rel="noopener">Gaucho VCP (open-source Pine Script)</a></h4>
-          <p class="src">Source: TradingView &middot; <a class="orig" href="https://br.tradingview.com/script/snHnWONt-Gaucho-VCP/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="src">TradingView &middot; <a class="orig" href="https://br.tradingview.com/script/snHnWONt-Gaucho-VCP/" target="_top" rel="noopener">Read it &#8599;</a></p>
           <p class="why">Its explicit rules (EMAs 8&gt;21&gt;50 rising, 10 to 60 day base under 25% depth, contracting pullbacks, volume drying up) are a ready spec to port to Python.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
           <h4><a href="https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/" target="_top" rel="noopener">Default hard budget caps</a></h4>
-          <p class="src">Source: Simon Willison &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="src">Simon Willison &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/" target="_top" rel="noopener">Read it &#8599;</a></p>
           <p class="why">Argues pay-as-you-go services should halt at a spending limit, a good reminder to set hard caps on your overnight Claude agents.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><a href="./" target="_top">Saturday, 24 October 2026 <small>(latest)</small></a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><span class="here" aria-current="page">Sunday, 11 October 2026<br><small>You are reading this edition</small></span></li></ul>
-  <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
+  <ul><li><a href="./" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><span class="here" aria-current="page">Sunday, 11 October 2026</span></li></ul>
 </nav>
 </main>
 <footer id="about">
-  <h2>About this page</h2>
-  <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 20:08 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
-  <p><b>Who it's for:</b> one reader, chosen by their interests (AI agents and systematic trading). It has no subscribers, ads or sign-up.</p>
-  <p><b>Cost:</b> free to read. Making this edition used $0.63 of AI time, paid by the owner's Claude plan.</p>
-  <p><b>Privacy:</b> no cookies, no tracking, no sign-up. The only outside request is for fonts from Google Fonts.</p>
-  <p><b>Sources checked (18):</b> <b>Had news:</b> Claude blog, Claude Code changelog, Hacker News front page, TradingView blog. <b>Nothing new:</b> Anthropic News, Simon Willison, GitHub trending (Python), CoinDesk markets, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Latent Space, TLDR AI, r/ClaudeAI, r/algotrading. Items left out as old, off-topic or repeated: 14.</p>
-  <p><b>Contact and corrections:</b> <a href="https://github.com/sulaimanmaharobin-coder/morning-edge">github.com/sulaimanmaharobin-coder/morning-edge</a></p>
+  <h2>About</h2>
+  <p>Written by AI (Claude sonnet) at 20:08 SGT for one reader &middot; $0.63 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Claude blog, Claude Code changelog, Hacker News front page, TradingView blog. <b>Nothing new:</b> Anthropic News, Simon Willison, GitHub trending (Python), CoinDesk markets, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Latent Space, TLDR AI, r/ClaudeAI, r/algotrading. Dropped: 14.</p>
+  <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>

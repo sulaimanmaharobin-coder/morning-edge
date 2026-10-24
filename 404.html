@@ -20,26 +20,23 @@ body { margin:0 auto; max-width:1180px; padding:22px 32px 40px; background:var(-
 .front > *, .read { min-width:0; overflow-wrap:anywhere; }
 a { color:inherit; text-decoration:none; }
 a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
-.ears { display:flex; justify-content:space-between; gap:12px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
-  border-bottom:1px solid var(--rule); padding-bottom:6px; }
 .masthead { text-align:center; font:400 clamp(30px,9vw,96px)/1.05 "UnifrakturMaguntia", "Old English Text MT", Georgia, serif; margin:10px 0 4px; }
 .masthead a:hover { text-decoration:none; }
-.motto { text-align:center; font-style:italic; color:var(--muted); font-size:13px; margin-bottom:8px; }
 .dateline { display:flex; justify-content:space-between; gap:12px; border-top:3px double var(--rule); border-bottom:1px solid var(--rule);
   padding:5px 2px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
 .notice { margin:12px 0 0; padding:8px 12px; border:1px solid var(--accent); color:var(--accent); font-size:14px; }
-.notice a, .toolbar a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.notice a, .dateline nav a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
 .notice a { font-weight:700; }
 .notice a, footer a { display:inline-block; padding:5px 0; }
-.toolbar { display:flex; justify-content:center; flex-wrap:wrap; gap:4px 22px; font-size:14px; padding:4px 0; border-bottom:1px solid var(--hair); }
-.toolbar a { display:inline-block; padding:8px 4px; color:var(--accent); }
+.dateline { align-items:center; }
+.dateline nav { display:flex; gap:18px; }
+.dateline nav a { display:inline-block; padding:6px 2px; color:var(--accent); }
 .front { display:grid; grid-template-columns:minmax(0,2.15fr) minmax(0,1fr); grid-template-areas:"lead side" "reads side" "editions side"; grid-template-rows:auto auto 1fr; gap:0; margin-top:18px; }
 .lead { grid-area:lead; padding-right:26px; border-right:1px solid var(--hair); }
 .lead h1 a, .brief h3 a, .read h4 a { text-decoration:underline; text-decoration-color:var(--hair); text-decoration-thickness:2px; text-underline-offset:5px; }
 .lead h1 a:hover, .brief h3 a:hover, .read h4 a:hover { text-decoration-color:var(--accent); }
 .orig { display:inline-block; padding:5px 0; color:var(--accent); white-space:nowrap; }
-.kicker { font:700 12px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
-.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:8px 0 10px; letter-spacing:-.01em; }
+.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:0 0 10px; letter-spacing:-.01em; }
 .dek { font:italic 400 21px/1.35 "Playfair Display", Georgia, serif; color:var(--muted); margin:0 0 12px; }
 .byline { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border-top:1px solid var(--hair);
   border-bottom:1px solid var(--hair); padding:5px 0; margin-bottom:14px; }
@@ -47,7 +44,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .story p { margin:0 0 .8em; }
 .story p:first-child::first-letter { float:left; font:900 64px/.82 "Playfair Display", Georgia, serif; padding:6px 8px 0 0; }
 .why-box { break-inside:avoid; margin:6px 0 0; padding:10px 14px; background:var(--box); border-left:3px solid var(--accent); font-style:italic; text-align:left; }
-.why-box b { font-style:normal; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:2px; }
 .editor-note { font-style:italic; color:var(--muted); font-size:14px; margin:14px 0 0; }
 .side { grid-area:side; padding-left:24px; }
 .side h2, .reads h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
@@ -57,7 +53,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .brief h3 { font:700 19px/1.2 "Playfair Display", Georgia, serif; margin:0 0 5px; }
 .brief p { margin:0 0 5px; font-size:14.5px; line-height:1.5; }
 .why { font-style:italic; }
-.why span { font-style:normal; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-right:4px; }
 .src { font-size:12px !important; letter-spacing:.06em; color:var(--muted); }
 .reads { grid-area:reads; padding:26px 26px 0 0; border-right:1px solid var(--hair); }
 .reads-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
@@ -75,8 +70,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .editions ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px; }
 .editions li a, .editions li .here { display:block; padding:10px 12px; border:1px solid var(--hair); font-size:15px; min-height:44px; }
 .editions li .here { background:var(--box); border-color:var(--ink); }
-.editions small { color:var(--muted); font-size:13px; }
-.editions p { color:var(--muted); font-size:14px; margin:10px 0 0; }
 footer { margin-top:28px; border-top:3px double var(--rule); padding-top:10px; font-size:14px; color:var(--muted); line-height:1.6; }
 footer h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; color:var(--ink); margin:4px 0 8px; }
 footer p { margin:0 0 8px; }
@@ -90,7 +83,7 @@ footer b { color:var(--ink); }
 .prose h2:first-of-type { margin-top:4px; }
 .prose h3 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:12px 0 4px; break-after:avoid; }
 .prose p, .prose li { font-size:15px; line-height:1.55; }
-.prose p:first-of-type { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
+.prose > p:first-child, .prose > h1 + p { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
 .prose ul, .prose ol { padding-left:20px; margin:0 0 12px; }
 .prose li { margin-bottom:7px; break-inside:avoid; }
 .prose code { font:13px/1.4 Consolas, "Courier New", monospace; overflow-wrap:anywhere; background:var(--box); padding:0 3px; }
@@ -118,19 +111,17 @@ footer b { color:var(--ink); }
   .editions ul { grid-template-columns:1fr; }
   .reads-row { grid-template-columns:1fr; }
   .read, .read:first-child, .read:last-child { padding:12px 0; border-right:none; border-bottom:1px solid var(--hair); }
-  .ears span:nth-child(2), .dateline span:nth-child(3) { display:none; }
+  .dateline span:last-child { display:none; }
 }
 
 </style></head>
 <body>
 <div class="masthead"><a href="/morning-edge/" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Page not found</span><span></span></div>
-<div class="notice">There is no page at <b id="asked">this address</b>. Editions exist only for the dates listed below.
-  <a href="/morning-edge/">Go to the latest edition</a></div>
+<div class="dateline"><span>Not found: <b id="asked"></b></span></div>
+<div class="notice"><a href="/morning-edge/">Go to the latest edition</a></div>
 <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><a href="/morning-edge/" target="_top">Saturday, 24 October 2026 <small>(latest)</small></a></li><li><a href="/morning-edge/2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="/morning-edge/2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="/morning-edge/2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="/morning-edge/2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="/morning-edge/2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="/morning-edge/2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="/morning-edge/2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="/morning-edge/2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="/morning-edge/2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="/morning-edge/2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="/morning-edge/2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
-  <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
+  <ul><li><a href="/morning-edge/" target="_top">Saturday, 24 October 2026</a></li><li><a href="/morning-edge/2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="/morning-edge/2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="/morning-edge/2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="/morning-edge/2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="/morning-edge/2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="/morning-edge/2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="/morning-edge/2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="/morning-edge/2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="/morning-edge/2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="/morning-edge/2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="/morning-edge/2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 <script>
 document.getElementById("asked").textContent = decodeURIComponent(location.pathname).slice(0, 80);

@@ -20,26 +20,23 @@ body { margin:0 auto; max-width:1180px; padding:22px 32px 40px; background:var(-
 .front > *, .read { min-width:0; overflow-wrap:anywhere; }
 a { color:inherit; text-decoration:none; }
 a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
-.ears { display:flex; justify-content:space-between; gap:12px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
-  border-bottom:1px solid var(--rule); padding-bottom:6px; }
 .masthead { text-align:center; font:400 clamp(30px,9vw,96px)/1.05 "UnifrakturMaguntia", "Old English Text MT", Georgia, serif; margin:10px 0 4px; }
 .masthead a:hover { text-decoration:none; }
-.motto { text-align:center; font-style:italic; color:var(--muted); font-size:13px; margin-bottom:8px; }
 .dateline { display:flex; justify-content:space-between; gap:12px; border-top:3px double var(--rule); border-bottom:1px solid var(--rule);
   padding:5px 2px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
 .notice { margin:12px 0 0; padding:8px 12px; border:1px solid var(--accent); color:var(--accent); font-size:14px; }
-.notice a, .toolbar a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.notice a, .dateline nav a, .orig, .editions a, footer a { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
 .notice a { font-weight:700; }
 .notice a, footer a { display:inline-block; padding:5px 0; }
-.toolbar { display:flex; justify-content:center; flex-wrap:wrap; gap:4px 22px; font-size:14px; padding:4px 0; border-bottom:1px solid var(--hair); }
-.toolbar a { display:inline-block; padding:8px 4px; color:var(--accent); }
+.dateline { align-items:center; }
+.dateline nav { display:flex; gap:18px; }
+.dateline nav a { display:inline-block; padding:6px 2px; color:var(--accent); }
 .front { display:grid; grid-template-columns:minmax(0,2.15fr) minmax(0,1fr); grid-template-areas:"lead side" "reads side" "editions side"; grid-template-rows:auto auto 1fr; gap:0; margin-top:18px; }
 .lead { grid-area:lead; padding-right:26px; border-right:1px solid var(--hair); }
 .lead h1 a, .brief h3 a, .read h4 a { text-decoration:underline; text-decoration-color:var(--hair); text-decoration-thickness:2px; text-underline-offset:5px; }
 .lead h1 a:hover, .brief h3 a:hover, .read h4 a:hover { text-decoration-color:var(--accent); }
 .orig { display:inline-block; padding:5px 0; color:var(--accent); white-space:nowrap; }
-.kicker { font:700 12px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
-.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:8px 0 10px; letter-spacing:-.01em; }
+.lead h1 { font:900 clamp(32px,4.4vw,54px)/1.04 "Playfair Display", Georgia, serif; margin:0 0 10px; letter-spacing:-.01em; }
 .dek { font:italic 400 21px/1.35 "Playfair Display", Georgia, serif; color:var(--muted); margin:0 0 12px; }
 .byline { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border-top:1px solid var(--hair);
   border-bottom:1px solid var(--hair); padding:5px 0; margin-bottom:14px; }
@@ -47,7 +44,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .story p { margin:0 0 .8em; }
 .story p:first-child::first-letter { float:left; font:900 64px/.82 "Playfair Display", Georgia, serif; padding:6px 8px 0 0; }
 .why-box { break-inside:avoid; margin:6px 0 0; padding:10px 14px; background:var(--box); border-left:3px solid var(--accent); font-style:italic; text-align:left; }
-.why-box b { font-style:normal; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:2px; }
 .editor-note { font-style:italic; color:var(--muted); font-size:14px; margin:14px 0 0; }
 .side { grid-area:side; padding-left:24px; }
 .side h2, .reads h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
@@ -57,7 +53,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .brief h3 { font:700 19px/1.2 "Playfair Display", Georgia, serif; margin:0 0 5px; }
 .brief p { margin:0 0 5px; font-size:14.5px; line-height:1.5; }
 .why { font-style:italic; }
-.why span { font-style:normal; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-right:4px; }
 .src { font-size:12px !important; letter-spacing:.06em; color:var(--muted); }
 .reads { grid-area:reads; padding:26px 26px 0 0; border-right:1px solid var(--hair); }
 .reads-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
@@ -75,8 +70,6 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .editions ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px; }
 .editions li a, .editions li .here { display:block; padding:10px 12px; border:1px solid var(--hair); font-size:15px; min-height:44px; }
 .editions li .here { background:var(--box); border-color:var(--ink); }
-.editions small { color:var(--muted); font-size:13px; }
-.editions p { color:var(--muted); font-size:14px; margin:10px 0 0; }
 footer { margin-top:28px; border-top:3px double var(--rule); padding-top:10px; font-size:14px; color:var(--muted); line-height:1.6; }
 footer h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; color:var(--ink); margin:4px 0 8px; }
 footer p { margin:0 0 8px; }
@@ -90,7 +83,7 @@ footer b { color:var(--ink); }
 .prose h2:first-of-type { margin-top:4px; }
 .prose h3 { font:700 18px/1.25 "Playfair Display", Georgia, serif; margin:12px 0 4px; break-after:avoid; }
 .prose p, .prose li { font-size:15px; line-height:1.55; }
-.prose p:first-of-type { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
+.prose > p:first-child, .prose > h1 + p { font:italic 400 19px/1.4 "Playfair Display", Georgia, serif; column-span:all; color:var(--muted); }
 .prose ul, .prose ol { padding-left:20px; margin:0 0 12px; }
 .prose li { margin-bottom:7px; break-inside:avoid; }
 .prose code { font:13px/1.4 Consolas, "Courier New", monospace; overflow-wrap:anywhere; background:var(--box); padding:0 3px; }
@@ -118,17 +111,14 @@ footer b { color:var(--ink); }
   .editions ul { grid-template-columns:1fr; }
   .reads-row { grid-template-columns:1fr; }
   .read, .read:first-child, .read:last-child { padding:12px 0; border-right:none; border-bottom:1px solid var(--hair); }
-  .ears span:nth-child(2), .dateline span:nth-child(3) { display:none; }
+  .dateline span:last-child { display:none; }
 }
 
 </style></head>
 <body>
-<div class="ears"><span>Edition 3</span><span>A personal paper for one reader</span><span>Free &middot; written by AI</span></div>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="motto">The Morning Edge is a daily news summary that AI (Claude) writes for one person. &ldquo;You&rdquo; on this page means that reader.</div>
-<div class="dateline"><span>Tuesday, 13 October 2026</span><span>Singapore</span><span>Made at 07:01</span></div>
-<nav class="toolbar" aria-label="Page"><a href="./" target="_top">Latest edition</a><a href="#editions">All editions &darr;</a><a href="#about">About this page &darr;</a></nav>
-<div class="notice">This is an older edition, from Tuesday, 13 October 2026. <a href="./" target="_top">Go to the latest edition</a></div>
+<div class="dateline"><span>Tuesday, 13 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span>No. 3</span></div>
+<div class="notice"><a href="./" target="_top">Go to the latest edition</a></div>
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
@@ -136,7 +126,7 @@ footer b { color:var(--ink); }
   var ed = "2026-10-13", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
-    n.textContent = "Today's edition hasn't arrived yet. This is the latest one, from Tuesday, 13 October 2026.";
+    n.textContent = "Today's edition is late.";
     n.hidden = false;
   }
 })();
@@ -151,15 +141,14 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <div class="kicker">Top story</div>
     <h1><a href="https://news.ycombinator.com/item?id=50059096" target="_top" rel="noopener">YC-backed Agent37 launches sandboxes for agents at under $5 a month</a></h1>
     <p class="dek">The Fall 2026 startup says it runs agent harnesses, including Claude Code, at a fraction of typical sandbox prices.</p>
-    <div class="byline">Summary by AI. Source: Hacker News (Launch HN) &middot; Tue 13 Oct 2026 &middot; <a class="orig" href="https://news.ycombinator.com/item?id=50059096" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <div class="byline">Hacker News (Launch HN) &middot; Tue 13 Oct 2026 &middot; <a class="orig" href="https://news.ycombinator.com/item?id=50059096" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
       <p>Agent37, a Y Combinator Fall 2026 company, launched on Hacker News with low-cost cloud sandboxes built for running AI agents. The founder, Vishnu Kool, says the service costs under 10% of most sandbox providers.</p>
 <p>Paid plans start at about $4.94 a month for a 2 vCPU, 4 GB configuration. The company says the average paid customer spends about $0.37 a month per sandbox. A free tier is available, which the company says costs it roughly $0.05 to $0.10 in infrastructure per user each month. It claims to be 2.8 times cheaper than Boat.dev and 94% cheaper than Fly.io Sprites. Those figures come from the company, not from independent tests.</p>
 <p>The platform offers both gVisor-based containers and full VM sandboxes. It supports several agent harnesses, naming Hermes, OpenClaw and Claude Code. It also provides OpenAI-compatible API endpoints and managed integrations including Composio and BraveSearch. The launch thread had 77 points when checked and was ranked #10 on the front page.</p>
-      <div class="why-box"><b>Why it matters to you</b>If you run Claude Code teams unattended overnight, an isolated, cheap sandbox is a way to cap blast radius and cost, though the pricing claims need testing against your own workloads.</div>
+      <div class="why-box">If you run Claude Code teams unattended overnight, an isolated, cheap sandbox is a way to cap blast radius and cost, though the pricing claims need testing against your own workloads.</div>
     </div>
     <p class="editor-note">Quiet day with several sources unreachable; some briefs and reads are 3 to 6 days old and unpublished.</p>
   </section>
@@ -168,32 +157,32 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
     <article class="brief">
           <h3><a href="https://www.coindesk.com/markets/2026/10/10/one-year-after-10-10-bitcoin-and-ether-liquidity-have-rebuilt-but-other-altcoins-still-face-risks" target="_top" rel="noopener">Bitcoin and ether order books rebuilt a year after 10/10 crash</a></h3>
           <p>Bitcoin depth within 1% of price reached $11.7 million on Oct 7, 75% deeper than on the crash day. ETH depth within 1% rose 75% to $5.3 million, but altcoin depth at 5% fell about a third to roughly $2 million.</p>
-          <p class="why"><span>Why it matters</span> For perps breakout-reclaim entries, thin altcoin books mean more slippage, so size alts smaller than majors.</p>
-          <p class="src">Source: CoinDesk &middot; Sat 10 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/10/one-year-after-10-10-bitcoin-and-ether-liquidity-have-rebuilt-but-other-altcoins-still-face-risks" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">For perps breakout-reclaim entries, thin altcoin books mean more slippage, so size alts smaller than majors.</p>
+          <p class="src">CoinDesk &middot; Sat 10 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/10/one-year-after-10-10-bitcoin-and-ether-liquidity-have-rebuilt-but-other-altcoins-still-face-risks" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://www.coindesk.com/markets/2026/10/09/bitcoin-s-volatility-has-plunged-but-extreme-price-swings-are-more-frequent-than-in-2018" target="_top" rel="noopener">Bitcoin logs 10 three-sigma days in 2026 despite falling volatility</a></h3>
           <p>Annualized volatility fell to 46% from 84%, yet 2026 already has 10 three-sigma days against eight in all of 2018. Analysts warn that value-at-risk models built on recent volatility understate tail risk.</p>
-          <p class="why"><span>Why it matters</span> If your backtests size positions from trailing volatility, stress-test them against fat-tail days.</p>
-          <p class="src">Source: CoinDesk &middot; Fri 9 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/09/bitcoin-s-volatility-has-plunged-but-extreme-price-swings-are-more-frequent-than-in-2018" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">If your backtests size positions from trailing volatility, stress-test them against fat-tail days.</p>
+          <p class="src">CoinDesk &middot; Fri 9 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/09/bitcoin-s-volatility-has-plunged-but-extreme-price-swings-are-more-frequent-than-in-2018" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://www.coindesk.com/markets/2026/10/09/ether-bets-were-wiped-out-at-six-times-bitcoin-s-rate-in-crypto-s-usd1-billion-flush" target="_top" rel="noopener">ETH longs wiped out at six times bitcoin&#x27;s rate in $1B flush</a></h3>
           <p>About $356 million of ETH positions were liquidated over 24 hours, more than bitcoin&#x27;s despite ETH&#x27;s smaller market cap, in a crypto-wide liquidation of roughly $1 billion.</p>
-          <p class="why"><span>Why it matters</span> Liquidation clusters like this are the failed-breakout and reclaim setups your perps scanner should log with volume data.</p>
-          <p class="src">Source: CoinDesk &middot; Fri 9 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/09/ether-bets-were-wiped-out-at-six-times-bitcoin-s-rate-in-crypto-s-usd1-billion-flush" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">Liquidation clusters like this are the failed-breakout and reclaim setups your perps scanner should log with volume data.</p>
+          <p class="src">CoinDesk &middot; Fri 9 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/09/ether-bets-were-wiped-out-at-six-times-bitcoin-s-rate-in-crypto-s-usd1-billion-flush" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://simonwillison.net/2026/Oct/12/python-3-15/" target="_top" rel="noopener">Python 3.15 arrives; Simon Willison drops 3.10 support</a></h3>
           <p>3.15 adds explicit lazy imports, unpacking in comprehensions and a built-in sampling profiler called Tachyon. Willison says dropping 3.10 lets his projects use 3.11 features such as asyncio TaskGroup and tomllib. He found performance gains modest outside the experimental JIT.</p>
-          <p class="why"><span>Why it matters</span> Tachyon could help you profile slow loops when porting Pine Script indicators to local Python backtests.</p>
-          <p class="src">Source: Simon Willison &middot; Mon 12 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/12/python-3-15/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">Tachyon could help you profile slow loops when porting Pine Script indicators to local Python backtests.</p>
+          <p class="src">Simon Willison &middot; Mon 12 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/12/python-3-15/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
           <h3><a href="https://yyhh.org/blog/2026/10/ai-is-a-tool/" target="_top" rel="noopener">Essay: LLMs are tools that reward skill, not automation</a></h3>
           <p>Huahai replies to Rich Hickey&#x27;s claim that LLMs are automation rather than tools. The essay argues the real divide is between skilled operation and delegating without understanding, since tools amplify poor judgment as readily as good.</p>
-          <p class="why"><span>Why it matters</span> It supports a habit worth keeping for unattended Claude agents: review their trading and code output yourself.</p>
-          <p class="src">Source: yyhh.org &middot; Mon 12 Oct 2026 &middot; <a class="orig" href="https://yyhh.org/blog/2026/10/ai-is-a-tool/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <p class="why">It supports a habit worth keeping for unattended Claude agents: review their trading and code output yourself.</p>
+          <p class="src">yyhh.org &middot; Mon 12 Oct 2026 &middot; <a class="orig" href="https://yyhh.org/blog/2026/10/ai-is-a-tool/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
@@ -201,35 +190,31 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
           <h4><a href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/" target="_top" rel="noopener">AI coding agents generate more code, but not more software</a></h4>
-          <p class="src">Source: Ars Technica &middot; <a class="orig" href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="src">Ars Technica &middot; <a class="orig" href="https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/" target="_top" rel="noopener">Read it &#8599;</a></p>
           <p class="why">A 284-point HN discussion on agent output versus shipped software, relevant to judging your own overnight agent teams (I could not open the article itself).</p>
         </article>
 <article class="read">
           <div class="num">2</div>
           <h4><a href="https://simonwillison.net/2026/Oct/9/built-using-my-voice/" target="_top" rel="noopener">A new feature for my blog, built using my voice</a></h4>
-          <p class="src">Source: Simon Willison &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/9/built-using-my-voice/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="src">Simon Willison &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/9/built-using-my-voice/" target="_top" rel="noopener">Read it &#8599;</a></p>
           <p class="why">A concrete example of voice-driven development that you could adapt for Claude Code sessions.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
           <h4><a href="https://claude.dev/blog/automating-eval-design-and-hillclimbing/" target="_top" rel="noopener">Automating eval design and hillclimbing with Claude</a></h4>
-          <p class="src">Source: Claude Developer Blog &middot; <a class="orig" href="https://claude.dev/blog/automating-eval-design-and-hillclimbing/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="src">Claude Developer Blog &middot; <a class="orig" href="https://claude.dev/blog/automating-eval-design-and-hillclimbing/" target="_top" rel="noopener">Read it &#8599;</a></p>
           <p class="why">Eval methodology you could reuse to score your scanner and strategy agents systematically.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><a href="./" target="_top">Saturday, 24 October 2026 <small>(latest)</small></a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><span class="here" aria-current="page">Tuesday, 13 October 2026<br><small>You are reading this edition</small></span></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
-  <p>No edition was made on Thu 15 Oct 2026 and Sat 17 Oct 2026: the morning run didn't happen.</p>
+  <ul><li><a href="./" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><span class="here" aria-current="page">Tuesday, 13 October 2026</span></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
-  <h2>About this page</h2>
-  <p><b>Who writes it:</b> AI. Claude (sonnet) read 18 sources and wrote this edition at 07:01 Singapore time. Each story is a short summary; the underlined headlines and &ldquo;Read the original&rdquo; links open the source article. Check the original before you act on anything. Nothing here is financial advice.</p>
-  <p><b>Who it's for:</b> one reader, chosen by their interests (AI agents and systematic trading). It has no subscribers, ads or sign-up.</p>
-  <p><b>Cost:</b> free to read. Making this edition used $0.41 of AI time, paid by the owner's Claude plan.</p>
-  <p><b>Privacy:</b> no cookies, no tracking, no sign-up. The only outside request is for fonts from Google Fonts.</p>
-  <p><b>Sources checked (18):</b> <b>Had news:</b> Simon Willison, Hacker News front page, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, TradingView blog, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Claude Code changelog, Latent Space, TLDR AI, r/ClaudeAI, r/algotrading. Items left out as old, off-topic or repeated: 14.</p>
-  <p><b>Contact and corrections:</b> <a href="https://github.com/sulaimanmaharobin-coder/morning-edge">github.com/sulaimanmaharobin-coder/morning-edge</a></p>
+  <h2>About</h2>
+  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.41 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Simon Willison, Hacker News front page, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, TradingView blog, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> Claude Code changelog, Latent Space, TLDR AI, r/ClaudeAI, r/algotrading. Dropped: 14.</p>
+  <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
