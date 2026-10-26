@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Mon 26 Oct 2026</title>
+<title>The Morning Edge: Tue 27 Oct 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Monday, 26 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 14</span></div>
+<div class="dateline"><span>Tuesday, 27 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 15</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-10-26", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-27", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html" target="_top" rel="noopener">Context engineering gives way to harness engineering, with new failure modes</a></h1>
-    <p class="dek">Drew Breunig&#x27;s year-end review lists six tactics for managing agent context and two new ways long-running agents go wrong.</p>
-    <div class="byline">Drew Breunig (dbreunig.com) &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://www.anthropic.com/news/s1-sec" target="_top" rel="noopener">Anthropic files S-1 for Nasdaq listing under ticker ANT</a></h1>
+    <p class="dek">The company has filed a registration statement with the SEC for a proposed initial public offering, with size and price still undetermined.</p>
+    <div class="byline">Anthropic &middot; Mon 26 Oct 2026 &middot; <a class="orig" href="https://www.anthropic.com/news/s1-sec" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Drew Breunig, writing on October 24, traces how the field has shifted: prompt engineering in 2023, context engineering (automatically assembling what a model sees) in 2025, and in 2026 what he calls harness engineering, where more of the work moves into code and orchestration around the model.</p>
-<p>He lists six tactics: context augmentation (retrieval and skills), tool loadout (exposing only the tools needed), context quarantine (subagents that start with a clean history), context pruning, context offloading to external storage, and summarization or compaction. He says a context warning threshold sits around 200,000 to 300,000 tokens.</p>
-<p>Breunig adds two failure modes he sees in 2026. &quot;Fighting the weights&quot; is when a model refuses or resists requests that conflict with its training biases. &quot;Context inertia&quot; is when a model hyperfocuses on its goal and ignores stop signals; he cites research from Anthropic, Microsoft and UC Berkeley saying periodic context resets improve performance. He says the fixes need roughly 16 added lines in a basic agent loop using DSPy, a prompt-programming library.</p>
-<p>He predicts that in 2027 the hard problem will be strategic forgetting: persistent agents that accumulate overlapping, contradictory instructions. The piece is a talk summary, so the figures are his and not independently verified here. The article is dated October 24, one day before the last edition.</p>
-      <div class="why-box">If your overnight Claude Code teams drift or ignore stop conditions, context quarantine through subagents and scheduled context resets are concrete changes to try.</div>
+      <p>Anthropic said on October 26 that it filed a registration statement on Form S-1 with the US Securities and Exchange Commission (SEC) for a proposed initial public offering (IPO) of its Class A common stock. It intends to list on the Nasdaq Global Select Market under the symbol &quot;ANT&quot;.</p>
+<p>According to Anthropic&#x27;s announcement, the number of shares and the price range have not yet been determined. The company is organised as a public benefit corporation. Goldman Sachs and Morgan Stanley are named as underwriters.</p>
+<p>The filing drew heavy attention: the S-1 document itself reached 1,409 points on Hacker News, and a Reddit thread on r/ClaudeAI carried a headline saying Anthropic will pay SpaceX up to $120.5 billion for AI compute. We did not open that thread or the filing text, so that figure is unverified here.</p>
+<p>CoinDesk&#x27;s live blog said bitcoin dipped below $80,000 on the same day while stocks rallied after the filing news. CoinDesk separately reported AI-related jitters in so-called neocloud stocks. Beyond the announcement, financial details in the S-1 were not reviewed for this edition.</p>
+      <div class="why-box">You build overnight agent systems on Claude, so the S-1&#x27;s disclosures on compute commitments and pricing may eventually affect your model costs and limits.</div>
     </div>
-    <p class="editor-note">Quiet day: several items are from October 24 or are Reddit threads read from listing snippets only; X was thin.</p>
+    <p class="editor-note">Quiet day for trading sources; X sources were not searched and Reddit pages could not be opened, so some items rely on listing snippets.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://minimaxir.com/2026/10/cheap-llms/" target="_top" rel="noopener">Why OpenAI and Anthropic keep cutting LLM prices</a></h3>
-          <p>Max Woolf (minimaxir) says OpenAI cut its GPT-5.6 Luna price by 80% and Anthropic&#x27;s Opus 5.5 became 40-60% cheaper between June and September 2026. He attributes this to commodity competition, many inference providers hosting open-weight models such as DeepSeek, and efficiency gains, and argues the labs lack pricing power.</p>
-          <p class="why">Falling per-token prices make running more always-on Claude agents and market-scanning loops cheaper to plan around.</p>
-          <p class="src">minimaxir.com &middot; Sun 25 Oct 2026 &middot; <a class="orig" href="https://minimaxir.com/2026/10/cheap-llms/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/NVIDIA/SkillSpector" target="_top" rel="noopener">NVIDIA releases SkillSpector to scan agent skills before install</a></h3>
+          <p>The open-source tool scans Claude Code, Codex, Gemini CLI and Model Context Protocol (MCP) skills for 71 vulnerability patterns across 17 categories, including prompt injection, data exfiltration and supply-chain risks. NVIDIA says that in a 31,132-skill dataset, 26.1% contained vulnerabilities and 5.2% showed likely malicious intent. It gives a 0-100 risk score and can run static-only with no LLM.</p>
+          <p class="why">You can run `skillspector scan` on any third-party skill or plugin before it gets access to your unattended Claude Code agents.</p>
+          <p class="src">NVIDIA (GitHub trending) &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://github.com/NVIDIA/SkillSpector" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.wiz.io/blog/gheist-attempted-scaled-abuse-of-stolen-github-tokens-stumbles" target="_top" rel="noopener">Stolen GitHub tokens used to dump secrets via fake workflows</a></h3>
-          <p>Wiz says the &quot;Gheist&quot; campaign, active since September 15, committed a workflow named sync-check to repositories reachable by stolen tokens, using base32 encoding to evade log masking. It reports over 13,500 planted branches and more than 850 compromised accounts; GitHub&#x27;s approval control blocked public-repo abuse, but private and enterprise repos stayed exposed.</p>
-          <p class="why">Agents that hold GitHub tokens and exchange API keys are a target, so rotate tokens and review workflows in your trading and agent repos.</p>
-          <p class="src">Wiz &middot; Sat 24 Oct 2026 &middot; <a class="orig" href="https://www.wiz.io/blog/gheist-attempted-scaled-abuse-of-stolen-github-tokens-stumbles" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/mvanhorn/last30days-skill" target="_top" rel="noopener">last30days skill researches topics across Reddit, X, HN and Polymarket</a></h3>
+          <p>The MIT-licensed agent skill searches platforms in parallel, ranks results by engagement (upvotes, likes, betting odds), clusters duplicates and writes a cited brief. It installs in Claude Code with /plugin marketplace add mvanhorn/last30days-skill. Reddit, Hacker News, Polymarket and GitHub need no setup.</p>
+          <p class="why">It could serve as a ready-made sentiment and setup-discovery step for your crypto and stock scanning agents.</p>
+          <p class="src">mvanhorn (GitHub trending) &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://github.com/mvanhorn/last30days-skill" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/JetBrains/thinkrail" target="_top" rel="noopener">JetBrains releases ThinkRail, an agentic IDE built around living specs</a></h3>
-          <p>ThinkRail runs the open-source pi coding agent in-process, with isolated git-worktree workspaces, concurrent chat sessions with live token and cost tracking, and SPEC.md files the agent maintains. It supports subagents, Model Context Protocol (MCP) servers and portable agent skills.</p>
-          <p class="why">Its worktree-per-session and cost tracking mirror what you need to run several Claude agents unattended without them colliding.</p>
-          <p class="src">JetBrains (GitHub) &middot; Sun 25 Oct 2026 &middot; <a class="orig" href="https://github.com/JetBrains/thinkrail" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://blog.cloudflare.com/kv-cache-exposure-remediation/" target="_top" rel="noopener">Cloudflare: GLM-5.3 bug leaked data across 155 responses</a></h3>
+          <p>Cloudflare says a mismatch between a 681,280-token cache pool and a 1,048,576-token context setting, plus a rejection-handling bug in the SGLang inference engine, let stale cache pages leak into later responses. Only prompts over 681,280 tokens on GLM-5.3 were affected, and Cloudflare says it found no evidence of deliberate exploitation.</p>
+          <p class="why">If you ever host or route long-context prompts through shared inference providers, this shows why you should not send sensitive trading keys or data in them.</p>
+          <p class="src">Cloudflare &middot; Mon 26 Oct 2026 &middot; <a class="orig" href="https://blog.cloudflare.com/kv-cache-exposure-remediation/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xetxga/seems_like_anthropic_enabled_safeguards_around/" target="_top" rel="noopener">Users report Claude reverse-engineering safeguards on TV firmware</a></h3>
-          <p>A r/ClaudeAI user says Anthropic appears to have enabled safeguards that trigger when asked to reverse-engineer a TV but not a videogame. Another thread says Opus 5.5 at xhigh or max effort triggers a safeguard on some questions that High effort answers. These are user reports; Anthropic has not confirmed them in the material seen.</p>
-          <p class="why">Unattended Claude Code runs that touch security-adjacent work, such as scraping or decompiling, may hit refusals, so test those tasks before leaving them overnight.</p>
-          <p class="src">r/ClaudeAI &middot; Sun 25 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xetxga/seems_like_anthropic_enabled_safeguards_around/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/10/26/calpers-pulls-back-from-big-tech-as-ai-jitters-deepen-neocloud-sell-off" target="_top" rel="noopener">Calpers trims big tech as neocloud stocks sell off</a></h3>
+          <p>According to CoinDesk, the California pension fund Calpers cut its Magnificent Seven holdings by 26% in the first half of 2026. CoreWeave, Cipher Digital and IREN fell in Monday pre-market trading after Elon Musk warned that financing has largely dried up for AI-data-centre firms with little other revenue, as SpaceX raised $40 billion in debt for GPUs.</p>
+          <p class="why">AI-linked equities and bitcoin have been moving together lately, so this is relevant risk context for your stock and perpetual futures (perps) positioning.</p>
+          <p class="src">CoinDesk &middot; Mon 26 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/26/calpers-pulls-back-from-big-tech-as-ai-jitters-deepen-neocloud-sell-off" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.reddit.com/r/algotrading/comments/1xetiki/indices_are_so_different_from_their_futures_and/" target="_top" rel="noopener">Backtest on S&amp;P 500 index differs sharply from ES futures and SPY</a></h3>
-          <p>An r/algotrading user tested the same setup and trading hours on the S&amp;P 500 index, ES futures and SPY, and found the profit factor of the index differed far more than expected. The post notes the index itself is not tradable. The full figures were not retrievable here.</p>
-          <p class="why">Before porting a Pine Script screener to Python, backtest on the instrument you actually trade, such as perps or the ETF, not a cash index.</p>
-          <p class="src">r/algotrading &middot; Sun 25 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xetiki/indices_are_so_different_from_their_futures_and/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xfo414/opus_55_orchestrating_sonnet_agents/" target="_top" rel="noopener">Users question cost of Opus orchestrating Sonnet subagents</a></h3>
+          <p>A r/ClaudeAI poster who uses a custom skill to have Opus 5.5 (High) orchestrate Sonnet 5.5 coding agents says they were told Sonnet on high effort can cost more than Opus on medium. They are unsure what effort level the orchestrator sets. We saw only the post&#x27;s opening text, not the replies, so the claim is unverified.</p>
+          <p class="why">It prompts you to check which effort level your multi-agent setups give subagents before running them overnight.</p>
+          <p class="src">r/ClaudeAI &middot; Mon 26 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xfo414/opus_55_orchestrating_sonnet_agents/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xfcot1/anyone_else_having_serious_quality_issues_with/" target="_top" rel="noopener">Anyone else having serious quality issues with Claude lately?</a></h4>
-          <p class="src">r/ClaudeAI &middot; Sun 25 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xfcot1/anyone_else_having_serious_quality_issues_with/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A heavy Claude Code user says Opus 5.5 Medium used to barely dent their usage but no longer does this week, which matters for overnight budgets.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xfkhum/opus_55_writes_slop_code_but_succeeds_anyways_a/" target="_top" rel="noopener">Opus 5.5 writes slop code, but succeeds anyways</a></h4>
+          <p class="src">r/ClaudeAI &middot; Mon 26 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xfkhum/opus_55_writes_slop_code_but_succeeds_anyways_a/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A research project built on SlopCodeBench, which measures whether an agent can keep adding features to its own earlier code without breaking it, relevant to long unattended runs.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xf45v4/high_is_the_best_effort_allowed_by_opus_55/" target="_top" rel="noopener">High is the best effort allowed by Opus 5.5</a></h4>
-          <p class="src">r/ClaudeAI &middot; Sun 25 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xf45v4/high_is_the_best_effort_allowed_by_opus_55/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Reports that xhigh and max effort can trigger refusals that High avoids, relevant to choosing effort levels for unattended agents.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xfqc9x/i_built_an_open_source_sky_camera_that_claude/" target="_top" rel="noopener">I built an open source sky camera that Claude Code can actually run</a></h4>
+          <p class="src">r/ClaudeAI &middot; Mon 26 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xfqc9x/i_built_an_open_source_sky_camera_that_claude/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A concrete overnight pattern: Claude Code runs a recording and classification pipeline and has results sorted by morning.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xfedfe/sanitychecking_a_thetadata_spx_options_backtest/" target="_top" rel="noopener">Sanity-checking a ThetaData SPX options backtest built with ChatGPT</a></h4>
-          <p class="src">r/algotrading &middot; Sun 25 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xfedfe/sanitychecking_a_thetadata_spx_options_backtest/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A worked example of asking an LLM for a strategy with a target return, and the overfitting and fill questions that raises for your own Claude-built backtests.</p>
+          <h4><a href="https://magazine.sebastianraschka.com/p/building-reasoning-models" target="_top" rel="noopener">Sebastian Raschka&#x27;s from-scratch course on building reasoning models</a></h4>
+          <p class="src">Sebastian Raschka&#x27;s Magazine, via Hacker News &middot; Mon 26 Oct 2026 &middot; <a class="orig" href="https://magazine.sebastianraschka.com/p/building-reasoning-models" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A hands-on way to understand how reasoning models work, which helps when tuning effort levels in your agent teams.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Monday, 26 October 2026</span></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Tuesday, 27 October 2026</span></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.31 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Hacker News front page, r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, Latent Space, TLDR AI, TradingView blog, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. Dropped: 14.</p>
+  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.30 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Anthropic News, Claude blog, Simon Willison, Hacker News front page, TLDR AI, r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Claude Code changelog, Latent Space, TradingView blog. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. Dropped: 30.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
