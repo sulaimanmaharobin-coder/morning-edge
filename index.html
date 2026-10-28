@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Wed 28 Oct 2026</title>
+<title>The Morning Edge: Thu 29 Oct 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Wednesday, 28 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 16</span></div>
+<div class="dateline"><span>Thursday, 29 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 17</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-10-28", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-10-29", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://latent.space/p/opus55/" target="_top" rel="noopener">Anthropic engineers explain how Managed Agents split the model&#x27;s &#x27;brain&#x27; from its &#x27;hands&#x27;</a></h1>
-    <p class="dek">In a Latent Space interview, two Anthropic engineers describe how the Claude Platform runs agents that survive sandbox failures without exposing credentials.</p>
-    <div class="byline">Latent Space &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://latent.space/p/opus55/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://www.coindesk.com/policy/2026/10/28/cftc-chief-poses-questions-about-policing-ai-but-calls-it-a-road-to-autonomous-trading" target="_top" rel="noopener">CFTC Chair Opens Debate on Who Is Liable When AI Agents Trade</a></h1>
+    <p class="dek">At a forum on AI in markets, Chairman Mike Selig called crypto a possible regulatory model for autonomous trading.</p>
+    <div class="byline">CoinDesk &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/policy/2026/10/28/cftc-chief-poses-questions-about-policing-ai-but-calls-it-a-road-to-autonomous-trading" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Katelyn Lesse and Angela Jiang of Anthropic told the Latent Space podcast that Claude Managed Agents separate a durable &quot;brain&quot; (the agent harness) from ephemeral &quot;hands&quot; (the sandbox where code runs). The harness persists across executions, while sandboxes are created only when needed, so losing an execution environment does not lose the whole agent.</p>
-<p>The same split drives the security model. According to the interview, credentials are kept in separate vaults rather than inside the sandbox. The agent sees only a placeholder, and a proxy on egress (outbound traffic) injects the real authentication, so compromised code in the sandbox cannot read the secrets.</p>
-<p>The conversation also covers Opus 5.5. The guests say it addresses earlier verbosity problems and lowers operating costs, and that Anthropic preserves thinking blocks across conversation turns as an anti-distillation measure. They also say the company ported its Python Messages API to Rust, which they report saved 40 to 50 percent of CPU and cut latency by 10 to 20 percent with no new features.</p>
-<p>They add that a feature called &quot;Dreaming&quot; shows managed agents composed on top of other managed agents. These figures come from the guests&#x27; own account; the summary here does not include independent benchmarks.</p>
-      <div class="why-box">If you run Claude agents unattended overnight, the brain/hands split and placeholder-credential proxy is a pattern you can copy to keep API keys and exchange keys out of agent sandboxes.</div>
+      <p>Commodity Futures Trading Commission (CFTC) Chairman Mike Selig held a forum on how artificial intelligence will reshape financial markets, according to CoinDesk. Selig described AI as &quot;superintelligence&quot; and said its convergence with crypto and modern financial infrastructure &quot;could transform our markets.&quot;</p>
+<p>The agency is weighing how to police AI trading agents. Selig raised questions about developer liability, whether agents must register, and how regulators can know &quot;who the agent...is acting on behalf of.&quot; CoinDesk reports that no framework has been decided; the questions remain open.</p>
+<p>Selig suggested crypto markets offer a useful model for handling these issues. Brett Harrison, chief executive of the AI derivatives exchange Architect and a former president of FTX US, also took part.</p>
+<p>The CFTC is scheduling further roundtables, including one on 24/7 trading on December 15. For anyone running automated strategies, identity, accountability and round-the-clock trading are the topics the regulator says it will examine next.</p>
+      <div class="why-box">If you run systematic perps or stock bots unattended, agent registration and developer-liability rules could eventually apply to your setup.</div>
     </div>
-    <p class="editor-note">Quiet day for trading sources, and X could not be read, so the edition leans on agent-engineering items.</p>
+    <p class="editor-note">Quiet day for trading setups and X; Cursor&#x27;s Agent SDK (October 20) and Project Deal (April) were too old to include.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://www.anthropic.com/research/early-progress-drug-development" target="_top" rel="noopener">Anthropic reports early drug-development results with six partners</a></h3>
-          <p>Anthropic says it has run research partnerships with six organizations, including Generate Biomedicines, Bristol Myers Squibb and Enveda. Reported results include a CAR T-cell (cancer immunotherapy) component design 70% shorter than standard that produced about 10 times more receptors in lab tests, and an 89% cut in manufacturing-document review time at Enveda. Anthropic notes that most of the work is preclinical.</p>
-          <p class="why">It is a concrete example of Claude doing long, multi-step research with checkable outputs, the same shape as quantitative research workflows.</p>
-          <p class="src">Anthropic &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://www.anthropic.com/research/early-progress-drug-development" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/" target="_top" rel="noopener">Claude Code allowance drained fast on October 27</a></h3>
+          <p>Latent Space&#x27;s AINews reports multiple users saw Claude Code usage spikes on October 27; one $200 Max subscriber used 70% of monthly usage in a day versus a typical 10-15%. Anthropic reportedly confirmed that service errors consume paid limits and will not be refunded.</p>
+          <p class="why">Overnight multi-agent runs can burn quota on retries during backend instability, so cap retries and watch usage.</p>
+          <p class="src">Latent Space AINews &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_top" rel="noopener">Claude Code 2.1.311 and 2.1.312 fix subagent and hook bugs</a></h3>
-          <p>According to the changelog, 2.1.311 fixes SubagentStop hooks firing about twice a minute per running subagent instead of once, subagents missing MCP tools from servers that connect late, and out-of-order transcripts in claude -p and SDK sessions. Version 2.1.312 fixes a command with an invalid name stopping all commands from loading, which could leave claude -p with no output.</p>
-          <p class="why">These fixes affect unattended multi-agent runs and headless claude -p jobs, so update before your next overnight session.</p>
-          <p class="src">Claude Code changelog &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://simonwillison.net/2026/Oct/28/github-octoverse-2026/" target="_top" rel="noopener">GitHub: 220 million merged pull requests a month</a></h3>
+          <p>GitHub&#x27;s Octoverse 2026 report, announced at GitHub Universe, shows 220 million merged pull requests per month (tripled in under a year), 7.38 billion commits per month and 30.3 million new repositories per month. Simon Willison attributes the near-vertical spike to agentic engineering.</p>
+          <p class="why">It is hard numbers on how fast agent-written code is scaling, the same trend your Claude Code workflows ride.</p>
+          <p class="src">GitHub Octoverse, via Simon Willison &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/28/github-octoverse-2026/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://claude.com/resources/articles/how-to-manage-costs-and-demonstrate-roi-for-claude-code-on-google-cloud" target="_top" rel="noopener">Anthropic guide: control, track and prove Claude Code spend</a></h3>
-          <p>Anthropic&#x27;s guide for Claude Code on Google Cloud recommends spend limits per user, alerts at 75% and 95% of caps, and model allowlists. It suggests tracking usage with OpenTelemetry metrics and measuring return on investment through adoption, satisfaction and pull-request cycle time. The guide gives no dollar figures.</p>
-          <p class="why">The alert-threshold and model-allowlist idea is a cheap guardrail to copy for agents that run unattended and could burn tokens overnight.</p>
-          <p class="src">Claude blog &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/how-to-manage-costs-and-demonstrate-roi-for-claude-code-on-google-cloud" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://surgehq.ai/blog/dayjob-tax" target="_top" rel="noopener">AI agents pass under 11% of tax assignments</a></h3>
+          <p>Surge HQ&#x27;s Dayjob: Tax benchmark gives agents 50 professional tax assignments with 1,789 files in total. Claude Sonnet 5.5 led at a 10.8% pass rate, ahead of Fable 5.1 (9.6%) and Opus 5.5 (9.2%) on a 95% rubric threshold. Agents missed deadlines and unverified assumptions.</p>
+          <p class="why">The failure pattern, not checking assumptions or flagging missing evidence, is what to guard against in unattended research agents.</p>
+          <p class="src">Surge HQ &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://surgehq.ai/blog/dayjob-tax" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/HKUDS/AutoSwarm" target="_top" rel="noopener">AutoSwarm coordinates Claude Code, Codex and other agents as one team</a></h3>
-          <p>The HKUDS open-source project picks suitable agents for a task, shares context, runs them in parallel and merges results. It installs with uv and supports Claude Code, Codex, DeepSeek Harness and Grok. Its README notes that native authentication and approvals still need manual handling and that there is no auto-updater.</p>
-          <p class="why">It is a ready-made multi-agent harness to compare with your own Claude team setup.</p>
-          <p class="src">GitHub (HKUDS/AutoSwarm) &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://github.com/HKUDS/AutoSwarm" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://latent.space/p/supabase/" target="_top" rel="noopener">Why AI models pick Supabase as their default backend</a></h3>
+          <p>On Latent Space, Supabase&#x27;s founders say frontier models almost uniformly choose it as the app backend, and it launches about 5 million databases a month. They point to a Docker-free local runtime (alpha), declarative schemas kept in the repo, and compute beside the database.</p>
+          <p class="why">Version-controlled schemas and a Docker-free local backend suit agent projects that need a database without manual setup.</p>
+          <p class="src">Latent Space &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://latent.space/p/supabase/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://latent.space/p/offline-coding/" target="_top" rel="noopener">Offline coding agent runs on a laptop with Ollama and Qwen</a></h3>
-          <p>Latent Space describes running OpenCode against a local Qwen3.5 9B model through Ollama, needing roughly 12 to 16GB of RAM. The author fixed a single-line bug with the network off. Limits: tasks must be self-contained, large repositories were untested, and token use was far higher than other agents.</p>
-          <p class="why">A local fallback agent could keep simple jobs, such as backtest script fixes, running when API limits or connectivity fail.</p>
-          <p class="src">Latent Space &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://latent.space/p/offline-coding/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/coindesk-indices/2026/10/28/crypto-long-and-short-what-happens-when-an-ai-agent-pays-for-the-wrong-thing" target="_top" rel="noopener">Agent payments over x402 have no dispute process</a></h3>
+          <p>A CoinDesk column by Albert Castellana of GenLayer Labs notes the x402 payment standard, under the Linux Foundation since July 2026, lacks chargebacks. Stablecoin payments are final, and a 2025 study found all 15 tested facilitators broke at least one safety rule.</p>
+          <p class="why">If your outreach or sales agents ever pay for services onchain, a wrong payment cannot be reversed.</p>
+          <p class="src">CoinDesk &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/coindesk-indices/2026/10/28/crypto-long-and-short-what-happens-when-an-ai-agent-pays-for-the-wrong-thing" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://blog.adrq.dev/here-be-monsters-what-do-you-still-need-to-know-when-agents-do-the-work" target="_top" rel="noopener">Here be monsters: What do you still need to know when agents do the work?</a></h4>
-          <p class="src">blog.adrq.dev &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://blog.adrq.dev/here-be-monsters-what-do-you-still-need-to-know-when-agents-do-the-work" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It argues for owning systems through broad knowledge plus fast deep dives rather than reading every agent-written line.</p>
+          <h4><a href="https://simonwillison.net/2026/Oct/28/vibe-game-development/" target="_top" rel="noopener">The October inflection point for vibe game development</a></h4>
+          <p class="src">Simon Willison &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/28/vibe-game-development/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Shows minimal-prompt, iterate-on-feel workflows with Opus 5.5 that transfer to any build-and-judge loop.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xgu80j/your_winner_gets_weaker_every_time_you_test/" target="_top" rel="noopener">Your winner gets weaker every time you test another version of it</a></h4>
-          <p class="src">r/algotrading &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xgu80j/your_winner_gets_weaker_every_time_you_test/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It explains how the Deflated Sharpe score falls as more strategy variants are tested, which matters for any systematic backtest you run.</p>
+          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xhthb6/lowering_the_barrier_to_build_trading_bots_does/" target="_top" rel="noopener">lowering the barrier to build trading bots does not magically give you an edge</a></h4>
+          <p class="src">r/algotrading &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xhthb6/lowering_the_barrier_to_build_trading_bots_does/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A sober check on LLM-built trading bots: easy deployment is not alpha.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xh0zpx/token_maxxing_a_guide_to_running_unlimited_agents/" target="_top" rel="noopener">Token maxxing: a guide to running unlimited agents without drowning in slop</a></h4>
-          <p class="src">r/ClaudeAI &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xh0zpx/token_maxxing_a_guide_to_running_unlimited_agents/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A user&#x27;s method for running many agents on a Claude Max plan, relevant to your overnight multi-agent setups (I could not open the post, so check its method yourself).</p>
+          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xhq7m9/release_pandastaclassic_v090_no_silent_fallbacks/" target="_top" rel="noopener">[RELEASE] pandas-ta-classic v0.9.0: no silent fallbacks, correct missing-data handling</a></h4>
+          <p class="src">r/algotrading &middot; Wed 28 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xhq7m9/release_pandastaclassic_v090_no_silent_fallbacks/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A breaking release of an indicator library that can change your local Python backtest results.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Wednesday, 28 October 2026</span></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Thursday, 29 October 2026</span></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.31 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Anthropic News, Claude blog, Claude Code changelog, Hacker News front page, Latent Space, r/ClaudeAI, r/algotrading, GitHub trending (Python). <b>Nothing new:</b> Simon Willison, TLDR AI, TradingView blog, CoinDesk markets. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. Dropped: 28.</p>
+  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.37 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Simon Willison, Hacker News front page, Latent Space, r/algotrading, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, TLDR AI, r/ClaudeAI, TradingView blog, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. Dropped: 14.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
