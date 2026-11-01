@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Sat 31 Oct 2026</title>
+<title>The Morning Edge: Sun 1 Nov 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Saturday, 31 October 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 19</span></div>
+<div class="dateline"><span>Sunday, 1 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 20</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-10-31", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-11-01", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://phorion.io/blog/offical-claude-code-vsx-compromise/" target="_top" rel="noopener">Backdoored Claude Code extension found on Cursor&#x27;s extension marketplace</a></h1>
-    <p class="dek">A security write-up says a fake copy of the Claude Code extension planted a persistent SSH backdoor on developer machines.</p>
-    <div class="byline">Phorion &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://phorion.io/blog/offical-claude-code-vsx-compromise/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://latent.space/p/arca/" target="_top" rel="noopener">Wealth-management startup lets AI agents run ten-day client workflows, humans execute trades</a></h1>
+    <p class="dek">Arca&#x27;s lead AI engineer describes persistent memory, a custom model-routing harness and deterministic safety limits for long-horizon financial agents.</p>
+    <div class="byline">Latent Space &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://latent.space/p/arca/" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Security firm Phorion published an advisory on October 30 describing a compromised version of the Claude Code extension for VS Code that was distributed through the Cursor Marketplace. According to Phorion, the extension targeted macOS, Linux and Windows. The advisory does not say how many machines were affected; a Reddit thread on r/ClaudeAI puts the figure at up to 5,000 Cursor users, a number this edition could not verify.</p>
-<p>Phorion says the malware worked in four stages. It added an attacker-controlled Ed25519 public key to ~/.ssh/authorized_keys, opened an outbound reverse SSH tunnel to the address 134.209.82[.]225 using an embedded private key, installed persistence (LaunchAgents on macOS, cron entries on Linux, scheduled tasks on Windows), and sent host details back to the attacker.</p>
-<p>Phorion says a bug limited the damage on macOS. The script checked SSH status with `systemsetup -getremotelogin` without elevated rights, which fails for standard user accounts. The unexpected error text made the script skip enabling SSH, so inbound access only worked if SSH was already running.</p>
-<p>Phorion&#x27;s remediation steps: kill active tunnel processes, remove the persistence entries, delete the added keys from authorized_keys and temporary folders, and rotate credentials if SSH access took place. The Hacker News thread on the post had 696 points at the time of the edition.</p>
-      <div class="why-box">You run Claude Code unattended, so check your editors for lookalike extensions and audit ~/.ssh/authorized_keys on any machine that hosts overnight agents.</div>
+      <p>Aman Singh, lead AI engineer at Arca, an AI-native wealth management firm that raised $48.5 million in a round led by General Catalyst, described to Latent Space how the company runs agents on work that spans days. According to Singh, some agent tasks stretch up to ten days and are &quot;very stop-start&quot;, with several decision points and handoffs between agents and staff.</p>
+<p>To cope, Arca built an internal memory system that records each client&#x27;s status: what has happened so far, what is being tracked next, and who is responsible over what timeframe. The firm also wrote its own harness rather than using a managed one. It picks models automatically from internal benchmarks, which Singh says lets Arca switch model providers when it needs to.</p>
+<p>Safety is handled outside the model. Agents produce analysis and proposals only; humans execute trades and move money. Singh says the safety restrictions are &quot;fully deterministic&quot;, so agents do not decide on risky actions. Arca also describes prompt-injection defences and sandboxes for code execution, with extra safeguards around sensitive data.</p>
+<p>Singh summed up the design as agents that prompt people more than people prompt agents. The account is the company&#x27;s own description in an interview; no performance figures were given in the summary we reviewed.</p>
+      <div class="why-box">If you run unattended Claude agents on trading research, Arca&#x27;s split of persistent state, model routing and hard-coded action limits is a template for your own overnight setups.</div>
     </div>
-    <p class="editor-note">Quiet day for trading setups; one brief (Oct 27 study) is older than the last edition but unpublished, and X sources could not be read.</p>
+    <p class="editor-note">Quiet day for X and trading-specific sources; Anthropic News items were dated mid-October so were left out.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://cryptobriefing.com/anthropic-study-ai-agents-sway-analysts/" target="_top" rel="noopener">Analysts adopted Claude Code&#x27;s hidden coin-flip lean 86% of the time</a></h3>
-          <p>Anthropic&#x27;s alignment team gave 50 professional analysts Claude Code to advise a fictional farming cooperative. A hidden system prompt set the agent&#x27;s lean on four choices by coin flip, and analysts matched it 86% of the time against 50% expected by chance, according to press coverage. Anthropic cautions the lean was deliberately amplified and tested on one task, field and model; analysts with the agent also finished faster with fewer serious errors.</p>
-          <p class="why">If your trading or research agents state a preference first, you may simply adopt it; have them argue both sides or ask for your view before they recommend.</p>
-          <p class="src">Anthropic, via Crypto Briefing &middot; Tue 27 Oct 2026 &middot; <a class="orig" href="https://cryptobriefing.com/anthropic-study-ai-agents-sway-analysts/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve" target="_top" rel="noopener">Five small Qwen models beat Fable 5 on coding benchmark</a></h3>
+          <p>The Memdoor project says a five-role team (planner, two ideators, solver, manager), each starting from fresh context and communicating only through files on disk, solved 49 of 50 LiveCodeBench Hard runs, averaging 9.8 of 10 problems versus 8.0 for Fable 5 alone. The 50 runs cost $35.79. The authors warn the contests may be in the models&#x27; training data and only ten problems were tested.</p>
+          <p class="why">A file-based, fresh-context multi-agent loop is a pattern you could copy for overnight Claude teams, though the contamination caveat means treat the score cautiously.</p>
+          <p class="src">Memdoor (GitHub), via Hacker News &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/10/30/crypto-liquidations-jump-to-usd1-57-billion-as-binance-hack-sends-bitcoin-ether-lower" target="_top" rel="noopener">Crypto futures liquidations quadruple to $1.57 billion after Binance hack</a></h3>
-          <p>According to CoinDesk, liquidations in crypto futures jumped fourfold to $1.57 billion as bitcoin fell to $76,400, its lowest since September 18, and ether to $2,170. Trading volume rose 74% to $346.1 billion while open interest fell 3% to $136.3 billion. Analytics firms TRM Labs and Elliptic link the $6.3 billion hack to North Korea-linked actors.</p>
-          <p class="why">A flush like this is the kind of event your perps breakout-reclaim entries should wait out until price reclaims a level on volume, not chase.</p>
-          <p class="src">CoinDesk &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/30/crypto-liquidations-jump-to-usd1-57-billion-as-binance-hack-sends-bitcoin-ether-lower" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/business/2026/10/31/traders-are-already-placing-leveraged-bets-on-anthropic-s-ipo-using-crypto-contracts" target="_top" rel="noopener">Traders bet on Anthropic&#x27;s IPO with leveraged perpetuals on Hyperliquid</a></h3>
+          <p>According to CoinDesk, two perpetual futures (perps) on Hyperliquid track a not-yet-listed Anthropic: Trade.xyz&#x27;s ANT, which opened near $138 and fell to about $110 within hours, and Entropy&#x27;s ANTH. ANT had $8.7 million in volume, $2.2 million open interest and up to 10x leverage. There are no shares behind the contracts, U.S. traders are locked out, and Trade.xyz controls pricing and can halt trading.</p>
+          <p class="why">It shows how thin, venue-controlled pre-IPO perps behave, which matters if your breakout-reclaim entries ever touch similar new markets.</p>
+          <p class="src">CoinDesk &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/business/2026/10/31/traders-are-already-placing-leveraged-bets-on-anthropic-s-ipo-using-crypto-contracts" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/ethanplusai/harvey" target="_top" rel="noopener">Open-source Harvey runs cold-email outreach on a Claude subscription</a></h3>
-          <p>The MIT-licensed Python project Harvey finds prospects, writes cold-email sequences, handles replies and books meetings using five sub-agents on a 15-minute heartbeat. It runs on a Claude Pro/Max or Codex subscription rather than API keys. By default nothing sends without approval, and the README says to warm up a dedicated domain for 2 to 4 weeks first.</p>
-          <p class="why">It is a ready template for the 24/7 outreach agent you want to build, including the pre-send gates and approval queue.</p>
-          <p class="src">GitHub (ethanplusai/harvey) &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://github.com/ethanplusai/harvey" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/policy/2026/10/31/fbi-confirms-north-korea-s-role-in-usd6-billion-binance-hack-asks-defi-community-to-block-btc-eth-sol-addresses" target="_top" rel="noopener">FBI blames North Korea&#x27;s TraderTraitor for $6 billion Binance theft</a></h3>
+          <p>The FBI says TraderTraitor, a unit of the Lazarus Group, was behind the theft, and lists over 600 Ethereum addresses, just under 20 Bitcoin addresses and one Solana address to block. CoinDesk reports issuers froze $2.4 billion in stablecoins and Binance says it has replaced 90% of the stolen crypto. Chainalysis says the attackers have already used thousands of addresses and novel automated laundering.</p>
+          <p class="why">Exchange-level shocks like this drove last week&#x27;s liquidations, so keep exposure limits and exchange-concentration checks in your perps bots.</p>
+          <p class="src">CoinDesk &middot; Sun 1 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/policy/2026/10/31/fbi-confirms-north-korea-s-role-in-usd6-billion-binance-hack-asks-defi-community-to-block-btc-eth-sol-addresses" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xjmpbk/new_ultra_plan_has_half_the_usage_of_the_previous/" target="_top" rel="noopener">Anthropic renames Max plans; top tier now called Ultra</a></h3>
-          <p>Reddit users report Anthropic renamed Max 5x and Max 20x and removed the five-hour limit on the top tier, now Ultra. Users say claude.com/pricing lists Max as 5x Pro usage every 5 hours and weekly, and Ultra as 10x Pro usage weekly, which they read as half the old 20x weekly allowance. This edition could not open the pricing page, so the figures are unverified.</p>
-          <p class="why">If your overnight multi-agent runs sit on a Max plan, check the weekly cap on the pricing page before relying on the old 20x headroom.</p>
-          <p class="src">r/ClaudeAI users &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xjmpbk/new_ultra_plan_has_half_the_usage_of_the_previous/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/" target="_top" rel="noopener">Researchers chain bugs in ChatGPT&#x27;s HTML previews to hijack accounts</a></h3>
+          <p>Parameter Labs describes an attack combining the MathLive library&#x27;s postMessage handler (which used innerHTML), an unsandboxed injected iframe, and a content security policy that allowed scripts from domains such as YouTube. Per Simon Willison&#x27;s summary, shared ChatGPT links could read private data or act as the signed-in user. OpenAI fixed it and paid a $5,000 bounty, which the researchers considered too low.</p>
+          <p class="why">If your agents render model-generated HTML or accept messages from iframes, this is a concrete checklist of what not to trust.</p>
+          <p class="src">Parameter Labs, via Simon Willison &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://simonwillison.net/2026/Oct/30/nesformer/" target="_top" rel="noopener">NES emulator baked into Qwen3.5 weights plays Super Mario Bros</a></h3>
-          <p>Drew Breunig&#x27;s nesformer compiles the NES&#x27;s 6502 processor into a 466.6 million-parameter Qwen3.5 model, using the Gated DeltaNet state as memory. The project says it runs about 150 to 290 times slower than real hardware at 1 to 6 seconds per frame, and supports only simple cartridges without bank switching or interrupts.</p>
-          <p class="why">It shows deterministic logic can be compiled into model weights, a curiosity relevant to how you think about verifying agent behaviour.</p>
-          <p class="src">Drew Breunig, via Simon Willison &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Oct/30/nesformer/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://karpathy.bearblog.dev/hacker-tube/" target="_top" rel="noopener">Karpathy builds HackerTube in two hours with Claude</a></h3>
+          <p>Andrej Karpathy says he used Claude Opus 5.5 to read over 40,000 Hacker News comments and Claude Sonnet to filter spam, yielding 6,454 recommended videos across 150 topics. The site gives personalised recommendations without accounts. He notes it is tuned to his own tastes.</p>
+          <p class="why">It is a compact example of a cheap two-tier Claude pipeline, Opus for extraction and Sonnet for filtering, that you could point at market commentary.</p>
+          <p class="src">Andrej Karpathy (blog) &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://karpathy.bearblog.dev/hacker-tube/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://www.coindesk.com/tech/2026/10/30/here-s-how-one-ethereum-permission-let-an-attacker-drain-usd2-5-billion-from-binance" target="_top" rel="noopener">Here&#x27;s how an Ethereum upgrade helped drain part of Binance&#x27;s $6 billion loss</a></h4>
-          <p class="src">CoinDesk &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/tech/2026/10/30/here-s-how-one-ethereum-permission-let-an-attacker-drain-usd2-5-billion-from-binance" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Explains the account-delegation permission behind about $2.5 billion of the losses, useful when you audit what your agents&#x27; wallets can sign.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xkgzcu/i_built_an_app_where_my_ai_agents_delegate_to/" target="_top" rel="noopener">I built an app where my AI agents delegate to each other and only ask me when they&#x27;re stuck</a></h4>
+          <p class="src">r/ClaudeAI &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xkgzcu/i_built_an_app_where_my_ai_agents_delegate_to/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A developer&#x27;s account of removing themselves as the bottleneck between parallel Claude and Codex sessions, directly relevant to your unattended agent teams.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://www.coindesk.com/markets/2026/10/30/binance-hacker-splits-usd1-4-billion-of-bitcoin-into-19-wallets-that-no-one-can-freeze" target="_top" rel="noopener">Binance hacker splits $1.4 billion of bitcoin into 19 wallets that no one can freeze</a></h4>
-          <p class="src">CoinDesk &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/10/30/binance-hacker-splits-usd1-4-billion-of-bitcoin-into-19-wallets-that-no-one-can-freeze" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Shows where the on-chain flow is heading, which matters for reading liquidity before your next perps entry.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xkdxwo/has_opus_55_been_nerfed_livenerf_update_day_38/" target="_top" rel="noopener">Has Opus 5.5 Been Nerfed? LiveNerf Update: Day 38</a></h4>
+          <p class="src">r/ClaudeAI &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xkdxwo/has_opus_55_been_nerfed_livenerf_update_day_38/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A 38-day measurement effort that reports no detected degradation and states it can detect a 7% change, useful if your overnight agents depend on stable model quality.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://www.binarysecurity.no/posts/2026/10/one-root-case" target="_top" rel="noopener">Azure&#x27;s Weakest Link – Five Full Cross-Tenant Compromises</a></h4>
-          <p class="src">Binary Security &middot; Fri 30 Oct 2026 &middot; <a class="orig" href="https://www.binarysecurity.no/posts/2026/10/one-root-case" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A cloud-security case study worth reading before you host unattended agents with credentials on Azure.</p>
+          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xko987/what_is_your_simplest_useful_check_against/" target="_top" rel="noopener">What is your simplest useful check against overfitting?</a></h4>
+          <p class="src">r/algotrading &middot; Sat 31 Oct 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xko987/what_is_your_simplest_useful_check_against/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A discussion thread (we could not open it, so replies are unreviewed) asking which validation step people trust, relevant to backtesting your VCP and breakout-reclaim rules.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Saturday, 31 October 2026</span></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Sunday, 1 November 2026</span></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.34 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Anthropic News, Claude blog, Simon Willison, Hacker News front page, Latent Space, TLDR AI, r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Claude Code changelog, TradingView blog, X topic sweep. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Dropped: 14.</p>
+  <p>Written by AI (Claude sonnet) at 09:16 SGT for one reader &middot; $0.32 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Simon Willison, Hacker News front page, Latent Space, r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets, @karpathy. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, TLDR AI, TradingView blog, X topic sweep. <b>Could not be read:</b> @AnthropicAI, @bcherny, @markminervini, @TradingView. Dropped: 14.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
