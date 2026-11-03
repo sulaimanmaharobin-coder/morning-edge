@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Tue 3 Nov 2026</title>
+<title>The Morning Edge: Wed 4 Nov 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Tuesday, 3 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 22</span></div>
+<div class="dateline"><span>Wednesday, 4 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 23</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-11-03", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-11-04", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://claude.com/resources/articles/message-threads" target="_top" rel="noopener">Claude&#x27;s Messages API adds threads that cut long-session latency by about 35%</a></h1>
-    <p class="dek">Agents can send the conversation once and then only the new messages, Anthropic says.</p>
-    <div class="byline">Claude blog (Anthropic) &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/message-threads" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://www.coindesk.com/policy/2026/11/03/cftc-clears-perpetual-futures-on-stocks-bringing-crypto-trading-model-to-wall-street" target="_top" rel="noopener">CFTC Clears Perpetual Futures on Individual Stocks for US Exchanges</a></h1>
+    <p class="dek">The Commodity Futures Trading Commission has approved crypto-style perps on single stocks, and a lawsuit was filed the same day.</p>
+    <div class="byline">CoinDesk &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/policy/2026/11/03/cftc-clears-perpetual-futures-on-stocks-bringing-crypto-trading-model-to-wall-street" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Anthropic released message threads in public beta on the Claude Platform on November 2. The first request carries the full conversation and starts a thread. Later requests include only new messages plus the ID of the previous response.</p>
-<p>Anthropic says the median time to first token (TTFT) improves by roughly 35% for requests of 500,000 to 1 million tokens. It lists coding agents, computer-use agents and document-heavy workflows as the intended uses. The feature is also available through Claude on AWS, Microsoft Foundry and Google Cloud.</p>
-<p>There are two caveats in Anthropic&#x27;s own description. Token usage does not fall, because Claude still processes the whole conversation on every turn, and standard token rates and rate limits apply. Threads are held in memory, encrypted and not written to disk, and they expire after five minutes of inactivity. A client that pauses longer must resend the full conversation to start a new thread.</p>
-<p>The practical effect is on speed rather than cost: large-context loops respond faster, and request payloads shrink.</p>
-      <div class="why-box">If your overnight Claude agents loop over very large contexts, this speeds each turn, but you must handle the five-minute expiry by resending the full history after any pause.</div>
+      <p>The US Commodity Futures Trading Commission (CFTC) on November 3 approved perpetual futures contracts tied to individual stocks, to be traded on regulated US exchanges for the first time, according to CoinDesk. Perpetual futures (perps) are leveraged contracts with no expiry date, long popular in crypto.</p>
+<p>The products will operate under existing security futures rules set by the Commodity Futures Modernization Act of 2000, with the CFTC and the Securities and Exchange Commission (SEC) both providing oversight. CFTC Chair Michael Selig said the move lets American traders use these products inside the CFTC&#x27;s framework rather than turning to offshore, often unregulated venues. CoinDesk notes that crypto perps recently recorded more than $630 billion in monthly trading volume. Selig&#x27;s statement did not say which exchanges or stocks will be included at launch.</p>
+<p>Opposition arrived immediately. The Capital Markets Alliance, backed by Cboe, Citadel Securities and others, sued the CFTC in the US District Court for the Southern District of New York on the same day, according to CoinDesk. It argues stock perps are securities-based swaps that belong under SEC jurisdiction, and that the CFTC broke the Administrative Procedure Act by not explaining its policy reversal. CME Group had earlier sued over crypto perps on similar grounds.</p>
+<p>Whether the product launches on schedule, and on which venues, now depends on how that litigation goes.</p>
+      <div class="why-box">If you trade perps systematically, regulated stock perps could give your breakout-reclaim logic a new venue, but the lawsuit makes timing and rules uncertain.</div>
     </div>
-    <p class="editor-note">X sources returned nothing usable; Reddit pages could not be opened, so Reddit items rely on listing text.</p>
+    <p class="editor-note">Reddit pages could not be fetched, so those items rely on listing excerpts; X searches returned nothing usable.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/02/anthropic-swings-to-third-quarter-operating-loss-as-compute-costs-surge-ahead-of-ipo" target="_top" rel="noopener">Anthropic reports $567 million Q3 operating loss ahead of IPO</a></h3>
-          <p>According to CoinDesk, Anthropic posted $17 billion in quarterly revenue but swung to a $567 million operating loss from a $974 million profit in Q2. The company blames costlier short-term compute commitments ($5 billion) and $2 billion in noncash charges tied to donation matching. Revenue growth slowed to 47% quarter on quarter from 144%.</p>
-          <p class="why">Compute costs drive Anthropic&#x27;s pricing and usage limits, which shape what your unattended Claude agents cost to run.</p>
-          <p class="src">CoinDesk &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/02/anthropic-swings-to-third-quarter-operating-loss-as-compute-costs-surge-ahead-of-ipo" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/policy/2026/11/03/cftc-gets-into-legal-clash-over-stock-perps-after-having-cleared-path-for-crypto-version" target="_top" rel="noopener">Industry group sues CFTC over stock perps approval</a></h3>
+          <p>The Capital Markets Alliance, backed by Cboe and Citadel Securities, filed suit in the Southern District of New York on the day of approval, according to CoinDesk. It says stock perps are securities-based swaps under SEC authority and that the CFTC did not explain its reversal. The American Securities Association makes a similar argument about retail access.</p>
+          <p class="why">This is the main risk to any plan to run your scanner against regulated stock perps soon.</p>
+          <p class="src">CoinDesk &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/policy/2026/11/03/cftc-gets-into-legal-clash-over-stock-perps-after-having-cleared-path-for-crypto-version" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xm39bk/stop_blowing_through_your_usage_pace_your_agents/" target="_top" rel="noopener">Users share ways to pace Claude agents against usage meter</a></h3>
-          <p>A r/ClaudeAI poster says Claude Code can read its own usage meter in the desktop app and set timers to wake itself. They propose skills and hooks that make agents pace work now that 5-hour limits are gone on the Ultra plan. This is a user&#x27;s account, not an Anthropic-documented method, and I could not open the thread itself.</p>
-          <p class="why">Pacing hooks could stop an overnight multi-agent run from exhausting your allowance before morning.</p>
-          <p class="src">r/ClaudeAI &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xm39bk/stop_blowing_through_your_usage_pace_your_agents/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/business/2026/11/03/binance-s-usd6-3-billion-hack-began-with-a-fake-job-interview-exchange-says" target="_top" rel="noopener">Binance says $6.3 billion hack began with a fake job interview</a></h3>
+          <p>According to Binance, as reported by CoinDesk, an engineer was approached through a job platform and sent a coding assignment containing malware. Separately, in June another engineer installed a tampered Homebrew package while looking for an AI tool. Attackers then used an Ethereum feature, EIP-7702, to gain control of a hot wallet, and funds moved on October 29.</p>
+          <p class="why">You run agents and install tooling unattended, so the tampered-package and take-home-repo routes apply directly to your setup.</p>
+          <p class="src">CoinDesk &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/business/2026/11/03/binance-s-usd6-3-billion-hack-began-with-a-fake-job-interview-exchange-says" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/daybook-us/2026/11/02/bitcoin-s-volatility-curve-has-a-midterm-bump" target="_top" rel="noopener">Bitcoin options show volatility bulge at election-eve expiry</a></h3>
-          <p>CoinDesk reports Bitcoin implied volatility (IV) at the November 4 expiry, the day after the US midterms, near 42.6% to 43.5%, against roughly 36% for later November expiries. The analysis firm quoted says flat open interest with a funding flip points to hedging demand, which historically decays once the event passes.</p>
-          <p class="why">Breakout-reclaim entries in perps around November 3-4 may see event-driven moves that fade, so volume confirmation matters more than usual.</p>
-          <p class="src">CoinDesk &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/daybook-us/2026/11/02/bitcoin-s-volatility-curve-has-a-midterm-bump" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/jordan-gibbs/hyperresearch" target="_top" rel="noopener">Hyperresearch turns Claude Code into a deep research agent</a></h3>
+          <p>The open-source Python tool installs a /hyperresearch command into Claude Code. Its README describes a 16-step pipeline, with runs from about 30-40 minutes to 2.5 hours, 100-250+ sources, four parallel critics and citation checks. The README claims first place on the DRACO benchmark; that is the project&#x27;s own claim, and its lint checks cover structure, not factual accuracy.</p>
+          <p class="why">It could serve as an overnight research agent for your quant and market research without building the pipeline yourself.</p>
+          <p class="src">GitHub (jordan-gibbs/hyperresearch) &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://github.com/jordan-gibbs/hyperresearch" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://rikiyat.github.io/blog/weight-space-programming/" target="_top" rel="noopener">Model reads and edits neural network weights directly, paper claims</a></h3>
-          <p>A write-up on Hacker News says an LLM named Astra, described as GPT-6, was given raw weights as text and edited them without gradient descent. The author reports Qwen3.5-0.8B rising from 7.9% to 48.1% on MATH-500 by editing 0.016% of weights. Results are early; larger models needed tools and forward passes, and one edit only removed a behavior rather than adding capability.</p>
-          <p class="why">It is a research signal on agents that modify models, relevant to your Claude-based quantitative research ideas, though not usable today.</p>
-          <p class="src">rikiyat.github.io, via Hacker News &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://rikiyat.github.io/blog/weight-space-programming/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xn0e12/i_tried_to_make_opus_55_cheaper_with_a_cheap/" target="_top" rel="noopener">Cheap coding subagent made Opus 5.5 worse and costlier</a></h3>
+          <p>A Reddit user tested 7 team designs (41 setups, about 1,200 runs) on 12 hard coding tasks. Opus alone solved 81% at $1.20 per task; Opus with DeepSeek V4.1 Flash solved 67% at $1.29. The poster says no design beat Opus alone and most cost more. It is a small, self-run test.</p>
+          <p class="why">It is evidence to weigh before you add cheaper subagents to your unattended multi-agent teams.</p>
+          <p class="src">r/ClaudeAI &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xn0e12/i_tried_to_make_opus_55_cheaper_with_a_cheap/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xm5vdp/anthropic_confirms_new_claude_code_limits_to/" target="_top" rel="noopener">Report: Claude Code with Opus 5.5 blocks game-cloning requests</a></h3>
-          <p>A r/ClaudeAI thread quotes a news report saying Anthropic confirmed new Claude Code limits aimed at preventing game cloning. The quoted report says the blocking appears limited to Claude Code combined with Opus 5.5. This is secondhand from a Reddit post and I did not verify it against an Anthropic statement.</p>
-          <p class="why">Refusal safeguards can interrupt unattended Claude Code runs, so check logs for unexpected refusals if your agents touch game or app-replication tasks.</p>
-          <p class="src">r/ClaudeAI &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xm5vdp/anthropic_confirms_new_claude_code_limits_to/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/algotrading/comments/1xn5ohs/i_tested_the_most_popular_ict_setup_over_6400/" target="_top" rel="noopener">Popular ICT liquidity-sweep setup tested over 6,400 trades</a></h3>
+          <p>A r/algotrading poster wrote exact rules before looking at results for the pattern sold as CRT, AMD, Power of 3 or liquidity sweeps: price breaks an overnight range, closes back inside and reverses. They tested it over 11 years and 6,400 trades. The listing excerpt does not give the result, so read the post for the numbers.</p>
+          <p class="why">It is a rules-first backtest of a reclaim-style entry close to your own breakout-reclaim logic.</p>
+          <p class="src">r/algotrading &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xn5ohs/i_tested_the_most_popular_ict_setup_over_6400/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/" target="_top" rel="noopener">Building Legal Agents When You Can&#x27;t See the Data - Jacob Lauritzen, CTO of Legora</a></h4>
-          <p class="src">Latent Space &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It shows how to test agents you cannot inspect, using simulated worlds and paraphrased traces narrowed to 10 or 20 failure types, which fits unattended runs.</p>
+          <h4><a href="https://github.com/shiyu-coder/Kronos" target="_top" rel="noopener">Kronos: A Foundation Model for the Language of Financial Markets</a></h4>
+          <p class="src">GitHub (shiyu-coder/Kronos) &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://github.com/shiyu-coder/Kronos" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Open candlestick (OHLCV) models trained on 45+ exchanges, with a simple predictor class you could test inside a local backtest.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xmbnd0/i_tested_748_crypto_trading_bots_and_opensourced/" target="_top" rel="noopener">I tested 748 crypto trading bots and open-sourced every corpse with full autopsy reports</a></h4>
-          <p class="src">r/algotrading &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xmbnd0/i_tested_748_crypto_trading_bots_and_opensourced/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Open-source code and failure reports for 748 crypto strategies are a free checklist for what kills a systematic perps idea before you build it.</p>
+          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xmwgwq/i_built_a_team_of_ai_agents_that_research_stocks/" target="_top" rel="noopener">I Built a Team of AI Agents That Research Stocks, Debate Each Other, and Make Investment Recommendations</a></h4>
+          <p class="src">r/algotrading &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xmwgwq/i_built_a_team_of_ai_agents_that_research_stocks/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Walks through the open-source TradingAgents multi-agent design, a template for a debating research team.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xlujwl/claude_codes_docs_say_claudemd_is_context_not/" target="_top" rel="noopener">Claude Code&#x27;s docs say CLAUDE.md is context, not enforced config. What have you moved into hooks because Claude kept skipping it?</a></h4>
-          <p class="src">r/ClaudeAI &middot; Mon 2 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xlujwl/claude_codes_docs_say_claudemd_is_context_not/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It collects what people moved from CLAUDE.md into PreToolUse hooks, useful for making overnight agents follow rules reliably.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xmgzia/how_claude_code_reacts_when_a_repo_has_a_noai/" target="_top" rel="noopener">How Claude Code reacts when a repo has a no-AI contribution policy</a></h4>
+          <p class="src">r/ClaudeAI &middot; Tue 3 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xmgzia/how_claude_code_reacts_when_a_repo_has_a_noai/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Shows how Claude Code behaves under repo rules, useful when your agents work unattended in repos you don&#x27;t control.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Tuesday, 3 November 2026</span></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Wednesday, 4 November 2026</span></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.28 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Claude blog, Hacker News front page, Latent Space, r/ClaudeAI, r/algotrading, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude Code changelog, Simon Willison, TLDR AI, TradingView blog, GitHub trending (Python), X topic sweep. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Dropped: 30.</p>
+  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.33 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, Hacker News front page, Latent Space, TLDR AI, TradingView blog, X topic sweep. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Dropped: 18.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
