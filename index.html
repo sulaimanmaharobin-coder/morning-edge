@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Fri 13 Nov 2026</title>
+<title>The Morning Edge: Sat 14 Nov 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Friday, 13 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 27</span></div>
+<div class="dateline"><span>Saturday, 14 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 28</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-11-13", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-11-14", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://claude.com/resources/articles/how-curative-is-building-a-national-provider-network-with-agents-on-claude" target="_top" rel="noopener">Curative&#x27;s Claude agent signs up to 2,400 provider contracts a week</a></h1>
-    <p class="dek">A health-care startup describes a negotiation agent built from three Claude models, with a cheap judge checking every outbound message.</p>
-    <div class="byline">Anthropic (Claude blog) &middot; Tue 10 Nov 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/how-curative-is-building-a-national-provider-network-with-agents-on-claude" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://claude.com/resources/articles/building-always-on-agents" target="_top" rel="noopener">Anthropic Publishes Five-Part Blueprint for Always-On Claude Agents</a></h1>
+    <p class="dek">A new guide from Anthropic&#x27;s William Hu describes the building blocks for agents that run indefinitely across many sessions.</p>
+    <div class="byline">Anthropic (Claude blog) &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/building-always-on-agents" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Curative, a US health-care company, says its deal-making agent, called Gwen, now handles provider contracts from first outreach to signature. According to Anthropic&#x27;s case study, published 10 November, the agent has signed 23,000 contracts since launch and is completing 2,000 to 2,400 a week. Curative says that compares with about 2,100 for all of 2025.</p>
-<p>The design is a hierarchy of models. Claude Opus runs the main negotiation and drafts messages. A Sonnet-based reviewer approves any pricing above the template standard. A Haiku-based judge screens every outbound message to catch embarrassing errors. Each agent run is isolated to a single provider. Supporting tools include Python contract redlining with docx libraries and a fax tool, because some providers prefer fax.</p>
-<p>The cost is substantial: roughly 20 million tokens per completed contract, according to the article. Curative says a contract can be signed in about an hour, 50 times faster than the manual process, and that team productivity rose 2.5 times while headcount grew 22%. These are the company&#x27;s own figures and were not independently checked.</p>
-<p>Humans remain in the loop. Significant pricing decisions still route to human review, access to protected health information is restricted through backend controls and audit logging, and people handle warm leads by phone. Fred Turner of Curative frames the target as an error rate comparable to a thousand people signing contracts, not perfection.</p>
-      <div class="why-box">If you build unattended outreach or sales agents, this is a concrete pattern: an expensive model negotiates, a mid-tier model approves exceptions, and a cheap judge gates everything that leaves.</div>
+      <p>Anthropic published &quot;Building always-on agents&quot; on its Claude resources site on November 13. The guide defines always-on agents as ones that run indefinitely and decide how and when to act across many sessions, spending most of their time asleep and waking for short runs.</p>
+<p>It names five core primitives. An event inbox is a durable, database-backed queue that receives webhooks, scheduled tasks and background jobs; the guide says handlers should acknowledge events quickly to avoid timeouts. Timers hold agent-set follow-ups and recurring schedules separately from the inbox, which is what lets an agent act without being prompted. Memory stores user instructions, notes and task progress, with the advice to load only what the agent can&#x27;t look up again.</p>
+<p>The remaining two are permissions and an outbox. Permissions cover credential proxies, auto-mode classifiers and deferred tool calls that wait for human approval. The outbox is a message queue for delivering results, which allows paced delivery and error recovery. Anthropic recommends starting with one inbox per user and splitting later for parallelism, and notes that the system prompt, tools and memory files are included in every run, so they add to cost.</p>
+<p>The guide also cites Anthropic&#x27;s figure that Opus 5.5 achieved 78% less cost per solved task than Opus 5 on long-horizon coding benchmarks. That is the company&#x27;s own claim, and the summary I saw did not include the benchmark details.</p>
+      <div class="why-box">If you run unattended multi-agent setups overnight, the inbox, timer and outbox split is a ready checklist for how to structure scanners and outreach agents.</div>
     </div>
-    <p class="editor-note">X sources could not be read directly and returned nothing recent; Reddit posts were not fetchable, so those items rely on the listing text.</p>
+    <p class="editor-note">X sources returned nothing usable, and Reddit items rest on listing snippets because the threads could not be opened.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://claude.com/resources/articles/self-hosted-claude-managed-agents" target="_top" rel="noopener">Anthropic previews self-hosted Claude Managed Agents</a></h3>
-          <p>Anthropic says the whole service, including the agent harness, sandboxes, credential vault and session history, can run in a customer&#x27;s own cloud or on-premise. Model requests can go to Anthropic, AWS Bedrock, Google Cloud or a customer gateway. It is in private beta and requires contacting an Anthropic account team.</p>
-          <p class="why">It shows Anthropic&#x27;s intended security design for long-running agents: credentials kept outside the sandbox, restricted network hosts and full audit logs, which you can copy in your own overnight setups.</p>
-          <p class="src">Anthropic (Claude blog) &middot; Thu 12 Nov 2026 &middot; <a class="orig" href="https://claude.com/resources/articles/self-hosted-claude-managed-agents" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/11/13/bitcoin-hits-12-week-low-as-dollar-rallies-on-interest-rate-outlook-liquidations-top-usd1-6-billion" target="_top" rel="noopener">Bitcoin hits 12-week low as $1.64 billion in positions liquidated</a></h3>
+          <p>According to CoinDesk, bitcoin fell to $67,770 and ether to about $1,900 on November 13. Liquidations reached $1.64 billion in 24 hours, 88.7% of them long positions. Futures volume rose 58.3% to $269.1 billion while open interest fell 4.6% to $120.2 billion, and funding turned moderately negative across major coins.</p>
+          <p class="why">Long-heavy liquidations with negative funding is the regime in which your breakout-reclaim perps entries should wait for a reclaim with volume rather than chase.</p>
+          <p class="src">CoinDesk &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/13/bitcoin-hits-12-week-low-as-dollar-rallies-on-interest-rate-outlook-liquidations-top-usd1-6-billion" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/12/bitcoin-listless-nvidia-perps-crash-7-as-ceo-jensen-huang-reportedly-faces-the-axe" target="_top" rel="noopener">Nvidia perpetual futures fall 7% on Hyperliquid after CEO reports</a></h3>
-          <p>According to CoinDesk, Nvidia perpetual futures (perps) on Hyperliquid fell about 7% on reports that the board was preparing to remove CEO Jensen Huang. The NVDA-USDC market held $535 million in open interest, the largest of Hyperliquid&#x27;s traditional-finance-linked markets. Cumulative NVDA perp volume across exchanges passed a record $4 billion, with Binance at 44%.</p>
-          <p class="why">Stock perps now trade around the clock and react before the Nasdaq opens, which matters for your breakout-reclaim entries and for sizing around news gaps.</p>
-          <p class="src">CoinDesk &middot; Thu 12 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/12/bitcoin-listless-nvidia-perps-crash-7-as-ceo-jensen-huang-reportedly-faces-the-axe" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.tradingview.com/blog/en/tick-based-calculations-footprint-volume-delta-cvd-62523/" target="_top" rel="noopener">TradingView adds tick-based Footprint, Volume Delta and CVD</a></h3>
+          <p>TradingView says Footprint, Volume Delta and cumulative volume delta (CVD) can now classify each trade as a buy or sell using market data rather than candle direction. It works on timeframes up to 1D with up to 3 million historical ticks, on select exchanges including Binance and Coinbase. It is limited to Ultimate plan subscribers.</p>
+          <p class="why">Order-flow-based volume confirmation for your perps reclaims is more reliable on tick data than on candle-colour approximations, though you would need to replicate it locally in Python.</p>
+          <p class="src">TradingView blog &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/tick-based-calculations-footprint-volume-delta-cvd-62523/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.tradingview.com/blog/en/ai-copilot-claude-chatgpt-deepseek-62292/" target="_top" rel="noopener">TradingView&#x27;s AI Copilot adds Claude Sonnet 5.5 as a model choice</a></h3>
-          <p>TradingView says Copilot users on paid plans can now pick DeepSeek V4.1 Flash (the default), GPT-6 Luna or Claude Sonnet 5.5 per chat. TradingView rates Sonnet 5.5 best in quality but 7.5 times more costly against the default, so it uses up the usage allowance faster.</p>
-          <p class="why">You can use Claude to explain chart setups and screener results inside TradingView, though the usage cost means reserving it for hard questions.</p>
-          <p class="src">TradingView blog &middot; Mon 9 Nov 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/ai-copilot-claude-chatgpt-deepseek-62292/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/tradermonty/claude-trading-skills" target="_top" rel="noopener">Open-source Claude skills include Minervini VCP screener</a></h3>
+          <p>The tradermonty/claude-trading-skills repository bundles Claude Code skills for equity traders, including a Volatility Contraction Pattern (VCP) screener, a breakout trade planner with risk calculations, CANSLIM screening and trade journaling. A starter path uses public CSVs with no paid API; extras use the Financial Modeling Prep free tier (250 requests a day) or Finviz Elite at $39.50 a month. It was trending on GitHub on November 13.</p>
+          <p class="why">It maps directly onto your VCP swing workflow and could be a base for a local scanner you extend.</p>
+          <p class="src">GitHub (tradermonty) &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://github.com/tradermonty/claude-trading-skills" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://simonwillison.net/2026/Nov/11/aws-emulator/" target="_top" rel="noopener">AWS releases a local emulator built largely by agent swarm</a></h3>
-          <p>Simon Willison highlights AWS&#x27;s new official emulator, written in Rust, for testing against a local clone of its services without paid credentials. AWS says a large swarm of agents produced 29,684 commits in the first three weeks. It currently needs Docker on macOS and Windows.</p>
-          <p class="why">It is a large public example of agent-swarm development, and a useful local test target if your agents touch AWS.</p>
-          <p class="src">AWS, via Simon Willison &middot; Wed 11 Nov 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Nov/11/aws-emulator/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xuuabz/anthropic_are_discouraging_using_fable_as_a/" target="_top" rel="noopener">Users report Anthropic discouraging Fable as Projects coordinator</a></h3>
+          <p>A r/ClaudeAI thread says Anthropic is discouraging use of its Fable model as the coordinator for Projects, which the poster says contradicts widespread &quot;use Fable for orchestration&quot; advice. I could not open the thread, so the claim rests on the poster&#x27;s summary and is unverified.</p>
+          <p class="why">If you orchestrate overnight agent teams with a top model as coordinator, check Anthropic&#x27;s current guidance before relying on that pattern.</p>
+          <p class="src">r/ClaudeAI &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xuuabz/anthropic_are_discouraging_using_fable_as_a/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xtx4ik/heads_up_claude_codes_dont_ask_again_has_been/" target="_top" rel="noopener">Claude Code &#x27;don&#x27;t ask again&#x27; approvals found leaking secrets into public repos</a></h3>
-          <p>A Reddit post citing GitLab and security firm Apiiro says 104,185 copies of .claude/settings.local.json sit in public repositories, and 1,122 of them contain a secret. The cause is that choosing &#x27;Yes, and don&#x27;t ask again&#x27; on a shell command saves the full command, including any inline credentials, to that file. These figures are as relayed by the poster; I could not open the Reddit post itself.</p>
-          <p class="why">If your unattended Claude Code agents have approved commands containing keys, add settings.local.json to .gitignore and check your repos, especially exchange API keys.</p>
-          <p class="src">r/ClaudeAI (citing GitLab and Apiiro) &middot; Wed 11 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xtx4ik/heads_up_claude_codes_dont_ask_again_has_been/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/algotrading/comments/1xvffd9/filtering_a_btc_meanreversion_bot_by_the_days/" target="_top" rel="noopener">Trader filters bitcoin perps mean-reversion bot by expected daily range</a></h3>
+          <p>A r/algotrading user describes six weeks of notes on a 15-minute-bar mean-reversion bot on bitcoin perpetual futures. To avoid fading trend days, they added a filter based on the day&#x27;s expected range derived from options implied volatility. The post is a small personal sample, not a validated result.</p>
+          <p class="why">A pre-session volatility-range filter is a cheap regime gate you could test against your own breakout and reclaim entries.</p>
+          <p class="src">r/algotrading &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xvffd9/filtering_a_btc_meanreversion_bot_by_the_days/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xufa5z/our_polymarket_newstrading_backtest_showed_t_10/" target="_top" rel="noopener">Our Polymarket news-trading backtest showed t = 10. The event filter was looking at the future</a></h4>
-          <p class="src">r/algotrading &middot; Thu 12 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xufa5z/our_polymarket_newstrading_backtest_showed_t_10/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It describes a look-ahead bug that is easy to write into any event-driven backtest, worth checking against your own local Pine Script ports.</p>
+          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xv9g4y/what_kept_a_300kline_claude_code_game_project/" target="_top" rel="noopener">What kept a 300k-line Claude Code game project from falling apart</a></h4>
+          <p class="src">r/ClaudeAI &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xv9g4y/what_kept_a_300kline_claude_code_game_project/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A concrete case of a large Claude-built codebase (172k lines of code, 135k of tests) and the habits that kept it maintainable.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://www.reddit.com/r/ClaudeAI/comments/1xuf60h/anthropic_says_1000_claude_fable_52_agents/" target="_top" rel="noopener">Anthropic says ~1,000 Claude Fable 5.2 agents formalized Fermat&#x27;s Last Theorem in Lean in 30 hours</a></h4>
-          <p class="src">r/ClaudeAI &middot; Thu 12 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xuf60h/anthropic_says_1000_claude_fable_52_agents/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">It is a recent data point on how far large parallel agent runs with minimal human oversight can go, relevant to your multi-agent overnight setups.</p>
+          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xvau5s/i_tested_100_versions_of_my_kalshi_bitcoin/" target="_top" rel="noopener">I tested 100 versions of my Kalshi Bitcoin pullback strategy</a></h4>
+          <p class="src">r/algotrading &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xvau5s/i_tested_100_versions_of_my_kalshi_bitcoin/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A parameter-sweep write-up on a pullback-and-recover entry, useful as a reference for how you backtest and guard against overfitting.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://simonwillison.net/2026/Nov/9/details-summary/" target="_top" rel="noopener">Hide your slop PR descriptions behind &lt;details&gt;</a></h4>
-          <p class="src">Simon Willison &middot; Mon 9 Nov 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Nov/9/details-summary/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A practical habit for reviewing the pull requests that Claude Code opens for you when agents run unattended.</p>
+          <h4><a href="https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/" target="_top" rel="noopener">[AINews] Jensen Huang resigns after 33 years leading NVIDIA</a></h4>
+          <p class="src">Latent Space &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">The Nvidia leadership change is already moving Nvidia perps and AI-linked markets you trade.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Friday, 13 November 2026</span></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Saturday, 14 November 2026</span></li><li><a href="2026-11-13.html" target="_top">Friday, 13 November 2026</a></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.36 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Claude blog, Simon Willison, Hacker News front page, Latent Space, TLDR AI, r/ClaudeAI, r/algotrading, TradingView blog, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude Code changelog, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. Dropped: 24.</p>
+  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.27 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Claude blog, Latent Space, r/ClaudeAI, r/algotrading, TradingView blog, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude Code changelog, Simon Willison, Hacker News front page, TLDR AI, X topic sweep. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Dropped: 40.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
