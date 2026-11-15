@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Sun 15 Nov 2026</title>
+<title>The Morning Edge: Mon 16 Nov 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Sunday, 15 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 29</span></div>
+<div class="dateline"><span>Monday, 16 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 30</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-11-15", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-11-16", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/" target="_top" rel="noopener">Google&#x27;s Antigravity /teamwork Runs Multi-Agent Research With Built-In Checkers</a></h1>
-    <p class="dek">Google Research describes a multi-agent mode in which many agents explore in parallel and automated verifiers decide which results survive.</p>
-    <div class="byline">Google Research &middot; Fri 13 Nov 2026 &middot; <a class="orig" href="https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://github.com/HKUDS/Vibe-Trading" target="_top" rel="noopener">Open-source Vibe-Trading agent adds backtests, 30 agent teams and broker links</a></h1>
+    <p class="dek">The MIT-licensed Python project, trending on GitHub, turns plain questions into research, backtests and paper portfolios.</p>
+    <div class="byline">GitHub (HKUDS/Vibe-Trading) &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://github.com/HKUDS/Vibe-Trading" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Google Research published a write-up on November 13 of /teamwork, a multi-agent system in its Antigravity coding tool. According to the post by Vahab Mirrokni, it expresses workflows as self-improving natural-language patterns and routes each prompt to the best-fitting one, such as distributed coding, iterative problem-solving (/boost), long proofs, or document review (Deep Review).</p>
-<p>The design relies on three habits: exploring many candidate solutions in parallel and checking them with falsifiers (a Lean 4 proof checker, test suites, simulators, hardware counters); giving each agent only the files and tools its step needs, which Google says limits attention drift over multi-day tasks; and having critics and auditors review work from clean contexts without seeing the producer&#x27;s reasoning.</p>
-<p>Google reports several results, all self-reported. A Weil conjectures formalization of about 1.8 million lines of Lean took 28,800 subagent invocations. A 30-agent chemistry system reached 95% top-1 exact match on NMR structure benchmarks, nearly double a single agent. Agents took a 9x9 Go engine to 1,885 Elo in under eight days. Deep Review was run on 578 STOC 2027 submissions; in a survey of 70 respondents, 90% rated the feedback mostly or almost all factual.</p>
-<p>External users can try /teamwork and /boost with Gemini 4 models in Antigravity now, and Google opened applications for six months of free access for 10,000 academic researchers.</p>
-      <div class="why-box">The verifier-per-step, partitioned-context and clean-context-critic pattern maps directly onto how you could structure unattended Claude agent teams and backtest-checking loops.</div>
+      <p>Vibe-Trading, from the HKUDS group, is an AI agent for finance that was among GitHub&#x27;s trending Python repositories on 15 November, gaining 83 stars that day. Its README says it turns questions into research reports, backtests and paper portfolios, and can place live trades through a supported broker within limits the user sets and can halt.</p>
+<p>For research it pulls prices, Securities and Exchange Commission (SEC) filings and exchange-traded fund (ETF) holdings, and ships about 30 preset multi-agent teams, including bull-case and bear-case committees and a risk review. A &#x27;Quant Lab&#x27; benchmarks 478 alpha factors across five libraries. Market data comes from 28 sources with fallback chains; crypto uses OKX, Binance and the CCXT library, and US equities use Yahoo, then Stooq and Sina.</p>
+<p>The backtesting engine models market-specific rules such as crypto funding and futures margin, shares one capital pool across markets and lets users inspect individual fills. A Research Lab reruns saved data under different fees and slippage, picks parameters on training data and tests them on a frozen holdout. Install is `pip install vibe-trading-ai`, or Docker for a web app; it also exposes an API and a Model Context Protocol (MCP) server.</p>
+<p>The project itself says the live-broker feature is experimental and has not been verified against a real broker account, and calls the software research tooling, not investment advice. We read the README only and did not run it.</p>
+      <div class="why-box">You could borrow its fee-and-slippage rerun and frozen-holdout design for your local Python backtests of perps breakouts and VCP setups, or call it from Claude Code over MCP.</div>
     </div>
-    <p class="editor-note">Quiet Sunday; X was not searchable, and some items are dated Nov 13-14, the edge of the window.</p>
+    <p class="editor-note">Quiet day: Anthropic&#x27;s listed posts predate the last edition, and the top story is an undated GitHub repo trending on 15 November.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/14/a-behind-the-scenes-force-may-amplify-bitcoin-and-ether-price-volatility" target="_top" rel="noopener">Negative dealer gamma may amplify bitcoin and ether swings</a></h3>
-          <p>CoinDesk, citing a Greeks.Live macro researcher and the firm&#x27;s gamma exposure (GEX) data, says options market makers are net short gamma from roughly $58,000 to $72,000 in bitcoin, with the largest concentrations near $68,000 and $70,000. Hedging by dealers in that zone can push prices further in the direction of the move. Gamma turns positive above about $73,000, where hedging could dampen moves.</p>
-          <p class="why">Knowing where dealer hedging may amplify moves helps you judge whether a perps breakout-reclaim has fuel or is just liquidation noise.</p>
-          <p class="src">CoinDesk &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/14/a-behind-the-scenes-force-may-amplify-bitcoin-and-ether-price-volatility" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/11/15/xrp-crashes-to-its-lowest-since-november-2024-as-money-leaves-crypto" target="_top" rel="noopener">XRP hits $0.89 as stablecoin supply shrinks</a></h3>
+          <p>CoinDesk reports XRP fell to $0.89, its lowest since November 2024, and is down 36% this quarter. The combined market value of the USDT and USDC stablecoins fell to $244 billion, the lowest since September 2025; Glassnode says supply dropped $17 billion in a month, the steepest fall since 2022.</p>
+          <p class="why">Shrinking stablecoin supply is a liquidity warning for your perps breakout-reclaim entries, which need volume to confirm.</p>
+          <p class="src">CoinDesk &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/15/xrp-crashes-to-its-lowest-since-november-2024-as-money-leaves-crypto" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/14/bitcoin-drifts-back-to-usd65-000-deep-value-zone-says-analyst" target="_top" rel="noopener">Bitcoin falls below $64,000, a three-month low</a></h3>
-          <p>According to CoinDesk&#x27;s headline, bitcoin slid to a three-month low under $64,000 while an analyst flagged what they call a fourth capitulation wave. This extends the previous edition&#x27;s 12-week-low story. The article&#x27;s own detail was not read in full here.</p>
-          <p class="why">A trending-down tape argues for waiting on volume-confirmed reclaims rather than chasing bounces in your perps entries.</p>
-          <p class="src">CoinDesk &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/14/bitcoin-drifts-back-to-usd65-000-deep-value-zone-says-analyst" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xwla4y/i_measured_how_much_each_save_tokens_trick/" target="_top" rel="noopener">Reddit user measures what &#x27;save tokens&#x27; tricks really cost</a></h3>
+          <p>A r/ClaudeAI poster ran the same prompt three times per case on a Pro plan using Claude Code&#x27;s JSON output. A fresh-chat question cost $0.038 per message, and the post&#x27;s title says returning to an old chat after an hour costs about 20 times more. We could only read the listing excerpt, so the full table is unchecked.</p>
+          <p class="why">If your overnight Claude Code agents resume stale sessions, this suggests restarting fresh may be cheaper than resuming.</p>
+          <p class="src">r/ClaudeAI &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xwla4y/i_measured_how_much_each_save_tokens_trick/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.reddit.com/r/algotrading/comments/1xwdbd0/my_conclusion_after_a_lot_of_testing_free_public/" target="_top" rel="noopener">Algotrading post argues free public data has no retail edge</a></h3>
-          <p>A r/algotrading poster says that after extensive testing of free exchange candles, funding rates and economic releases, nothing survives real costs for a retail trader, and invites rebuttals. It is an anecdotal opinion with no verified results.</p>
-          <p class="why">It is a useful skeptic&#x27;s checklist to run your own scanner and backtests against before trusting a free-data edge.</p>
-          <p class="src">r/algotrading &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xwdbd0/my_conclusion_after_a_lot_of_testing_free_public/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xwnjxb/opus_55_running_for_more_than_24_hours_for_a/" target="_top" rel="noopener">Opus 5.5 left running 24 hours on a refactor</a></h3>
+          <p>A r/ClaudeAI user says they spent a month building code with Opus 5.5 and another model, ended with a bloated codebase, then asked Opus 5.5 at max effort to review it and plan a simplification that ran for over 24 hours. This is one user&#x27;s account, not a benchmark.</p>
+          <p class="why">It is a real example of a long unattended Opus run, relevant to your overnight multi-agent setups.</p>
+          <p class="src">r/ClaudeAI &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xwnjxb/opus_55_running_for_more_than_24_hours_for_a/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/NVIDIA/SkillEvaluator" target="_top" rel="noopener">NVIDIA releases SkillEvaluator for testing agent skills</a></h3>
-          <p>The GitHub repo describes a multi-tier framework for evaluating AI agent skills, with quality gates, semantic overlap detection, synthetic evaluation dataset generation and live agent evaluation that measures how skills change agent behavior. GitHub lists 168 stars gained today.</p>
-          <p class="why">If you keep Claude Code skills for scanners and research, this offers a way to test whether they actually help before agents run unattended.</p>
-          <p class="src">GitHub (NVIDIA) &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://github.com/NVIDIA/SkillEvaluator" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.reddit.com/r/ClaudeAI/comments/1xwpenj/claude_wrote_and_trained_a_language_model_for_dos/" target="_top" rel="noopener">Claude builds a 367K-parameter language model for DOS</a></h3>
+          <p>A r/ClaudeAI poster says Fable 5.2 wrote its own transformer and Opus 5.5 generated about 3,500 training facts. The model has 367,000 parameters, stores weights as 8-bit integers with one scale per row, and runs on an Intel Pentium.</p>
+          <p class="why">It shows a compact, reproducible pattern of using one Claude model to generate data for another that you could reuse for small local classifiers.</p>
+          <p class="src">r/ClaudeAI &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/ClaudeAI/comments/1xwpenj/claude_wrote_and_trained_a_language_model_for_dos/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.crissyfield.de/research/lovable-en/" target="_top" rel="noopener">Researcher says Lovable apps exposed passports and 200,000 messages</a></h3>
-          <p>A German research write-up claims apps built on the Lovable AI app builder exposed passport details and more than 200,000 private messages. The post reached 542 points on Hacker News. The claims come from the researcher and were not independently verified here.</p>
-          <p class="why">Agent-generated apps you ship or connect to trading or outreach data need their own access-control review.</p>
-          <p class="src">crissyfield.de, via Hacker News &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://www.crissyfield.de/research/lovable-en/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/" target="_top" rel="noopener">Essay: buyers&#x27; AI agents will favour hackable devices</a></h3>
+          <p>Geoff Stearns argues cheap AI makes writing firmware easy, so devices owners can reflash will win. He cites M-Vave&#x27;s open-source release under the GPLv3 licence and Behringer publishing firmware source, and notes open firmware can also make attacks on many variants easier.</p>
+          <p class="why">It frames how agents choose tools and vendors, which matters if you build agents that buy or integrate on your behalf.</p>
+          <p class="src">Geoff Stearns (via Hacker News) &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://latent.space/p/ainews-the-no-ai-slop-manifesto/" target="_top" rel="noopener">[AINews] The No AI Slop Manifesto</a></h4>
-          <p class="src">Latent Space &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://latent.space/p/ainews-the-no-ai-slop-manifesto/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Speakers from the AI Engineer conference lay out how to fight low-quality AI output, relevant to anything your outreach agents publish.</p>
+          <h4><a href="https://magazine.sebastianraschka.com/p/understanding-positional-embeddings" target="_top" rel="noopener">Understanding Positional Embeddings in Modern LLMs</a></h4>
+          <p class="src">Sebastian Raschka &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://magazine.sebastianraschka.com/p/understanding-positional-embeddings" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A code-backed tour of rotary embeddings (RoPE) and newer variants, useful background for judging long-context behaviour in models you run.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://www.reddit.com/r/algotrading/comments/1xvqp0t/question_for_the_sub/" target="_top" rel="noopener">Question for the sub (forward-test review points)</a></h4>
-          <p class="src">r/algotrading &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://www.reddit.com/r/algotrading/comments/1xvqp0t/question_for_the_sub/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Asks whether to review a forward test after a fixed trade count or a sample size derived from the backtest&#x27;s spread, a decision you face with every systematic setup.</p>
+          <h4><a href="https://jakub.jankiewicz.org/blog/ai-code-open-source/" target="_top" rel="noopener">All AI-generated code should be Open Source</a></h4>
+          <p class="src">Jakub T. Jankiewicz (via Hacker News) &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://jakub.jankiewicz.org/blog/ai-code-open-source/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">The top Hacker News post (1,017 points) argues about copyright and licensing of AI-written code, which bears on any bots you build with Claude.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://github.com/paul-nameless/agweb" target="_top" rel="noopener">Agweb – a browser for agents that stays out of your way</a></h4>
-          <p class="src">GitHub, via Hacker News &middot; Sat 14 Nov 2026 &middot; <a class="orig" href="https://github.com/paul-nameless/agweb" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A browser built for agents could be useful for research and outreach agents that need to browse unattended.</p>
+          <h4><a href="https://www.coindesk.com/policy/2026/11/15/did-prediction-markets-call-the-u-s-midterm-election-state-of-crypto" target="_top" rel="noopener">Did prediction markets call the U.S. midterm election?: State of Crypto</a></h4>
+          <p class="src">CoinDesk &middot; Sun 15 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/policy/2026/11/15/did-prediction-markets-call-the-u-s-midterm-election-state-of-crypto" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A data-based look at where prediction markets and polls both missed, useful before trusting market-implied probabilities in a systematic model.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Sunday, 15 November 2026</span></li><li><a href="2026-11-14.html" target="_top">Saturday, 14 November 2026</a></li><li><a href="2026-11-13.html" target="_top">Friday, 13 November 2026</a></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Monday, 16 November 2026</span></li><li><a href="2026-11-15.html" target="_top">Sunday, 15 November 2026</a></li><li><a href="2026-11-14.html" target="_top">Saturday, 14 November 2026</a></li><li><a href="2026-11-13.html" target="_top">Friday, 13 November 2026</a></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.20 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Hacker News front page, Latent Space, r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, TLDR AI, TradingView blog, X topic sweep. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Dropped: 14.</p>
+  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.25 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Hacker News front page, r/ClaudeAI, r/algotrading, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, Latent Space, TLDR AI, TradingView blog, X topic sweep. <b>Could not be read:</b> @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView. Dropped: 14.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
