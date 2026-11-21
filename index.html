@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Sat 21 Nov 2026</title>
+<title>The Morning Edge: Sun 22 Nov 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Saturday, 21 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 34</span></div>
+<div class="dateline"><span>Sunday, 22 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 35</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-11-21", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-11-22", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://frontier.replit.com/throwing-headcount-at-the-problem/" target="_top" rel="noopener">Replit: 32 Opus agents speed up NumPy 18.9x versus 3.7x for one</a></h1>
-    <p class="dek">A new benchmark finds Claude-based agent swarms beat solo runs every time, but only when coordination is peer-to-peer and the work can be split.</p>
-    <div class="byline">Replit Engineering, via TLDR AI &middot; Thu 19 Nov 2026 &middot; <a class="orig" href="https://frontier.replit.com/throwing-headcount-at-the-problem/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/" target="_top" rel="noopener">Lean and Mathlib communities back Claude-assisted Riemann Hypothesis proof</a></h1>
+    <p class="dek">Anthropic mathematician Levent Alpöge&#x27;s roughly 17-million-line Lean proof has been reproduced by dozens of people, though the mathematics is not yet explained.</p>
+    <div class="byline">Lean community blog, with Latent Space &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>Replit Engineering published results from Optimization-Bench, a suite that asks agents to speed up a workload in a pinned open-source library while keeping outputs identical. Runs used one agent or swarms of 8, 16 or 32, each with 8 virtual CPUs, 16 GiB of memory and a two-hour window. Six models were tested. The coordinator received no instructions on how to organize the team, and agents talked through direct messages and a shared board.</p>
-<p>On NumPy, a single Opus 5.5 agent reached a median speedup of about 3.7x, while a 32-agent Opus swarm reached 18.9x. Sonnet 5.5 reached 8.6x at 32 agents. Opus and Sonnet swarms beat their solo runs in every case, with a median gain of about 1.30x at 16 and 32 agents. OpenAI&#x27;s GPT-6.2 Astra was the strongest solo agent, but its larger swarms often scored below its solo results.</p>
-<p>Replit says coordination style mattered more than solo ability: strong swarms posted work to a shared board and claimed tasks, while weaker ones routed traffic through the coordinator, which became a bottleneck. Gains also tracked how much independent work a codebase offered. NumPy, with 13 separate workloads, scaled best; Git, whose workloads touch the same 15 files, barely improved.</p>
-<p>Caveats from the report: it is a prerelease covering four of 14 libraries, it does not give cost or compute accounting against single agents, only the final branch at the deadline was scored, and some chart and text figures are hard to reconcile.</p>
-      <div class="why-box">If you run overnight multi-agent teams on Claude, this suggests a shared claim-a-task board beats a coordinator relay, and that splitting work into independent pieces matters more than adding agents.</div>
+      <p>The Lean and Mathlib communities, endorsed by the Lean FRO (a non-profit Lean development group) and the Mathlib Initiative, issued a joint statement on November 21 saying they have &quot;full confidence&quot; in a proof of the Riemann Hypothesis released a day earlier by Levent Alpöge. The proof is a Lean library of about 17 million lines of code.</p>
+<p>According to the statement, dozens of people reproduced the compilation, and several independent proof checkers accepted an exported copy. The statement of the theorem was compared against Mathlib&#x27;s definition using two separate tools. The statement does not mention Claude or any AI system.</p>
+<p>Latent Space&#x27;s AINews digest reports that Alpöge, who works at Anthropic, says he proved it with Claude, and that the method also covers the Generalized Riemann Hypothesis (GRH). It says work began around October 6 and the final entry landed November 16. Latent Space also reports a separate, purely human claim by Alessandro Masullo: a 940-page work in progress built over 12 years.</p>
+<p>Caveats: the Lean statement is a community certification, not peer review. It says mathematicians will still need to &quot;explain the new ideas&quot;, and acceptance by the wider community has not been stated. Latent Space notes that ANT, Anthropic&#x27;s stock, reportedly fell about 10% that day, a figure it relays without confirming.</p>
+      <div class="why-box">You build long-running Claude agent setups, and this is a public case of a formal checker (Lean) being the verification layer for unattended AI-generated work.</div>
     </div>
-    <p class="editor-note">Reddit was blocked and X searches returned nothing recent, so this edition leans on newsletters, CoinDesk and GitHub.</p>
+    <p class="editor-note">Quiet day for Claude-agent and trading-method sources; Reddit was unreachable and X searches returned nothing usable.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://www.tradingview.com/blog/en/cryptoasset-trading-volume-now-available-62856/" target="_top" rel="noopener">TradingView adds volume for 2,300+ crypto coins</a></h3>
-          <p>TradingView says volume is now available for more than 2,300 coins with the CRYPTO prefix, shown on charts, the Screener and the Heatmap. It sums spot pairs only; futures and perpetual contracts are excluded, and the 24-hour figure is a rolling window.</p>
-          <p class="why">Useful for volume-confirmation checks on breakouts, but it will not reflect perps volume, so your perps reclaim entries still need exchange data.</p>
-          <p class="src">TradingView blog &middot; Fri 20 Nov 2026 &middot; <a class="orig" href="https://www.tradingview.com/blog/en/cryptoasset-trading-volume-now-available-62856/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open" target="_top" rel="noopener">Bitcoin rebounds above $60,000 after $1.8 billion liquidation wave</a></h3>
+          <p>CoinDesk reports bitcoin (BTC) bounced more than 9% from an early low of $55,130, its weakest since September 2024, to about $60,300. CoinGlass data shows about $1.8 billion in liquidations over 24 hours, about $1.3 billion of them longs. Glassnode says the selloff cleared a large liquidation cluster between $59,000 and $62,000.</p>
+          <p class="why">A flush of the long-side cluster followed by a reclaim of $60,000 is the kind of reclaim setup you wait for with volume confirmation rather than chase.</p>
+          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/20/cftc-tells-hyperliquid-and-crypto-rivals-no-special-rules-for-onchain-trading" target="_top" rel="noopener">CFTC chair: onchain venues like Hyperliquid get no special rules</a></h3>
-          <p>CFTC Chairman Michael Selig said onchain exchanges could offer perpetual futures to US retail traders with approval or through a licensed partner, and would face the same rules as other derivatives exchanges, according to CoinDesk. Key applications, including Kraken parent Payward&#x27;s plan via Bitnomial, are still pending, and Hyperliquid remains unavailable to US customers.</p>
-          <p class="why">It signals where perps liquidity and access may move, which bears on venue choice for your systematic perps trading.</p>
-          <p class="src">CoinDesk &middot; Fri 20 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/20/cftc-tells-hyperliquid-and-crypto-rivals-no-special-rules-for-onchain-trading" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/11/21/bitcoin-nodes-could-be-stalled-by-repeating-one-id-50-000-times-ai-found-the-bug" target="_top" rel="noopener">AI scan finds Bitcoin Core bug that can stall nodes</a></h3>
+          <p>An automated AI scan through Project Loupe, an open-source scanner from Block&#x27;s Spiral unit, found that repeating one transaction ID 50,000 times in an announcement forces repeated expensive checks, stalling a node for over a dozen seconds per message. Core developers rated it medium severity (CVE-2026-117348); fixes are in versions 30.5 and 31.3.</p>
+          <p class="why">It is a concrete example of agent-driven code scanning finding a real bug in critical code, a pattern you could apply to your own trading infrastructure.</p>
+          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/bitcoin-nodes-could-be-stalled-by-repeating-one-id-50-000-times-ai-found-the-bug" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/" target="_top" rel="noopener">ChatPRD founder ends free trials after token fraud flood</a></h3>
-          <p>Claire Vo, who runs ChatPRD, says abusers looped free trials and promo codes to get free AI usage, resell tokens or build game maps on her agent, per Simon Willison&#x27;s write-up of her video. Willison notes pelican-on-a-bicycle prompts may be used to fingerprint the underlying model. Vo is winding down free trials.</p>
-          <p class="why">If you ever put an unattended Claude agent or outreach bot in front of the public, you will need usage caps and abuse controls from day one.</p>
-          <p class="src">Claire Vo (YouTube), via Simon Willison &middot; Fri 20 Nov 2026 &middot; <a class="orig" href="https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/markets/2026/11/21/ether-treasury-firm-btcs-warns-sec-its-usd54-million-aave-loan-could-be-liquidated" target="_top" rel="noopener">Ether treasury firm BTCS warns $54 million Aave loan could be liquidated</a></h3>
+          <p>BTCS, a Nasdaq-listed firm holding mostly ether, told the SEC it cannot rule out liquidation of a loan of about $54 million backed by 46,676 ETH. CoinDesk estimates the health factor near 1.2 and a liquidation point around $1,446 to $1,450 per ether, about 17% below Saturday&#x27;s price.</p>
+          <p class="why">A known forced-selling level in ETH gives you a reference for sizing ETH perps entries and stops.</p>
+          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/ether-treasury-firm-btcs-warns-sec-its-usd54-million-aave-loan-could-be-liquidated" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://stripe.dev/blog/stripe-integration-evals-methodology" target="_top" rel="noopener">Stripe publishes method for evaluating coding agents</a></h3>
-          <p>TLDR AI summarizes Stripe&#x27;s benchmark of how well coding agents build Stripe integrations, using realistic scenarios and a role-playing agent to drive the interaction. Stripe says harnesses with frontier models can produce working integrations but do not always follow best practices.</p>
-          <p class="why">A concrete template for writing evals that catch an agent doing the job badly even when it works, applicable to your own unattended Claude setups.</p>
-          <p class="src">Stripe, via TLDR AI &middot; Fri 20 Nov 2026 &middot; <a class="orig" href="https://stripe.dev/blog/stripe-integration-evals-methodology" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/ShinMegamiBoson/lookatmyquant" target="_top" rel="noopener">Open-source tool squeezes Inkling-2-Mini into 5.4 GB</a></h3>
+          <p>LookAtMyQuant, an MIT-licensed quantization compiler, reports (self-reported) that Inkling-2-Mini at 5.38 GB scores 134/200 on GSM8K, against 132 for a larger 9.14 GB Unsloth quantization. It includes an Apple Silicon runtime and speculative decoding. The author&#x27;s numbers have not been independently checked.</p>
+          <p class="why">If you want a local model for cheap overnight scanning or summarising agents, this shows how small a capable model can now get.</p>
+          <p class="src">GitHub (ShinMegamiBoson), via Hacker News &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://github.com/ShinMegamiBoson/lookatmyquant" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/tech/2026/11/20/bitcoin-bots-pounced-within-seconds-when-researchers-exposed-their-keys" target="_top" rel="noopener">Researchers: Bitcoin bots drain exposed keys within seconds</a></h3>
-          <p>University of Liège researchers put $3 to $5 into deliberately vulnerable Bitcoin and Ethereum accounts and say bots attacked within seconds. Scanning six chains through June 30, 2024, they recovered 3,620 private keys from reused signing nonces. The roughly $106 million figure is a theoretical peak, not a loss total, according to CoinDesk.</p>
-          <p class="why">A reminder to audit how your trading bots and agents generate and store keys, since automated attackers react almost instantly.</p>
-          <p class="src">CoinDesk &middot; Fri 20 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/tech/2026/11/20/bitcoin-bots-pounced-within-seconds-when-researchers-exposed-their-keys" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html" target="_top" rel="noopener">GPGME double-free flaw: update to 2.3.1</a></h3>
+          <p>GnuPG&#x27;s advisory (CVE-2026-129975) says a crafted OpenPGP key with a very long user ID triggers a double free in GPGME versions before 2.3.0. The advisory says it can be used to exfiltrate data and remote code execution (RCE) cannot be ruled out. Johan Carlsson reported it on November 12.</p>
+          <p class="why">If any of your agents or scripts verify signatures or handle PGP keys through GPGME, update them before they process untrusted keys.</p>
+          <p class="src">GnuPG announce list, via Hacker News &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://latent.space/p/formal-verification/" target="_top" rel="noopener">The War Against Slop and an Emerging Weapon to Fight it: Formal Verification</a></h4>
-          <p class="src">Latent Space &middot; Fri 20 Nov 2026 &middot; <a class="orig" href="https://latent.space/p/formal-verification/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Explains how Lean-based verification could let agents ship code that is checked rather than reviewed, with Anthropic&#x27;s figure of about 40% fewer tokens for Opus 5.5 versus Opus 5.</p>
+          <h4><a href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/" target="_top" rel="noopener">[AINews] Riemann Hypothesis proved...twice independently</a></h4>
+          <p class="src">Latent Space &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">One-page roundup of the Claude proof claim, METR time horizons and agent benchmarks, including a GrepMem append-only-log memory result.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://arxiv.org/abs/2611.21885" target="_top" rel="noopener">Language Models Can Rewrite Their Own Weights</a></h4>
-          <p class="src">arXiv &middot; Wed 18 Nov 2026 &middot; <a class="orig" href="https://arxiv.org/abs/2611.21885" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A 27B open model edits its own weights without gradients and gains 6.6 points on unseen problems; the authors say only the largest model improved.</p>
+          <h4><a href="https://pwn.ai/upload2shell" target="_top" rel="noopener">Upload2Shell (CVE-2026-125396)</a></h4>
+          <p class="src">pwn.ai &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://pwn.ai/upload2shell" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A Ghostscript sandbox escape affecting WordPress, Roundcube and others; worth checking if any of your tooling renders uploaded PDFs.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://github.com/google-research/paper-orchestra" target="_top" rel="noopener">PaperOrchestra: multi-agent framework for automated research paper writing</a></h4>
-          <p class="src">Google Research (GitHub) &middot; Fri 20 Nov 2026 &middot; <a class="orig" href="https://github.com/google-research/paper-orchestra" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">An open-source pipeline of specialized agents (outline, literature review, writing, refinement) that is a reusable pattern for your quant research write-ups, though it targets Gemini and OpenAI keys.</p>
+          <h4><a href="https://www.coindesk.com/markets/2026/11/21/xrp-falls-10-as-long-bets-unwind-and-etf-assets-slip-below-usd1-billion" target="_top" rel="noopener">XRP falls 10% as long bets unwind and ETF assets slip below $1 billion</a></h4>
+          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/xrp-falls-10-as-long-bets-unwind-and-etf-assets-slip-below-usd1-billion" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Gives open interest, negative funding and long-liquidation data useful for judging whether a perps flush is exhausted.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Saturday, 21 November 2026</span></li><li><a href="2026-11-20.html" target="_top">Friday, 20 November 2026</a></li><li><a href="2026-11-18.html" target="_top">Wednesday, 18 November 2026</a></li><li><a href="2026-11-17.html" target="_top">Tuesday, 17 November 2026</a></li><li><a href="2026-11-16.html" target="_top">Monday, 16 November 2026</a></li><li><a href="2026-11-15.html" target="_top">Sunday, 15 November 2026</a></li><li><a href="2026-11-14.html" target="_top">Saturday, 14 November 2026</a></li><li><a href="2026-11-13.html" target="_top">Friday, 13 November 2026</a></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Sunday, 22 November 2026</span></li><li><a href="2026-11-21.html" target="_top">Saturday, 21 November 2026</a></li><li><a href="2026-11-20.html" target="_top">Friday, 20 November 2026</a></li><li><a href="2026-11-18.html" target="_top">Wednesday, 18 November 2026</a></li><li><a href="2026-11-17.html" target="_top">Tuesday, 17 November 2026</a></li><li><a href="2026-11-16.html" target="_top">Monday, 16 November 2026</a></li><li><a href="2026-11-15.html" target="_top">Sunday, 15 November 2026</a></li><li><a href="2026-11-14.html" target="_top">Saturday, 14 November 2026</a></li><li><a href="2026-11-13.html" target="_top">Friday, 13 November 2026</a></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.24 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Simon Willison, Hacker News front page, Latent Space, TLDR AI, TradingView blog, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> r/ClaudeAI, r/algotrading. Dropped: 14.</p>
+  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.25 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Hacker News front page, Latent Space, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, TLDR AI, TradingView blog, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> r/ClaudeAI, r/algotrading. Dropped: 14.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
