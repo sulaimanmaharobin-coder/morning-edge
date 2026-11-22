@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Morning Edge: Sun 22 Nov 2026</title>
+<title>The Morning Edge: Mon 23 Nov 2026</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-title" content="Morning Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
@@ -117,13 +117,13 @@ footer b { color:var(--ink); }
 </style></head>
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
-<div class="dateline"><span>Sunday, 22 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 35</span></div>
+<div class="dateline"><span>Monday, 23 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 36</span></div>
 
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
 (function () {
-  var ed = "2026-11-22", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  var ed = "2026-11-23", today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
   if (ed < today && !document.querySelector(".notice:not(#stale)")) {
     var n = document.getElementById("stale");
     n.textContent = "Today's edition is late.";
@@ -141,81 +141,81 @@ document.addEventListener("click", function (e) {  // in-page jumps: scroll with
 </script>
 <main class="front">
   <section class="lead">
-    <h1><a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/" target="_top" rel="noopener">Lean and Mathlib communities back Claude-assisted Riemann Hypothesis proof</a></h1>
-    <p class="dek">Anthropic mathematician Levent Alpöge&#x27;s roughly 17-million-line Lean proof has been reproduced by dozens of people, though the mathematics is not yet explained.</p>
-    <div class="byline">Lean community blog, with Latent Space &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/" target="_top" rel="noopener">Read the original &#8599;</a></div>
+    <h1><a href="https://github.com/wshobson/agents" target="_top" rel="noopener">One Markdown plugin library now targets seven coding-agent tools</a></h1>
+    <p class="dek">wshobson/agents packages 199 agents and 185 skills and generates versions for Claude Code, Codex CLI, Cursor and others.</p>
+    <div class="byline">GitHub (wshobson/agents) &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://github.com/wshobson/agents" target="_top" rel="noopener">Read the original &#8599;</a></div>
     <div class="story">
-      <p>The Lean and Mathlib communities, endorsed by the Lean FRO (a non-profit Lean development group) and the Mathlib Initiative, issued a joint statement on November 21 saying they have &quot;full confidence&quot; in a proof of the Riemann Hypothesis released a day earlier by Levent Alpöge. The proof is a Lean library of about 17 million lines of code.</p>
-<p>According to the statement, dozens of people reproduced the compilation, and several independent proof checkers accepted an exported copy. The statement of the theorem was compared against Mathlib&#x27;s definition using two separate tools. The statement does not mention Claude or any AI system.</p>
-<p>Latent Space&#x27;s AINews digest reports that Alpöge, who works at Anthropic, says he proved it with Claude, and that the method also covers the Generalized Riemann Hypothesis (GRH). It says work began around October 6 and the final entry landed November 16. Latent Space also reports a separate, purely human claim by Alessandro Masullo: a 940-page work in progress built over 12 years.</p>
-<p>Caveats: the Lean statement is a community certification, not peer review. It says mathematicians will still need to &quot;explain the new ideas&quot;, and acceptance by the wider community has not been stated. Latent Space notes that ANT, Anthropic&#x27;s stock, reportedly fell about 10% that day, a figure it relays without confirming.</p>
-      <div class="why-box">You build long-running Claude agent setups, and this is a public case of a formal checker (Lean) being the verification layer for unattended AI-generated work.</div>
+      <p>The open-source repository wshobson/agents, MIT-licensed, describes itself as plugins, agents, skills and commands &quot;written once in Markdown and adapted to each tool by generators with validation and evals.&quot; Its local source lists 93 plugins, 199 agents, 185 skills and 103 commands.</p>
+<p>Contributors write each component in the Claude Code plugin format. Adapters then generate what each harness reads, map model aliases to that harness&#x27;s models and translate tool permissions where the harness supports them. Claude Code and Cursor install through plugin marketplaces. Codex CLI has a native marketplace. OpenCode, Antigravity CLI, GitHub Copilot and Pi install through make targets after cloning the repo.</p>
+<p>Continuous integration regenerates artifacts for every harness, validates them and runs the OpenCode, Antigravity and Pi outputs through their command-line tools. A static scorer, plugin-eval, runs without model calls. The README says its large-language-model judge and Monte Carlo layers are experimental and not validated against human labels, so their scores do not prove a task succeeds.</p>
+<p>A separate paid layer of repeated, &quot;verified&quot; test runs is sold by Major7 Apps, a company the README says the maintainer founded. GitHub&#x27;s daily trending list showed the repo gaining 39 stars on the day, so this is a steady reference library rather than a surge.</p>
+      <div class="why-box">You can mine its multi-agent and Python plugins for your overnight Claude Code teams, and borrow its static plugin-eval check before trusting any skill unattended.</div>
     </div>
-    <p class="editor-note">Quiet day for Claude-agent and trading-method sources; Reddit was unreachable and X searches returned nothing usable.</p>
+    <p class="editor-note">Quiet day: Reddit was unreachable and most sources were empty, so items are mostly from Nov 22 and one is from Nov 16.</p>
   </section>
   <aside class="side">
     <h2>In Brief</h2>
     <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open" target="_top" rel="noopener">Bitcoin rebounds above $60,000 after $1.8 billion liquidation wave</a></h3>
-          <p>CoinDesk reports bitcoin (BTC) bounced more than 9% from an early low of $55,130, its weakest since September 2024, to about $60,300. CoinGlass data shows about $1.8 billion in liquidations over 24 hours, about $1.3 billion of them longs. Glassnode says the selloff cleared a large liquidation cluster between $59,000 and $62,000.</p>
-          <p class="why">A flush of the long-side cluster followed by a reclaim of $60,000 is the kind of reclaim setup you wait for with volume confirmation rather than chase.</p>
-          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/HKUDS/CLI-Anything" target="_top" rel="noopener">CLI-Anything generates agent-ready command-line wrappers for desktop software</a></h3>
+          <p>HKUDS&#x27;s Apache-2.0 project uses a 7-phase pipeline to build Click-based command-line interfaces (CLIs) with a --json flag and a SKILL.md file for each tool. It wraps real backends such as FFmpeg, Blender and LibreOffice. The page lists about 62.7k stars and gives two different test counts (2,461 and 2,464).</p>
+          <p class="why">The same pattern could wrap a local charting or backtest tool so a Claude Code agent drives it through deterministic commands instead of screenshots.</p>
+          <p class="src">GitHub (HKUDS/CLI-Anything) &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://github.com/HKUDS/CLI-Anything" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/21/bitcoin-nodes-could-be-stalled-by-repeating-one-id-50-000-times-ai-found-the-bug" target="_top" rel="noopener">AI scan finds Bitcoin Core bug that can stall nodes</a></h3>
-          <p>An automated AI scan through Project Loupe, an open-source scanner from Block&#x27;s Spiral unit, found that repeating one transaction ID 50,000 times in an announcement forces repeated expensive checks, stalling a node for over a dozen seconds per message. Core developers rated it medium severity (CVE-2026-117348); fixes are in versions 30.5 and 31.3.</p>
-          <p class="why">It is a concrete example of agent-driven code scanning finding a real bug in critical code, a pattern you could apply to your own trading infrastructure.</p>
-          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/bitcoin-nodes-could-be-stalled-by-repeating-one-id-50-000-times-ai-found-the-bug" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://www.coindesk.com/tech/2026/11/22/bitcoin-s-quantum-security-challenge-extends-to-bridges-custodians-and-millions-of-coins" target="_top" rel="noopener">Bitcoin&#x27;s quantum risk: over 6 million coins sit behind exposed keys</a></h3>
+          <p>According to CoinDesk, citing Glassnode data, over 6 million BTC (about 31.2% of supply) sat behind public keys already visible onchain in October. Quantum computers cannot break Bitcoin today. The article says the concern is how long migration would take, and BIP 360 and BIP 361 remain drafts.</p>
+          <p class="why">It is a slow-burn tail risk for the BTC perps you trade, and the article names no timeline for it.</p>
+          <p class="src">CoinDesk &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/tech/2026/11/22/bitcoin-s-quantum-security-challenge-extends-to-bridges-custodians-and-millions-of-coins" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://www.coindesk.com/markets/2026/11/21/ether-treasury-firm-btcs-warns-sec-its-usd54-million-aave-loan-could-be-liquidated" target="_top" rel="noopener">Ether treasury firm BTCS warns $54 million Aave loan could be liquidated</a></h3>
-          <p>BTCS, a Nasdaq-listed firm holding mostly ether, told the SEC it cannot rule out liquidation of a loan of about $54 million backed by 46,676 ETH. CoinDesk estimates the health factor near 1.2 and a liquidation point around $1,446 to $1,450 per ether, about 17% below Saturday&#x27;s price.</p>
-          <p class="why">A known forced-selling level in ETH gives you a reference for sizing ETH perps entries and stops.</p>
-          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/ether-treasury-firm-btcs-warns-sec-its-usd54-million-aave-loan-could-be-liquidated" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://openai.com/index/perplexity-and-intelligence/" target="_top" rel="noopener">OpenAI&#x27;s chief scientist proposes perplexity as a shared frontier metric</a></h3>
+          <p>In an essay dated November 22, Jakub Pachocki of OpenAI says log-perplexity on its internal codebase dataset fell from about 0.99 for GPT-3.5 to about 0.91 for GPT-4. He says it was near 0.76 when a model began producing notable results on open math problems. He concedes labs use different datasets and that perplexity ignores chain-of-thought gains.</p>
+          <p class="why">It gives a rough read on how fast the models under your agents may improve, though the data is OpenAI&#x27;s own and not independently checked.</p>
+          <p class="src">OpenAI &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://openai.com/index/perplexity-and-intelligence/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://github.com/ShinMegamiBoson/lookatmyquant" target="_top" rel="noopener">Open-source tool squeezes Inkling-2-Mini into 5.4 GB</a></h3>
-          <p>LookAtMyQuant, an MIT-licensed quantization compiler, reports (self-reported) that Inkling-2-Mini at 5.38 GB scores 134/200 on GSM8K, against 132 for a larger 9.14 GB Unsloth quantization. It includes an Apple Silicon runtime and speculative decoding. The author&#x27;s numbers have not been independently checked.</p>
-          <p class="why">If you want a local model for cheap overnight scanning or summarising agents, this shows how small a capable model can now get.</p>
-          <p class="src">GitHub (ShinMegamiBoson), via Hacker News &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://github.com/ShinMegamiBoson/lookatmyquant" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/" target="_top" rel="noopener">Study estimates Anthropic&#x27;s 2028 power mix at 87% gas and 11% coal</a></h3>
+          <p>The Better Data Center Project, an advocacy site, estimates about 15 gigawatts of contracted compute as of October 2026. It projects emissions of 17 to 38 million tonnes of CO2-equivalent a year in 2028, with a mid-case of 32 million. Most figures are projections built on stated assumptions, not disclosed emissions, and Anthropic says its plants use emissions controls.</p>
+          <p class="why">Compute supply and cost pressure on Anthropic can shape the pricing and limits you plan around for unattended Claude runs.</p>
+          <p class="src">Better Data Center Project, via Hacker News &middot; Mon 16 Nov 2026 &middot; <a class="orig" href="https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
 <article class="brief">
-          <h3><a href="https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html" target="_top" rel="noopener">GPGME double-free flaw: update to 2.3.1</a></h3>
-          <p>GnuPG&#x27;s advisory (CVE-2026-129975) says a crafted OpenPGP key with a very long user ID triggers a double free in GPGME versions before 2.3.0. The advisory says it can be used to exfiltrate data and remote code execution (RCE) cannot be ruled out. Johan Carlsson reported it on November 12.</p>
-          <p class="why">If any of your agents or scripts verify signatures or handle PGP keys through GPGME, update them before they process untrusted keys.</p>
-          <p class="src">GnuPG announce list, via Hacker News &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html" target="_top" rel="noopener">Read the original &#8599;</a></p>
+          <h3><a href="https://github.com/elementalsouls/Claude-BugHunter" target="_top" rel="noopener">Claude-BugHunter bundles 82 Claude Code skills for security research</a></h3>
+          <p>The repo describes a skill bundle with 82 skills, 15 slash commands and 681 disclosed-report patterns across 24 vulnerability classes. GitHub&#x27;s Python trending list showed it gaining 1,721 stars in one day. The description is from the repo&#x27;s own summary and I did not review the contents.</p>
+          <p class="why">It is a large worked example of structuring skills and slash commands, useful when you design your own trading-agent skill bundle.</p>
+          <p class="src">GitHub (elementalsouls/Claude-BugHunter) &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://github.com/elementalsouls/Claude-BugHunter" target="_top" rel="noopener">Read the original &#8599;</a></p>
         </article>
   </aside>
   <section class="reads">
     <h2>Worth Reading in Full</h2>
     <div class="reads-row"><article class="read">
           <div class="num">1</div>
-          <h4><a href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/" target="_top" rel="noopener">[AINews] Riemann Hypothesis proved...twice independently</a></h4>
-          <p class="src">Latent Space &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">One-page roundup of the Claude proof claim, METR time horizons and agent benchmarks, including a GrepMem append-only-log memory result.</p>
+          <h4><a href="https://news.ycombinator.com/item?id=50604314" target="_top" rel="noopener">Agent swarm trying to solve P vs. NP (Hacker News thread)</a></h4>
+          <p class="src">Hacker News &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://news.ycombinator.com/item?id=50604314" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">A live public multi-agent swarm (commenters cite 96 bots) whose progress you can watch, with useful skepticism in the comments.</p>
         </article>
 <article class="read">
           <div class="num">2</div>
-          <h4><a href="https://pwn.ai/upload2shell" target="_top" rel="noopener">Upload2Shell (CVE-2026-125396)</a></h4>
-          <p class="src">pwn.ai &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://pwn.ai/upload2shell" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">A Ghostscript sandbox escape affecting WordPress, Roundcube and others; worth checking if any of your tooling renders uploaded PDFs.</p>
+          <h4><a href="https://github.com/gulivan/worker755" target="_top" rel="noopener">Show HN: I built a game where you are an LLM&#x27;s subagent</a></h4>
+          <p class="src">Hacker News (GitHub: gulivan/worker755) &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://github.com/gulivan/worker755" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">Playing the subagent&#x27;s role may show you what a delegation prompt looks like from the receiving end.</p>
         </article>
 <article class="read">
           <div class="num">3</div>
-          <h4><a href="https://www.coindesk.com/markets/2026/11/21/xrp-falls-10-as-long-bets-unwind-and-etf-assets-slip-below-usd1-billion" target="_top" rel="noopener">XRP falls 10% as long bets unwind and ETF assets slip below $1 billion</a></h4>
-          <p class="src">CoinDesk &middot; Sat 21 Nov 2026 &middot; <a class="orig" href="https://www.coindesk.com/markets/2026/11/21/xrp-falls-10-as-long-bets-unwind-and-etf-assets-slip-below-usd1-billion" target="_top" rel="noopener">Read it &#8599;</a></p>
-          <p class="why">Gives open interest, negative funding and long-liquidation data useful for judging whether a perps flush is exhausted.</p>
+          <h4><a href="https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/" target="_top" rel="noopener">Testing Terraform with AWS Emulator</a></h4>
+          <p class="src">notes.hatedabamboo.me &middot; Sun 22 Nov 2026 &middot; <a class="orig" href="https://notes.hatedabamboo.me/terraform-tests-with-aws-emulator/" target="_top" rel="noopener">Read it &#8599;</a></p>
+          <p class="why">It shows a local-emulator test loop you could copy so unattended agents never touch real cloud resources.</p>
         </article></div>
   </section>
   <nav class="editions" id="editions" aria-label="All editions">
   <h2>All editions</h2>
-  <ul><li><span class="here" aria-current="page">Sunday, 22 November 2026</span></li><li><a href="2026-11-21.html" target="_top">Saturday, 21 November 2026</a></li><li><a href="2026-11-20.html" target="_top">Friday, 20 November 2026</a></li><li><a href="2026-11-18.html" target="_top">Wednesday, 18 November 2026</a></li><li><a href="2026-11-17.html" target="_top">Tuesday, 17 November 2026</a></li><li><a href="2026-11-16.html" target="_top">Monday, 16 November 2026</a></li><li><a href="2026-11-15.html" target="_top">Sunday, 15 November 2026</a></li><li><a href="2026-11-14.html" target="_top">Saturday, 14 November 2026</a></li><li><a href="2026-11-13.html" target="_top">Friday, 13 November 2026</a></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
+  <ul><li><span class="here" aria-current="page">Monday, 23 November 2026</span></li><li><a href="2026-11-22.html" target="_top">Sunday, 22 November 2026</a></li><li><a href="2026-11-21.html" target="_top">Saturday, 21 November 2026</a></li><li><a href="2026-11-20.html" target="_top">Friday, 20 November 2026</a></li><li><a href="2026-11-18.html" target="_top">Wednesday, 18 November 2026</a></li><li><a href="2026-11-17.html" target="_top">Tuesday, 17 November 2026</a></li><li><a href="2026-11-16.html" target="_top">Monday, 16 November 2026</a></li><li><a href="2026-11-15.html" target="_top">Sunday, 15 November 2026</a></li><li><a href="2026-11-14.html" target="_top">Saturday, 14 November 2026</a></li><li><a href="2026-11-13.html" target="_top">Friday, 13 November 2026</a></li><li><a href="2026-11-07.html" target="_top">Saturday, 7 November 2026</a></li><li><a href="2026-11-06.html" target="_top">Friday, 6 November 2026</a></li><li><a href="2026-11-05.html" target="_top">Thursday, 5 November 2026</a></li><li><a href="2026-11-04.html" target="_top">Wednesday, 4 November 2026</a></li><li><a href="2026-11-03.html" target="_top">Tuesday, 3 November 2026</a></li><li><a href="2026-11-02.html" target="_top">Monday, 2 November 2026</a></li><li><a href="2026-11-01.html" target="_top">Sunday, 1 November 2026</a></li><li><a href="2026-10-31.html" target="_top">Saturday, 31 October 2026</a></li><li><a href="2026-10-30.html" target="_top">Friday, 30 October 2026</a></li><li><a href="2026-10-29.html" target="_top">Thursday, 29 October 2026</a></li><li><a href="2026-10-28.html" target="_top">Wednesday, 28 October 2026</a></li><li><a href="2026-10-27.html" target="_top">Tuesday, 27 October 2026</a></li><li><a href="2026-10-26.html" target="_top">Monday, 26 October 2026</a></li><li><a href="2026-10-25.html" target="_top">Sunday, 25 October 2026</a></li><li><a href="2026-10-24.html" target="_top">Saturday, 24 October 2026</a></li><li><a href="2026-10-23.html" target="_top">Friday, 23 October 2026</a></li><li><a href="2026-10-22.html" target="_top">Thursday, 22 October 2026</a></li><li><a href="2026-10-21.html" target="_top">Wednesday, 21 October 2026</a></li><li><a href="2026-10-20.html" target="_top">Tuesday, 20 October 2026</a></li><li><a href="2026-10-19.html" target="_top">Monday, 19 October 2026</a></li><li><a href="2026-10-18.html" target="_top">Sunday, 18 October 2026</a></li><li><a href="2026-10-16.html" target="_top">Friday, 16 October 2026</a></li><li><a href="2026-10-14.html" target="_top">Wednesday, 14 October 2026</a></li><li><a href="2026-10-13.html" target="_top">Tuesday, 13 October 2026</a></li><li><a href="2026-10-12.html" target="_top">Monday, 12 October 2026</a></li><li><a href="2026-10-11.html" target="_top">Sunday, 11 October 2026</a></li></ul>
 </nav>
 </main>
 <footer id="about">
   <h2>About</h2>
-  <p>Written by AI (Claude sonnet) at 07:02 SGT for one reader &middot; $0.25 &middot; no cookies or tracking &middot; not financial advice.</p>
-  <p><b>Had news:</b> Hacker News front page, Latent Space, CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, TLDR AI, TradingView blog, GitHub trending (Python), @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> r/ClaudeAI, r/algotrading. Dropped: 14.</p>
+  <p>Written by AI (Claude sonnet) at 07:01 SGT for one reader &middot; $0.22 &middot; no cookies or tracking &middot; not financial advice.</p>
+  <p><b>Had news:</b> Hacker News front page, GitHub trending (Python), CoinDesk markets. <b>Nothing new:</b> Anthropic News, Claude blog, Claude Code changelog, Simon Willison, Latent Space, TLDR AI, TradingView blog, @AnthropicAI, @bcherny, @karpathy, @markminervini, @TradingView, X topic sweep. <b>Could not be read:</b> r/ClaudeAI, r/algotrading. Dropped: 14.</p>
   <p><a href="https://github.com/sulaimanmaharobin-coder/morning-edge">Corrections</a></p>
 </footer>
 </body></html>
