@@ -64,7 +64,7 @@ a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underli
 .read p { margin:0 0 6px; font-size:14.5px; }
 .editions { margin-top:28px; }
 .front .editions { grid-area:editions; padding-right:26px; border-right:1px solid var(--hair); margin-top:0; padding-top:28px; }
-.front .editions ul { grid-template-columns:1fr; }
+.front .editions ul { grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); }
 .editions h2 { font:700 13px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.2em; text-transform:uppercase; text-align:center;
   border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:6px 0; margin:0 0 10px; }
 .editions ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px; }
@@ -118,7 +118,7 @@ footer b { color:var(--ink); }
 <body>
 <div class="masthead"><a href="./" title="The Morning Edge: go to the latest edition">The Morning Edge</a></div>
 <div class="dateline"><span>Monday, 23 November 2026</span><nav aria-label="Page"><a href="#editions">Editions</a><a href="#about">About</a></nav><span class="no">No. 36</span></div>
-<div class="notice">This morning&#x27;s run failed (Claude Code did not write edition.json (exit 1): Claude Code can&#x27;t use your Claude subscription, usually because a payment is past due · Pay or renew at https:/). Showing the last good edition.</div>
+<div class="notice">Today&#x27;s edition is late.</div>
 <div class="notice" id="stale" hidden></div>
 <script>
 // Catches a missed run or a failed push: say so if this isn't today's paper (Singapore time).
