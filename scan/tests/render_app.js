@@ -8,4 +8,4 @@ const document = {
   querySelectorAll: () => [],
 };
 vm.runInNewContext(script, { document, window: { scrollTo() {} } });
-console.log(JSON.stringify(Object.fromEntries(["today", "stocks", "crypto"].map((id) => [id, els[id].innerHTML]))));
+console.log(JSON.stringify(Object.fromEntries(["today", "paper", "stocks", "crypto"].map((id) => [id, els[id].innerHTML]))));

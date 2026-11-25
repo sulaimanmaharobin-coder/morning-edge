@@ -1,213 +1,354 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Morning Edge App</title>
+<title>Morning Edge</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Every morning feed in one place: the paper, pullback setups, crypto setups and the jev-trader scan.">
 <meta name="apple-mobile-web-app-title" content="Edge"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1b18" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#edf1f4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1a21" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="app.webmanifest"><link rel="apple-touch-icon" href="icon.png"><link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,350;8..60,400;8..60,600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/json" id="claude-artifacts-manifest">{"permissions": ["full-access"]}</script>
 <style>
-:root { --paper:#f3eee2; --ink:#1b1916; --muted:#5d574c; --rule:#1b1916; --hair:#cdc4b1; --accent:#8a1c12; --box:#e9e2d1; --good:#2f6b3a; --bad:#8a1c12; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#1d1b18; --ink:#ebe5d8; --muted:#a59d8e; --rule:#ebe5d8; --hair:#4a453d; --accent:#e0806f; --box:#26231f; --good:#8cc79a; --bad:#e0806f; } }
-:root[data-theme="dark"] { --paper:#1d1b18; --ink:#ebe5d8; --muted:#a59d8e; --rule:#ebe5d8; --hair:#4a453d; --accent:#e0806f; --box:#26231f; --good:#8cc79a; --bad:#e0806f; }
-* { box-sizing:border-box; }
-html { background:var(--paper); -webkit-text-size-adjust:100%; }
-body { margin:0 auto; max-width:760px; padding:14px 16px calc(84px + env(safe-area-inset-bottom)); background:var(--paper); color:var(--ink);
-  font:16px/1.5 "Libre Caslon Text", Georgia, serif; overflow-wrap:anywhere; }
-a { color:inherit; text-decoration:underline; text-decoration-color:var(--hair); text-underline-offset:3px; }
-header { text-align:center; border-bottom:3px double var(--rule); padding-bottom:6px; }
-.mast { font:400 40px/1.05 "UnifrakturMaguntia", Georgia, serif; }
-.dateline { display:flex; justify-content:space-between; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-top:4px; }
-h2 { font:700 12px/1 "Libre Caslon Text", Georgia, serif; letter-spacing:.18em; text-transform:uppercase; text-align:center;
-  border-top:3px double var(--rule); border-bottom:1px solid var(--rule); padding:7px 0; margin:22px 0 8px; }
-h3 { font:700 20px/1.25 "Playfair Display", Georgia, serif; margin:10px 0 4px; }
-.lead h3 { font-size:26px; font-weight:900; }
-.dek { font:italic 400 17px/1.4 "Playfair Display", Georgia, serif; color:var(--muted); margin:0 0 6px; }
-.muted, .src { color:var(--muted); font-size:13px; }
-.why { font-style:italic; font-size:14.5px; }
-.card { border-bottom:1px solid var(--hair); padding:10px 0; }
-.card:last-child { border-bottom:none; }
-.box { background:var(--box); border-left:3px solid var(--accent); padding:9px 12px; margin:8px 0; font-size:14.5px; }
-.kpis { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:10px 0; align-items:start; }
-.kpi { background:var(--box); padding:10px 12px; cursor:pointer; border:0; color:inherit; font:inherit; text-align:left; }
-.kpi b { display:block; font:900 26px/1.1 "Playfair Display", Georgia, serif; }
-.kpi span { font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
-.kpi small { display:block; font-size:13px; margin-top:2px; }
-.wrap { overflow-x:auto; margin:4px 0 8px; }
-table { border-collapse:collapse; width:100%; font-size:13.5px; }
-th, td { border-bottom:1px solid var(--hair); padding:6px 6px; text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
-th { font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:400; }
-th:first-child, td:first-child { text-align:left; font-weight:700; }
-.tag { display:inline-block; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; padding:1px 6px; border:1px solid currentColor; }
-.long { color:var(--good); } .short, .warn { color:var(--bad); }
-.fresh { display:grid; grid-template-columns:auto 1fr; gap:2px 12px; font-size:13.5px; }
-.fresh .bad { color:var(--bad); }
-.btn { display:block; text-align:center; background:var(--ink); color:var(--paper); text-decoration:none; padding:12px; font-weight:700; margin:10px 0; }
-nav.tabs { position:fixed; left:0; right:0; bottom:0; background:var(--paper); border-top:1px solid var(--rule);
-  display:flex; justify-content:center; padding-bottom:env(safe-area-inset-bottom); z-index:5; }
-nav.tabs button { flex:1; max-width:152px; background:none; border:0; color:var(--muted); font:12px/1 "Libre Caslon Text", Georgia, serif;
-  letter-spacing:.08em; text-transform:uppercase; padding:14px 2px 16px; cursor:pointer; border-top:3px solid transparent; }
-nav.tabs button[aria-selected="true"] { color:var(--ink); border-top-color:var(--accent); font-weight:700; }
-section[hidden] { display:none; }
-details summary { cursor:pointer; color:var(--muted); font-size:13.5px; margin:6px 0; }
+/* VOICE: calm morning paper for one reader, then the numbers he trades on.
+   IDEA: design A "three zones": briefs, top story, reads; the app view puts the scans first.
+   PICTURE: the stop-to-high range bars for the tightest pre-breakouts.
+   COLOUR and TYPE: cool grey ground, deep ink, one teal accent; Source Serif 4 heads, Public Sans text.
+   LAYOUT: Today and Paper side by side on a wide window, one column on a phone, tabs at the foot. */
+:root{color-scheme:light dark;--bg:light-dark(#edf1f4,#0f1a21);--ink:light-dark(#15232d,#e3eaee);--t:light-dark(#4b5b66,#9aabb5);--x:light-dark(#00606a,#5cc4c9);--h:light-dark(#b9c5cc,#2c3d47);--box:light-dark(#e1e8ec,#172630);--bad:light-dark(#9a2a1c,#f08f7f)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{margin:0 auto;max-width:1240px;padding:18px max(16px,env(safe-area-inset-left)) calc(86px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-right));background:var(--bg);color:var(--ink);font:15px/1.45 "Public Sans",system-ui,sans-serif;overflow-wrap:anywhere;overflow-x:clip}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--x);outline-offset:2px}
+h1,h2,h3,p,ol,ul{margin:0;padding:0}ol,ul{list-style:none}h1,h3{text-wrap:balance}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--h)}
+.name{font:600 24px/1 "Source Serif 4",Georgia,serif}.s{color:var(--t);font-size:13px}
+h2{font:700 14px/1.2 "Public Sans",sans-serif;color:var(--x);padding-bottom:10px;border-bottom:2px solid var(--x);margin:24px 0 6px}
+h3{font-size:15px;line-height:1.3}
+.box{background:var(--box);border-left:3px solid var(--x);padding:10px 12px;margin:14px 0 0;font-size:14px}
+.warn{color:var(--bad)}
+summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--x);font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";margin-left:8px;font-weight:700}details[open]>summary::after{content:"\2212"}
+.btn{display:inline-grid;place-items:center;min-height:44px;padding:0 16px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);font:600 14px "Public Sans",sans-serif;cursor:pointer;margin-top:12px}
+.btn.ghost{background:none;color:var(--ink)}
+/* paper: three zones */
+.z{display:grid;grid-template-columns:300px minmax(0,1fr) 250px;gap:32px;margin-top:8px}
+.z h2{margin-top:16px}
+h1{font:350 46px/1.08 "Source Serif 4",Georgia,serif;margin:16px 0 14px}
+.why{font-size:18px;line-height:1.4;margin-bottom:14px}.dek{color:var(--t);font-size:16px;margin-bottom:6px}
+.story p,.fill p{margin-top:12px;max-width:62ch}.story{margin-top:6px}
+li.brief{display:grid;grid-template-columns:24px minmax(0,1fr);padding:11px 0 2px;border-bottom:1px dashed var(--h)}
+li.brief>b{font:400 20px/1.1 "Source Serif 4",serif;color:var(--x)}
+li.brief details p{margin-bottom:8px}
+.r{padding:11px 0;border-bottom:1px dashed var(--h)}.r p{margin-top:4px}
+.eds{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;margin-top:18px;border-top:1px solid var(--h)}
+.eds a{flex:none;min-width:44px;min-height:44px;display:grid;place-items:center;padding:0 8px;font-size:14px}.eds .on{color:var(--x);font-weight:700}
+/* app view */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 90px 90px;gap:12px;padding:9px 0;min-height:44px;align-items:center;border-bottom:1px solid var(--h);font-variant-numeric:tabular-nums}
+.row span{text-align:right}.row.hd{font-size:13px;color:var(--t);min-height:0}
+.row.cn{grid-template-columns:60px minmax(0,1fr)}.cn span{text-align:left}
+.q{padding:10px 0}
+.rg{display:grid;grid-template-columns:56px minmax(0,1fr) 72px;align-items:center;min-height:36px;font-size:14px;font-variant-numeric:tabular-nums}.rg>span:last-child{text-align:right}
+.pl{position:relative;height:36px}.pl i{position:absolute;display:block}
+.pl .z0{left:50%;top:0;bottom:0;width:1px;background:currentColor;opacity:.45}
+.pl .ln{top:17px;height:2px;background:var(--x)}.pl .st{top:11px;width:4px;height:14px;margin-left:-2px;background:currentColor}
+.pl .hi{top:13px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--x)}
+.pl .tk{top:9px;transform:translateX(-50%);font-style:normal;font-size:13px;color:var(--t)}
+.ax{font-size:13px;color:var(--t);margin-top:6px}
+.foot{margin-top:24px;padding-top:10px;border-top:1px solid var(--h);display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center}
+.foot a{min-height:44px;display:inline-grid;place-items:center;text-decoration:underline;text-underline-offset:3px}
+/* tables */
+.wrap{overflow-x:auto;margin:4px 0 8px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--h);padding:8px 6px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+th{font-size:13px;color:var(--t);font-weight:400}
+th:first-child,td:first-child{text-align:left;font-weight:700}
+.tag{color:var(--x);font-weight:600}
+/* tabs */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--bg);border-top:1px solid var(--ink);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom)}
+nav.tabs button{flex:1;max-width:180px;min-height:52px;background:none;border:0;border-top:3px solid transparent;color:var(--t);font:600 14px "Public Sans",sans-serif;cursor:pointer}
+nav.tabs button[aria-selected=true]{color:var(--ink);border-top-color:var(--x);font-weight:700}
+section[hidden]{display:none!important}
+@media (max-width:860px){.z,.two{grid-template-columns:minmax(0,1fr);gap:0}.z .l{order:2}.z .rr{order:3}h1{font-size:34px}.row{grid-template-columns:minmax(0,1fr) 80px 80px}}
+@media (prefers-reduced-motion:no-preference){section{animation:in .18s ease-out}@keyframes in{from{opacity:0;transform:translateY(4px)}}}
 </style></head>
 <body>
-<header>
-  <div class="mast">The Morning Edge</div>
-  <div class="dateline"><span id="dl-date"></span><span id="dl-built"></span></div>
-</header>
+<div class="head"><span class="name">Morning Edge</span><span class="s" id="dl"></span></div>
+<div id="live" class="s" hidden></div>
 <main>
   <section id="today" role="tabpanel"></section>
   <section id="paper" role="tabpanel" hidden></section>
   <section id="stocks" role="tabpanel" hidden></section>
   <section id="crypto" role="tabpanel" hidden></section>
-  <section id="work" role="tabpanel" hidden></section>
 </main>
-<nav class="tabs" role="tablist">
+<nav class="tabs" role="tablist" aria-label="Views">
   <button role="tab" data-tab="today">Today</button>
   <button role="tab" data-tab="paper">Paper</button>
   <button role="tab" data-tab="stocks">Stocks</button>
   <button role="tab" data-tab="crypto">Crypto</button>
-  <button role="tab" data-tab="work">Work</button>
 </nav>
 <script id="app-data" type="application/json">__APP_DATA__</script>
 <script>
 (function () {
-  var D = JSON.parse(document.getElementById("app-data").textContent);
+  var SITE = "https://sulaimanmaharobin-coder.github.io/morning-edge/";
+  var LIVE = SITE + "app.json";
   function e(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
-  function link(url, label) { return /^https?:\/\//.test(url || "") ? '<a href="' + e(url) + '" target="_blank" rel="noopener">' + e(label) + "</a>" : e(label); }
-  function px(x) { if (x == null) return "n/a"; var a = Math.abs(x); return a >= 1000 ? x.toLocaleString("en-US", {maximumFractionDigits: 0}) : a >= 1 ? x.toFixed(2) : x.toPrecision(4); }
-  function pct(x, signed) { return x == null ? "n/a" : (signed && x > 0 ? "+" : "") + x.toFixed(1) + "%"; }
+  function link(url, label) { return /^https:\/\//.test(url || "") ? '<a href="' + e(url) + '" target="_blank" rel="noopener">' + e(label) + "</a>" : e(label); }
+  // Feed numbers are checked before use: anything that is not a finite number shows as "n/a", never as markup.
+  function isNum(x) { return typeof x === "number" && isFinite(x); }
+  function px(x) { if (!isNum(x)) return "n/a"; var a = Math.abs(x); return a >= 1000 ? x.toLocaleString("en-US", {maximumFractionDigits: 0}) : a >= 1 ? x.toFixed(2) : x.toPrecision(4); }
+  function pct(x, signed) { return !isNum(x) ? "n/a" : (signed && x > 0 ? "+" : "") + x.toFixed(1) + "%"; }
+  function num(x, d) { return !isNum(x) ? "n/a" : x.toFixed(d); }
+  function dt(iso) { return iso ? new Date(iso.slice(0, 10) + "T00:00Z").toLocaleDateString("en-GB", {day: "numeric", month: "short", timeZone: "UTC"}) : "n/a"; }
   function table(head, rows) { return '<div class="wrap"><table><tr>' + head.map(function (h) { return "<th>" + e(h) + "</th>"; }).join("") + "</tr>" + rows.join("") + "</table></div>"; }
   function tr(cells) { return "<tr>" + cells.map(function (c) { return "<td>" + c + "</td>"; }).join("") + "</tr>"; }
-  function unavailable(name) { return '<p class="muted">' + e(name) + " is unavailable in this build" + (D.errors[name] ? " (" + e(D.errors[name]) + ")" : "") + ".</p>"; }
-  var sgtToday = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+  function clean(s) { return String(s || "").replace(/\s*·\s*Read (the original|it)\s*↗\s*$/, "").trim(); }
+  function sgtNow() { return new Date(Date.now() + 8 * 3600e3); }
+  function pos(v) { v = isNum(v) ? v : 0; return Math.max(2, Math.min(98, 50 + v / 6 * 50)); }
 
-  var ed = D.edition, pb = D.pullback, st = D.setups, bo = D.breakouts, jv = D.jev;
-  var strict = st ? st.rows.filter(function (r) { return r.strict; }) : [];
-  var fresh = bo ? bo.rows.filter(function (r) { return r.label === "FRESH-CROSS"; }) : [];
-  var jevOk = jv && ["prebreak", "growth"].every(function (k) { return jv[k].breakouts; });
-  var jevBreaks = jevOk ? ["prebreak", "growth"].reduce(function (a, k) { return a.concat(jv[k].breakouts.filter(function (b) { return b.day === jv[k].bar_day; })); }, []) : [];
+  function render(D) {
+    function unavailable(name) { return '<p class="q s">' + e(name) + " is unavailable in this build" + (D.errors && D.errors[name] ? " (" + e(D.errors[name]) + ")" : "") + ".</p>"; }
+    var today = sgtNow().toISOString().slice(0, 10);
+    var ed = D.edition, pb = D.pullback, st = D.setups, bo = D.breakouts, jv = D.jev;
+    var strict = st ? st.rows.filter(function (r) { return r.strict; }) : [];
+    var fresh = bo ? bo.rows.filter(function (r) { return r.label === "FRESH-CROSS"; }) : [];
+    var jevOk = !!jv && ["prebreak", "growth"].every(function (k) { return jv[k] && jv[k].breakouts; });
+    var barDay = jevOk ? [jv.growth.bar_day, jv.prebreak.bar_day].filter(Boolean).sort().pop() : null;
+    var jevBreaks = jevOk ? ["prebreak", "growth"].reduce(function (a, k) { return a.concat(jv[k].breakouts.filter(function (b) { return b.day === jv[k].bar_day; })); }, []) : [];
+    function up(b) { return isNum(b.close) && isNum(b.level) && b.level ? (b.close / b.level - 1) * 100 : null; }
+    jevBreaks.sort(function (x, y) { return (up(y) || 0) - (up(x) || 0); });
 
-  document.getElementById("dl-date").textContent = new Date(Date.now() + 8 * 3600e3).toLocaleDateString("en-GB", {weekday: "long", day: "numeric", month: "long", timeZone: "UTC"});
-  document.getElementById("dl-built").textContent = "Updated " + D.built.slice(11) + " SGT";
+    document.getElementById("dl").textContent = sgtNow().toLocaleDateString("en-GB", {weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC"}) + " · updated " + builtAt(D) + " SGT";
+    function builtAt(x) { var b = String(x.built || ""); return (b.slice(0, 10) === today ? "" : dt(b) + " ") + b.slice(11); }
+    var stale = ed && ed.date < today ? '<p class="box">Today\'s paper has not arrived yet. Showing the edition of ' + e(dt(ed.date)) + ".</p>" : "";
+    var lead = ed && ed.lead ? ed.lead : null;
+    var leadSrc = ed ? clean(ed.byline) : "";
 
-  // Today
-  var h = "";
-  if (ed && ed.date < sgtToday) h += '<p class="box">Today\'s paper has not arrived yet. Showing the edition of ' + e(ed.date) + ".</p>";
-  if (ed && ed.lead) h += '<div class="lead card"><div class="src">Top story</div><h3>' + link(ed.lead.url, ed.lead.title) + '</h3><p class="dek">' + e(ed.dek) + "</p></div>";
-  h += '<div class="kpis">' +
-    kpi("crypto", strict.length, "Crypto setups", strict.map(function (r) { return r.coin + " " + r.bias; }).join(", ") || "none strict") +
-    kpi("stocks", pb ? pb.total : "–", "Pre-breakouts", pb ? pb.rows.slice(0, 3).map(function (r) { return r.sym; }).join(", ") : "scan unavailable") +
-    kpi("stocks", jevOk ? jevBreaks.length : "–", "jev breakouts today", jevOk ? (jevBreaks.map(function (r) { return r.ticker; }).join(", ") || "none") : jv || D.errors.jev ? "unavailable" : "not connected") +
-    kpi("crypto", bo ? fresh.length : "–", "Fresh EMA crosses", bo ? (fresh.map(function (r) { return r.coin; }).join(", ") || "none") : "unavailable") +
-    "</div>";
-  h += "<h2>Feeds</h2><div class=\"fresh\">" +
-    row("Paper", ed ? ed.date : null, ed && ed.date >= sgtToday) +
-    row("Pullback scan", pb ? pb.scanned + " SGT" : null, !!pb) +
-    row("Crypto", st ? D.built + " SGT" : null, !!st) +
-    row("jev-trader", jv ? (jv.report_date || "?") : null, jevOk && jv.prebreak.watch && jv.growth.watch) + "</div>";
-  if (D.work_url) h += '<a class="btn" href="' + e(D.work_url) + '" target="_blank" rel="noopener">Open private Work Brief</a>';
-  document.getElementById("today").innerHTML = h;
-  function kpi(tab, n, label, sub) { return '<button class="kpi" data-go="' + tab + '"><b>' + e(n) + "</b><span>" + e(label) + "</span><small>" + e(sub) + "</small></button>"; }
-  function row(name, when, ok) { return "<span>" + e(name) + "</span><span" + (ok ? "" : ' class="bad"') + ">" + (when ? e(when) : "unavailable") + "</span>"; }
-
-  // Paper
-  h = "";
-  if (!ed) h = unavailable("edition");
-  else {
-    h += "<h2>Edition of " + e(ed.date) + "</h2>";
-    if (ed.lead) h += '<div class="lead card"><h3>' + link(ed.lead.url, ed.lead.title) + '</h3><p class="dek">' + e(ed.dek) + '</p><div class="src">' + e(ed.byline) + "</div>" + (ed.why ? '<div class="box"><b>Why it matters to you.</b> ' + e(ed.why) + "</div>" : "") + "</div>";
-    if (ed.briefs.length) h += "<h2>In Brief</h2>" + ed.briefs.map(function (b) { return '<div class="card"><h3>' + link(b.url, b.title) + "</h3><p>" + e(b.body) + "</p>" + (b.why ? '<p class="why">' + e(b.why) + "</p>" : "") + "</div>"; }).join("");
-    if (ed.reads.length) h += "<h2>Worth Reading in Full</h2>" + ed.reads.map(function (r) { return '<div class="card"><h3>' + link(r.url, r.title) + '</h3><div class="src">' + e(r.src) + '</div><p class="why">' + e(r.why) + "</p></div>"; }).join("");
-    h += '<p class="muted"><a href="' + e(ed.file) + '">Open the full edition</a></p>';
-  }
-  document.getElementById("paper").innerHTML = h;
-
-  // Stocks
-  h = "<h2>Pre-breakout pullbacks</h2>";
-  if (!pb) h += unavailable("pullback");
-  else {
-    h += '<p class="muted">' + e(pb.total) + " pre-breakout setups, " + e(pb.noise) + " left out with a stop inside one ATR. Ranked by stop distance in ATR. Scanned " + e(pb.scanned) + " SGT.</p>";
-    h += table(["Name", "Close", "vs 20 EMA", "RSI", "Stop", "Risk", "ATR", "To high"], pb.rows.map(function (r) {
-      return tr([e(r.sym), px(r.close), pct(r.d20, true), r.rsi.toFixed(1), px(r.e50), pct(r.stop_pct), r.stop_atr.toFixed(1), pct(r.to_hi)]);
-    }));
-    if (pb.all && pb.all.length) {
-      h += "<details><summary>Full buy zone, crypto and stocks (" + pb.all.length + ")</summary>";
-      h += '<p class="muted">Pre-breakouts ranked by stop in ATR come first, then the rest by distance to the 20-day high. Flags: <b>pre</b> = pre-breakout, <b>&lt;1 ATR</b> = stop inside a normal day\'s range, <b>close</b> = wait for a daily close back above the 20 EMA.</p>';
-      h += table(["Name", "Flag", "vs 20 EMA", "ATR", "To high", "RSI", "Stop", "Close"], pb.all.map(function (r) {
-        var flags = [];
-        if (r.pre_breakout) flags.push("pre");
-        if (r.stop_atr != null && r.stop_atr < 1) flags.push("&lt;1 ATR");
-        if (r.d20 < 0) flags.push("close");
-        return tr([e(r.sym) + ' <span class="muted">' + (r.kind === "crypto" ? "crypto" : "") + "</span>", flags.join(" · "), pct(r.d20, true), r.stop_atr == null ? "n/a" : r.stop_atr.toFixed(1), pct(r.to_hi), r.rsi.toFixed(1), pct(r.stop_pct), px(r.close)]);
-      }));
-      h += "</details>";
+    // shared pieces
+    function plot(r) {
+      return '<span class="pl" title="' + e(r.sym) + ": close " + px(r.close) + ", stop " + pct(r.stop_pct) + " below, 20-day high " + pct(r.to_hi) + ' above"><i class="z0"></i><i class="ln" style="left:' + pos(-r.stop_pct) + "%;width:" + (pos(r.to_hi) - pos(-r.stop_pct)) + '%"></i><i class="st" style="left:' + pos(-r.stop_pct) + '%"></i><i class="hi" style="left:' + pos(r.to_hi) + '%"></i></span>';
     }
-    h += "<details><summary>Rules and sources</summary><p class=\"muted\">Buy zone: 20 EMA above 50 EMA, 50 EMA rising, daily low touched the 20 EMA in the last two bars, RSI(14) above 50. Pre-breakout: stop (50 EMA) within 5% and price within 5% of its 20-day high. Exit when the 20 EMA closes below the 50 EMA or price closes below the 50 EMA. " + e(pb.notes.join(" ")) + "</p></details>";
-  }
-  h += "<h2>jev-trader scan</h2>";
-  if (!jv && D.errors.jev) h += unavailable("jev");
-  else if (!jv) h += '<p class="muted">Not connected. Add a read-only token for jev-trader as the repository secret JEV_TOKEN to show the nightly breakouts here.</p>';
-  else {
-    ["prebreak", "growth"].forEach(function (k) {
-      var s = jv[k], name = k === "prebreak" ? "Pre-breakout sleeve" : "Growth sleeve";
-      h += "<h3>" + name + "</h3><p class=\"muted\">Scanned " + e(s.scanned || "n/a") + ", newest bar " + e(s.bar_day || "n/a") + ".</p>";
-      h += !s.breakouts ? '<p class="warn">Breakouts unavailable.</p>' : s.breakouts.length ? table(["Breakout", "Close", "Level", "Above", "Vol ×", "Rev YoY", "Day"], s.breakouts.map(function (b) {
-        return tr([e(b.ticker), px(b.close), px(b.level), pct((b.close / b.level - 1) * 100, true), b.vol_ratio == null ? "n/a" : b.vol_ratio.toFixed(2), b.rev_yoy == null ? "n/a" : pct(b.rev_yoy * 100), e(b.day)]);
-      })) : '<p class="muted">No breakouts.</p>';
-      if (!s.watch) h += '<p class="warn">Watch list unavailable.</p>';
-      else if (s.watch.length) h += "<details><summary>Watch list (" + s.watch.length + "), breakout levels</summary>" + table(["Watch", "Level", "Rev YoY"], s.watch.map(function (w) { return tr([e(w.ticker), px(w.level), w.rev_yoy == null ? "n/a" : pct(w.rev_yoy * 100)]); })) + "</details>";
-    });
-    h += '<p class="muted">Paper trades only. The pre-breakout rule\'s 2-year backtest was losing (profit factor 0.84).</p>';
-  }
-  document.getElementById("stocks").innerHTML = h;
+    var axis = '<div class="rg"><b></b><span class="pl"><i class="tk" style="left:' + pos(-4) + '%">-4%</i><i class="tk" style="left:50%">close</i><i class="tk" style="left:' + pos(4) + '%">+4%</i></span><span class="s">Close</span></div>';
+    function ranges(rows) { return axis + rows.map(function (r) { return '<div class="rg"><b>' + e(r.sym) + "</b>" + plot(r) + "<span>" + px(r.close) + "</span></div>"; }).join("") + '<p class="ax">Bar: stop at the 50 EMA. Dot: 20-day high. Scale ±6% of the close.</p>'; }
+    function coinSummary() {
+      if (!st) return unavailable("setups");
+      var h = '<p class="q">' + (strict.length ? strict.length + (strict.length > 1 ? " setups: " : " setup: ") + e(strict.map(function (r) { return r.coin + " " + (r.bias === "bullish" ? "long" : r.bias === "bearish" ? "short" : r.bias); }).join(", ")) + "." : "No setup in " + st.rows.length + (st.rows.length === 1 ? " coin." : " coins.")) + (st.failed && st.failed.length ? " " + st.failed.length + " not fetched." : "") + " ";
+      h += !bo ? "EMA scan unavailable." : fresh.length ? fresh.length + " fresh EMA " + (fresh.length > 1 ? "crosses: " : "cross: ") + e(fresh.map(function (r) { return r.coin; }).join(", ")) + "." : "No fresh EMA cross.";
+      h += "</p>";
+      var miss = st.rows.filter(function (r) { return !r.strict; });
+      if (miss.length) h += "<details><summary>Why not</summary>" + miss.map(function (r) { return '<div class="row cn"><b>' + e(r.coin) + "</b><span>" + e(r.missing) + "</span></div>"; }).join("") + "</details>";
+      return h;
+    }
+    function foot() {
+      return '<div class="foot"><span class="s">Built ' + e(builtAt(D)) + " SGT</span>" + (D.work_url ? link(D.work_url, "Work Brief") : "") + (ed ? link(SITE + ed.file, "Full edition") : "") + "</div>";
+    }
 
-  // Crypto
-  h = "<h2>Watchlist setups</h2>";
-  if (!st) h += unavailable("setups");
-  else {
-    h += table(["Coin", "Bias", "Entry", "Stop", "Target", "RR", "RSI", "4H"], st.rows.map(function (r) {
-      var b = r.bias === "bullish" ? '<span class="long">long</span>' : r.bias === "bearish" ? '<span class="short">short</span>' : "neutral";
-      return tr([e(r.coin) + (r.strict ? ' <span class="tag long">setup</span>' : ""), b, px(r.entry), px(r.stop), px(r.target), r.rr == null ? "n/a" : r.rr.toFixed(1), r.rsi.toFixed(1), e(r.structure)]);
-    }));
-    var miss = st.rows.filter(function (r) { return !r.strict; }).map(function (r) { return "<b>" + e(r.coin) + "</b>: " + e(r.missing); });
-    if (miss.length) h += '<p class="muted">Not a setup: ' + miss.join(" · ") + "</p>";
-    h += "<details><summary>Rules</summary><p class=\"muted\">Bullish: 1D close above 1D EMA50, daily RSI 45–70, higher highs and higher lows on 4H. Bearish: close below EMA50, RSI 45 or less, lower highs and lower lows on 4H. Long stop = latest 4H swing low − 0.5 × 4H ATR; target = nearest daily swing high. A setup needs RR of 2 or more. Risk at most 1% of the portfolio per trade. Check for US CPI, FOMC and weekend thin liquidity before acting." + (st.failed.length ? " Failed to fetch: " + e(st.failed.join(", ")) + "." : "") + "</p></details>";
-  }
-  h += "<h2>EMA 20/50 breakout scan</h2>";
-  if (!bo) h += unavailable("breakouts");
-  else {
-    ["FRESH-CROSS", "NEAR-CROSS", "IN-TREND", "CHASING", "QUIET-SETUP"].forEach(function (lab) {
-      var rs = bo.rows.filter(function (r) { return r.label === lab; });
-      var body = rs.length ? table(["Coin", "EMA gap", "Cross", "vs SMA200", "7d", "14d range", "Vol $K"], rs.map(function (r) {
-        return tr([e(r.coin) + (r.thin ? ' <span class="muted">thin</span>' : ""), pct(r.gap, true), r.cross_days == null ? "n/a" : r.cross_days + "d", pct(r.vs_sma200, true), pct(r.d7, true), pct(r.range14), r.vol_k.toLocaleString("en-US")]);
-      })) : '<p class="muted">none</p>';
-      h += lab === "FRESH-CROSS" || lab === "NEAR-CROSS" ? "<h3>" + lab + " (" + rs.length + ")</h3>" + body : "<details><summary>" + lab + " (" + rs.length + ")</summary>" + body + "</details>";
-    });
-    h += '<p class="muted">FRESH-CROSS: EMA20 crossed above EMA50 in the last 3 closed bars and the entry gate passes. NEAR-CROSS: EMA20 within 2% below EMA50 and closing. QUIET-SETUP is a watch list only, never an entry. Research only, not advice.</p>';
-  }
-  document.getElementById("crypto").innerHTML = h;
+    // Today
+    var h = stale + '<div class="two"><section aria-label="Breakouts"><h2>';
+    if (jevOk) {
+      h += e(jevBreaks.length + (jevBreaks.length === 1 ? " breakout, " : " breakouts, ") + dt(barDay) + " close") + "</h2>";
+      h += jevBreaks.length ? '<div class="row hd"><b>Stock</b><span>Close</span><span>Over level</span></div>' + jevBreaks.map(function (b) { return '<div class="row" title="' + e(b.ticker) + ": level " + px(b.level) + '"><b>' + e(b.ticker) + "</b><span>" + px(b.close) + "</span><span>" + pct(up(b), true) + "</span></div>"; }).join("") : '<p class="q s">No jev-trader breakouts on the last close.</p>';
+    } else h += "jev-trader breakouts</h2>" + (jv || (D.errors && D.errors.jev) ? '<p class="q warn">jev-trader breakouts unavailable.</p>' : '<p class="q s">jev-trader is not connected.</p>');
+    h += "</section><section aria-label=\"Pre-breakouts\"><h2>";
+    if (pb) {
+      var top = pb.rows.slice(0, 8);
+      h += e(pb.total + " pre-breakouts, " + top.length + " tightest stops of 1 ATR or more") + "</h2>" + (top.length ? ranges(top) : '<p class="q s">None after the one-ATR filter.</p>');
+    } else h += "Pre-breakouts</h2>" + unavailable("pullback");
+    h += '</section></div><div class="two"><section><h2>Crypto</h2>' + coinSummary() + "</section><section><h2>Top story</h2>";
+    h += lead ? "<h3>" + link(lead.url, lead.title) + '</h3><p class="s">' + e(leadSrc) + "</p>" + (ed.why ? '<p style="margin-top:8px">' + e(ed.why) + "</p>" : "") : unavailable("edition");
+    h += "</section></div>" + foot();
+    document.getElementById("today").innerHTML = h;
 
-  // Work
-  h = "<h2>Work Brief</h2><p>The LTA morning brief, meeting prep and task list come from your email and calendar, so they live on a private claude.ai page that only you can open.</p>";
-  h += D.work_url ? '<a class="btn" href="' + e(D.work_url) + '" target="_blank" rel="noopener">Open private Work Brief</a>' : '<p class="muted">The private page is not linked yet.</p>';
-  document.getElementById("work").innerHTML = h;
+    // Paper: three zones
+    if (!ed) h = unavailable("edition");
+    else {
+      h = stale + '<div class="z"><section class="l"><h2>In brief</h2><ol>' + ed.briefs.map(function (b, i) {
+        return '<li class="brief"><b>' + (i + 1) + "</b><div><h3>" + link(b.url, b.title) + "</h3>" + (b.src ? '<p class="s">' + e(b.src) + "</p>" : "") + "<details><summary>Why it matters</summary>" + (b.why ? "<p>" + e(b.why) + "</p>" : "") + "<p>" + e(b.body) + "</p></details></div></li>";
+      }).join("") + "</ol></section><section>";
+      if (lead) {
+        var story = ed.story || [];
+        h += "<h1>" + link(lead.url, lead.title) + "</h1>" + (ed.why ? '<p class="why">' + e(ed.why) + "</p>" : "") + '<p class="dek">' + e(ed.dek) + '</p><p class="s">' + e(leadSrc) + "</p>";
+        if (story.length) h += '<div class="fill"><p>' + e(story[0]) + "</p></div>" + (story.length > 1 ? '<details class="story"><summary>Full story</summary>' + story.slice(1).map(function (p) { return "<p>" + e(p) + "</p>"; }).join("") + "</details>" : "");
+      }
+      if (ed.note) h += '<p class="s" style="margin-top:14px">' + e(ed.note) + "</p>";
+      h += '</section><section class="rr"><h2>Read in full</h2>' + ed.reads.map(function (r) { return '<div class="r"><h3>' + link(r.url, r.title) + '</h3><p class="s">' + e(clean(r.src)) + "</p><p>" + e(r.why) + "</p></div>"; }).join("") + "</section></div>";
+      var eds = ed.editions && ed.editions.length ? ed.editions : [ed.date];
+      h += '<nav class="eds" aria-label="Editions">' + eds.map(function (x) { return '<a href="' + e(SITE + x + ".html") + '" target="_blank" rel="noopener"' + (x === ed.date ? ' class="on"' : "") + ">" + e(dt(x)) + "</a>"; }).join("") + "</nav>";
+    }
+    document.getElementById("paper").innerHTML = h;
 
-  // Tabs
+    // Stocks
+    h = "<h2>Pre-breakout pullbacks</h2>";
+    if (!pb) h += unavailable("pullback");
+    else {
+      h += '<p class="q s">' + e(pb.total) + " pre-breakout setups, " + e(pb.noise) + " left out with a stop inside one ATR. Ranked by stop distance in ATR. Scanned " + e(pb.scanned) + " SGT.</p>";
+      h += table(["Name", "Close", "vs 20 EMA", "RSI", "Stop", "Risk", "ATR", "To high"], pb.rows.map(function (r) {
+        return tr([e(r.sym), px(r.close), pct(r.d20, true), num(r.rsi, 1), px(r.e50), pct(r.stop_pct), num(r.stop_atr, 1), pct(r.to_hi)]);
+      }));
+      if (pb.rows.length) h += "<details><summary>Stop-to-high chart</summary>" + ranges(pb.rows) + "</details>";
+      if (pb.all && pb.all.length) {
+        h += "<details><summary>Full buy zone, crypto and stocks (" + pb.all.length + ")</summary>";
+        h += '<p class="s">Pre-breakouts ranked by stop in ATR come first, then the rest by distance to the 20-day high. Flags: pre = pre-breakout, &lt;1 ATR = stop inside a normal day\'s range, close = wait for a daily close back above the 20 EMA.</p>';
+        h += table(["Name", "Flag", "vs 20 EMA", "ATR", "To high", "RSI", "Stop", "Close"], pb.all.map(function (r) {
+          var flags = [];
+          if (r.pre_breakout) flags.push("pre");
+          if (isNum(r.stop_atr) && r.stop_atr < 1) flags.push("&lt;1 ATR");
+          if (isNum(r.d20) && r.d20 < 0) flags.push("close");
+          return tr([e(r.sym) + (r.kind === "crypto" ? ' <span class="s">crypto</span>' : ""), flags.join(" · "), pct(r.d20, true), num(r.stop_atr, 1), pct(r.to_hi), num(r.rsi, 1), pct(r.stop_pct), px(r.close)]);
+        }));
+        h += "</details>";
+      }
+      h += '<details><summary>Rules and sources</summary><p class="s">Buy zone: 20 EMA above 50 EMA, 50 EMA rising, daily low touched the 20 EMA in the last two bars, RSI(14) above 50. Pre-breakout: stop (50 EMA) within 5% and price within 5% of its 20-day high. Exit when the 20 EMA closes below the 50 EMA or price closes below the 50 EMA. ' + e((pb.notes || []).join(" ")) + "</p></details>";
+    }
+    h += "<h2>jev-trader scan</h2>";
+    if (!jv && D.errors && D.errors.jev) h += unavailable("jev");
+    else if (!jv) h += '<p class="q s">Not connected. Add a read-only token for jev-trader as the repository secret JEV_TOKEN to show the nightly breakouts here.</p>';
+    else {
+      ["prebreak", "growth"].forEach(function (k) {
+        var s = jv[k] || {}, name = k === "prebreak" ? "Pre-breakout sleeve" : "Growth sleeve";
+        h += '<h3 style="margin-top:14px">' + name + '</h3><p class="s">Scanned ' + e(s.scanned || "n/a") + ", newest bar " + e(s.bar_day || "n/a") + ".</p>";
+        h += !s.breakouts ? '<p class="q warn">Breakouts unavailable.</p>' : s.breakouts.length ? table(["Breakout", "Close", "Level", "Above", "Vol ×", "Rev YoY", "Day"], s.breakouts.map(function (b) {
+          return tr([e(b.ticker), px(b.close), px(b.level), pct(up(b), true), num(b.vol_ratio, 2), isNum(b.rev_yoy) ? pct(b.rev_yoy * 100) : "n/a", e(b.day)]);
+        })) : '<p class="q s">No breakouts.</p>';
+        if (!s.watch) h += '<p class="q warn">Watch list unavailable.</p>';
+        else if (s.watch.length) h += "<details><summary>Watch list (" + s.watch.length + "), breakout levels</summary>" + table(["Watch", "Level", "Rev YoY"], s.watch.map(function (w) { return tr([e(w.ticker), px(w.level), isNum(w.rev_yoy) ? pct(w.rev_yoy * 100) : "n/a"]); })) + "</details>";
+      });
+      h += '<p class="s" style="margin-top:10px">Paper trades only. The pre-breakout rule\'s 2-year backtest was losing (profit factor 0.84).</p>';
+    }
+    document.getElementById("stocks").innerHTML = h + foot();
+
+    // Crypto
+    h = "<h2>Watchlist setups</h2>";
+    if (!st) h += unavailable("setups");
+    else {
+      h += coinSummary();
+      h += table(["Coin", "Bias", "Entry", "Stop", "Target", "RR", "RSI", "4H"], st.rows.map(function (r) {
+        var b = r.bias === "bullish" ? '<span class="tag">long</span>' : r.bias === "bearish" ? '<span class="warn">short</span>' : "neutral";
+        return tr([e(r.coin) + (r.strict ? ' <span class="tag">setup</span>' : ""), b, px(r.entry), px(r.stop), px(r.target), num(r.rr, 1), num(r.rsi, 1), e(r.structure)]);
+      }));
+      h += '<details><summary>Rules</summary><p class="s">Bullish: 1D close above 1D EMA50, daily RSI 45 to 70, higher highs and higher lows on 4H. Bearish: close below EMA50, RSI 45 or less, lower highs and lower lows on 4H. Long stop = latest 4H swing low minus 0.5 × 4H ATR; target = nearest daily swing high. A setup needs RR of 2 or more. Risk at most 1% of the portfolio per trade. Check for US CPI, FOMC and weekend thin liquidity before acting.' + (st.failed && st.failed.length ? " Failed to fetch: " + e(st.failed.join(", ")) + "." : "") + "</p></details>";
+    }
+    h += "<h2>EMA 20/50 breakout scan</h2>";
+    if (!bo) h += unavailable("breakouts");
+    else {
+      ["FRESH-CROSS", "NEAR-CROSS", "IN-TREND", "CHASING", "QUIET-SETUP"].forEach(function (lab) {
+        var rs = bo.rows.filter(function (r) { return r.label === lab; });
+        var body = rs.length ? table(["Coin", "EMA gap", "Cross", "vs SMA200", "7d", "14d range", "Vol $K"], rs.map(function (r) {
+          return tr([e(r.coin) + (r.thin ? ' <span class="s">thin</span>' : ""), pct(r.gap, true), isNum(r.cross_days) ? r.cross_days + "d" : "n/a", pct(r.vs_sma200, true), pct(r.d7, true), pct(r.range14), isNum(r.vol_k) ? r.vol_k.toLocaleString("en-US") : "n/a"]);
+        })) : '<p class="q s">None.</p>';
+        h += lab === "FRESH-CROSS" || lab === "NEAR-CROSS" ? '<h3 style="margin-top:14px">' + lab + " (" + rs.length + ")</h3>" + body : "<details><summary>" + lab + " (" + rs.length + ")</summary>" + body + "</details>";
+      });
+      h += '<p class="s" style="margin-top:10px">FRESH-CROSS: EMA20 crossed above EMA50 in the last 3 closed bars and the entry gate passes. NEAR-CROSS: EMA20 within 2% below EMA50 and closing. QUIET-SETUP is a watch list only, never an entry. Research only, not advice.</p>';
+    }
+    document.getElementById("crypto").innerHTML = h + foot();
+  }
+
+  // Tabs, routed on the hash so a view can be bookmarked.
   var tabs = document.querySelectorAll("nav.tabs button");
-  function show(id) {
+  var VIEWS = ["today", "paper", "stocks", "crypto"], cur = "today";
+  function show(id, scroll) {
+    if (VIEWS.indexOf(id) < 0) id = "today";
+    cur = id;
     tabs.forEach(function (b) { b.setAttribute("aria-selected", b.dataset.tab === id ? "true" : "false"); });
     document.querySelectorAll("main > section").forEach(function (s) { s.hidden = s.id !== id; });
-    window.scrollTo(0, 0);
+    if (scroll) window.scrollTo(0, 0);
   }
-  tabs.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.tab); }); });
-  document.querySelectorAll("[data-go]").forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.go); }); });
-  show("today");
+  tabs.forEach(function (b) { b.addEventListener("click", function () { try { history.replaceState(null, "", "#" + b.dataset.tab); } catch (x) {} show(b.dataset.tab, true); }); });
+  if (window.addEventListener) window.addEventListener("hashchange", function () { show(location.hash.slice(1), true); });
+
+  var data = JSON.parse(document.getElementById("app-data").textContent);
+  var KEY = "morning-edge-data";
+  var embedded = data;
+  try { var c = JSON.parse(localStorage.getItem(KEY) || "null"); if (c && c.built > data.built) data = c; } catch (x) {}
+  try { render(data); } catch (x) { data = embedded; render(data); }
+  show(typeof location !== "undefined" ? location.hash.slice(1) : "today", false);
+
+  // Installed desktop app (Claude): pull the newest app.json from GitHub Pages.
+  if (!(window.claude && typeof window.claude.use === "function")) return;
+  var live = document.getElementById("live");
+  function say(html) { live.innerHTML = html; live.hidden = !html; }
+  window.claude.use("desktop").then(function (d) {
+    if (!d) return;
+    if (!d.childProcess) {
+      say('Snapshot built ' + e(data.built) + ' SGT. For a live copy, use the desktop app or the <a href="' + SITE + 'app.html" target="_blank" rel="noopener">phone app</a>.');
+      if (d.install) d.install.state().then(function (s) {
+        if (s !== "available") return;
+        live.insertAdjacentHTML("beforeend", ' <button class="btn" id="inst">Install as app</button>');
+        document.getElementById("inst").onclick = function () { d.install.request().catch(function () {}); };
+      }).catch(function () {});
+      return;
+    }
+    try { d.app.dock.setIcon(icon()).catch(function () {}); } catch (x) {}
+    try { d.window.setOptions({width: 1240, height: 860, minWidth: 380, minHeight: 500}).catch(function () {}); } catch (x) {}
+    var timer = null, renderedDay = sgtNow().toISOString().slice(0, 10);
+    function btn(id, label, fn, ghost) { live.insertAdjacentHTML("beforeend", ' <button class="btn' + (ghost ? " ghost" : "") + '" id="' + id + '">' + label + "</button>"); document.getElementById(id).onclick = fn; }
+    function off() {
+      say("Live updates are off because the permission was refused. Showing data built " + e(data.built) + " SGT.");
+      btn("perm", "Change permission", function () { d.permissions.manage().then(function () { start(0); }).catch(function () {}); });
+    }
+    function ask() {
+      say("Showing data built " + e(data.built) + " SGT. Live updates fetch the feed from GitHub Pages with curl, which needs this app's full-access permission.");
+      btn("pull", "Turn on live updates", function () { pull(true); });
+    }
+    function pull(manual) {
+      say("Checking for a newer feed…");
+      d.os.platform().then(function (p) {
+        return d.childProcess.exec((p === "win32" ? "curl.exe" : "curl") + " -sfL --max-time 25 " + LIVE, {timeout: 35000});
+      }).then(function (r) {
+        if (!r || r.code !== 0 || !r.stdout) throw new Error("no connection, or the feed is not published yet");
+        var n;
+        try { n = JSON.parse(r.stdout); } catch (x) { throw new Error("the feed was not readable"); }
+        if (!n || typeof n.built !== "string" || !n.edition && !n.pullback) throw new Error("the feed was not readable");
+        var day = sgtNow().toISOString().slice(0, 10);
+        if (n.built > data.built || day !== renderedDay) {
+          try { render(n); } catch (x) { render(data); show(cur, false); throw new Error("the feed could not be shown"); }
+          if (n.built > data.built) { data = n; try { localStorage.setItem(KEY, JSON.stringify(n)); } catch (x) {} }
+          else render(data);
+          renderedDay = day; show(cur, false);
+        }
+        if (!timer) timer = setInterval(function () { if (document.visibilityState === "visible") pull(false); }, 30 * 60e3);
+        say("Live feed, built " + e(data.built) + " SGT. Checked " + e(sgtNow().toISOString().slice(11, 16)) + " SGT.");
+        btn("pull", "Check now", function () { pull(true); }, true);
+      }).catch(function (err) {
+        var msg = String(err && err.message || err);
+        if (/^EPERM/.test(msg)) {
+          d.permissions.state("full-access").then(function (s) {
+            if (s === "denied") off();
+            else if (s === "unavailable") { say("Live updates are not available in this window right now. Showing data built " + e(data.built) + " SGT."); btn("pull", "Try again", function () { pull(true); }, true); }
+            else ask();
+          }).catch(ask);
+          return;
+        }
+        if (!timer) timer = setInterval(function () { if (document.visibilityState === "visible") pull(false); }, 30 * 60e3);
+        say("Could not get the feed (" + e(msg.slice(0, 80)) + "). Showing data built " + e(data.built) + " SGT.");
+        btn("pull", "Try again", function () { pull(true); }, true);
+      });
+    }
+    function start(tries) {
+      if (!tries) say("Checking permission…");
+      d.permissions.state("full-access").then(function (s) {
+        if (s === "granted") pull(false);
+        else if (s === "denied") off();
+        else if (s === "unavailable" && tries < 4) setTimeout(function () { start(tries + 1); }, 5000);
+        else ask();
+      }).catch(ask);
+    }
+    start(0);
+  }).catch(function () {});
+
+  function icon() {
+    var c = document.createElement("canvas"); c.width = c.height = 256;
+    var g = c.getContext("2d");
+    g.fillStyle = "#00606a"; g.fillRect(0, 0, 256, 256);
+    g.fillStyle = "#edf1f4"; g.beginPath(); g.arc(128, 168, 64, Math.PI, 0); g.fill();
+    g.fillRect(40, 176, 176, 10); g.fillRect(64, 200, 128, 8); g.fillRect(88, 220, 80, 6);
+    return c.toDataURL("image/png");
+  }
 })();
 </script>
 </body></html>
