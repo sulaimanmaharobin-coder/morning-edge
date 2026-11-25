@@ -65,25 +65,32 @@ def jev(jev_dir):
     if not jev_dir or not os.path.isdir(os.path.join(jev_dir, "state")):
         return None
 
-    def load(name):
+    def load(name, parse):
+        """parse(file contents), or None (unavailable) when the file is missing, corrupt or the wrong shape."""
         try:
-            return json.load(open(os.path.join(jev_dir, "state", name)))
-        except Exception:
+            with open(os.path.join(jev_dir, "state", name), encoding="utf-8") as f:
+                return parse(json.load(f))
+        except Exception as e:
+            print(f"jev feed {name} unavailable: {type(e).__name__}")
             return None
 
     def day(n):
         return (date(1970, 1, 1) + timedelta(days=n)).isoformat() if isinstance(n, int) else None
 
-    out = {}
-    for sleeve in ("prebreak", "growth"):
-        b, w = load(f"{sleeve}-breakouts.json") or {}, load(f"{sleeve}-watch.json") or {}
-        out[sleeve] = dict(
+    def breakouts(b):
+        return dict(
             scanned=(datetime.fromtimestamp(b["made_ms"] / 1000, timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M SGT") if b.get("made_ms") else None,
             bar_day=day(b.get("bar_day")),
             breakouts=[dict(ticker=x["ticker"], close=x["close"], level=x["level"], vol_ratio=x.get("vol_ratio"),
-                            rev_yoy=x.get("rev_yoy"), day=day(x.get("day"))) for x in b.get("breakouts", [])],
-            watch=[dict(ticker=k, level=v.get("level"), rev_yoy=v.get("rev_yoy"))
-                   for k, v in sorted((w.get("names") or {}).items())])
+                            rev_yoy=x.get("rev_yoy"), day=day(x.get("day"))) for x in b["breakouts"]])
+
+    def watch(w):
+        return [dict(ticker=k, level=v.get("level"), rev_yoy=v.get("rev_yoy")) for k, v in sorted(w["names"].items())]
+
+    out = {}
+    for sleeve in ("prebreak", "growth"):
+        b = load(f"{sleeve}-breakouts.json", breakouts) or dict(scanned=None, bar_day=None, breakouts=None)
+        out[sleeve] = dict(b, watch=load(f"{sleeve}-watch.json", watch))
     reports = sorted(f for f in os.listdir(os.path.join(jev_dir, "stock-scan")) if f.endswith(".md")) if os.path.isdir(
         os.path.join(jev_dir, "stock-scan")) else []
     out["report_date"] = reports[-1][:10] if reports else None
