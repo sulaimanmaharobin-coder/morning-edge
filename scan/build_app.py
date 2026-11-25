@@ -44,6 +44,7 @@ def edition(site):
         h = first(r'<h3><a href="([^"]+)"[^>]*>(.*?)</a></h3>', art)
         if h:
             briefs.append(dict(url=h[0], title=text(h[1]),
+                               src=text((first(r'<p class="src">(.*?)</p>', art) or [""])[0]).replace("Read the original \u2197", "").strip(" \u00b7"),
                                body=text((first(r"<h3>.*?</h3>\s*<p>(.*?)</p>", art) or [""])[0]),
                                why=text((first(r'<p class="why">(.*?)</p>', art) or [""])[0]).replace("Why it matters", "", 1).strip()))
     reads = []
@@ -57,7 +58,10 @@ def edition(site):
         lead=dict(url=lead[0], title=text(lead[1])) if lead else None,
         dek=text((first(r'<p class="dek">(.*?)</p>') or [""])[0]),
         byline=text((first(r'<div class="byline">(.*?)</div>') or [""])[0]),
-        why=text((first(r'<div class="why-box"><b>.*?</b>(.*?)</div>') or [""])[0]),
+        why=text(re.sub(r"^\s*<b>.*?</b>", "", (first(r'<div class="why-box">(.*?)</div>') or [""])[0], flags=re.S)),
+        story=[text(x) for x in re.findall(r"<p>(.*?)</p>", (first(r'<div class="story">(.*?)(?:<div class="why-box">|</div>\s*<p class="editor-note"|</section>)') or [""])[0], re.S)],
+        note=text((first(r'<p class="editor-note">(.*?)</p>') or [""])[0]),
+        editions=[n[:10] for n in names[::-1][:10]],
         briefs=briefs, reads=reads)
 
 
@@ -147,8 +151,10 @@ def main():
     except Exception as e:
         data["jev"], data["errors"]["jev"] = None, type(e).__name__
     tpl = open(os.path.join(HERE, "app_template.html"), encoding="utf-8").read()
-    blob = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
+    blob = json.dumps(data, separators=(",", ":")).replace("<", "\\u003c")
     open(os.path.join(site, "app.html"), "w", encoding="utf-8").write(tpl.replace("__APP_DATA__", blob))
+    # The same data as plain JSON, for the installed desktop app's live refresh.
+    open(os.path.join(site, "app.json"), "w", encoding="utf-8").write(json.dumps(data, separators=(",", ":")))
     print("app.html built;", "errors:", data["errors"] or "none")
     for r in (data.get("pullback") or {}).get("all", []):  # readable in the Actions log
         print(f"buy-zone {r['kind']:6} {r['sym']:8} d20 {r['d20']:+5.1f}% rsi {r['rsi']:4.1f} "
